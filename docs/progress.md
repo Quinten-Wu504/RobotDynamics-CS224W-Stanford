@@ -1,10 +1,10 @@
 # Progress
 
-## Stage status
+## Roadmap
 
 | Stage | Scope | Status |
 | --- | --- | --- |
-| 0 | Repository and minimal documentation | AWAITING_REVIEW |
+| 0 | Repository setup | CHECKING |
 | 1 | Protocol, resource audit, minimal environment | NOT_STARTED |
 | 2 | Data audit, state recovery, visualization | NOT_STARTED |
 | 3 | Splits, windows, evaluation, non-learning baselines | NOT_STARTED |
@@ -16,14 +16,10 @@
 | 9 | Evidence-driven robustness or extension | NOT_STARTED |
 | 10 | Reproduction and final deliverables | NOT_STARTED |
 
-## Stage 0 delivery
+## Current notes
 
-- The owner created `Quinten-Wu504/RobotDynamics-CS224W-Stanford` manually after the initial creation-tool blocker.
-- Public visibility is explicitly requested by the owner and is retained.
-- An independent same-name local project directory contains README, ignore rules, this progress record, and the stage record.
-- The parent directory's three course PDFs and execution plan remain outside the repository.
-- Initialization content and staged file scope were reviewed. Whitespace checks passed; representative credential, environment, raw-data, checkpoint, and course-file paths are ignored. This delivery is submitted for review; the final upload and remote SHA check are reported with the commit link.
-- No experiments have run. Environment compatibility and compute resources are unverified.
-- No stage 1 work has started. Advancement requires review of the stage 0 delivery.
+Repository setup is complete; the documentation is being checked. `CHECKING` marks this final pass before a stage is closed.
 
-See [stage 0 evidence](stage_0.md). Commit identifiers are provided in the delivery report rather than embedded into their own commit.
+The codebase currently contains documentation and ignore rules only. No experiments have run. Hardware, dependencies, and dataset details still need checking.
+
+Next up: define the task protocol, check the available hardware, and test a minimal environment. See the [setup notes](stage_0.md) for the initial repository checks.

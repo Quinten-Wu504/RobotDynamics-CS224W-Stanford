@@ -1,49 +1,45 @@
 # RobotDynamics-CS224W-Stanford
 
-Graph learning for robot dynamics prediction, developed as a CS224W course project at Stanford.
+CS224W course project at Stanford. We study graph-based prediction of robot and object motion using MimicGen Square.
 
-## Research scope
+## Project
 
-The project will test whether graph structure, geometric equivariance, and joint-embedding predictive learning (JEPA) improve robot and object dynamics prediction under comparable information and training budgets. Positive results are not assumed.
+The main question is whether graph structure helps predict manipulation dynamics compared with MLP and GRU baselines. We will also compare geometric equivariance and JEPA pretraining, keeping input information and training budgets comparable.
 
-The initial task is MimicGen Square: D0 for development and training, followed by held-out D0 and D1 distribution-shift evaluation. Planned inputs are causal state histories and planned action sequences; initial targets are end-effector and manipulated-object position changes. Static fixtures will not be included in the primary average error. One-step alignment will be checked before predicting 0.25 s and 0.5 s ahead, using the verified control frequency.
+Models will take state histories and planned actions as input and predict position changes for the end effector and manipulated object. We will start with one-step prediction, then use 0.25 s and 0.5 s horizons once the data's control frequency is confirmed. D0 will be used for training and development; held-out D0 and D1 trajectories will test generalization.
 
 ## Current status
 
-Stage 0 contains repository documentation only. See [progress](docs/progress.md) and the [initialization record](docs/stage_0.md).
+The repository is initialized. Implementation and experiments have not started. See the [project progress](docs/progress.md) for the remaining work.
 
-| Area | Status |
-| --- | --- |
-| Code implemented | Documentation and Git ignore rules only |
-| Code verified | Initialization content reviewed; no model or data code exists |
-| Experiments run | None |
-| Experiments pending | All data audits, baselines, models, and evaluations |
-| Local compute | Not audited; no compute blocker has been established |
+- **Code:** documentation and ignore rules are in place and checked. No data pipeline or models yet.
+- **Experiments:** none run; no results yet.
+- **Environment:** dependency versions and hardware requirements still need checking.
 
-## Results and reproducibility
+## Evaluation plan
 
-There are no experimental results or empirical conclusions yet. Dataset counts, split manifests, seeds, fitted normalization, configurations, and result artifacts have not been produced. Planned primary metrics are separate end-effector and object Euclidean position errors in cm, aggregated by episode. Formal comparisons will use at least three seeds, nested training subsets, and validation-only model selection. Each future result will identify its source commit and configuration.
+We will report end-effector and object position errors separately in cm, averaging by episode and excluding static fixtures from the main metric. Splits will be made by trajectory before generating windows. Formal comparisons will use at least three seeds and nested training subsets, with model selection based on validation data. Results will include the data split, sample counts, prediction horizon, configuration, and code commit.
 
-## Running the project
+## Setup
 
-There is no training, preprocessing, evaluation, visualization, or checkpoint-resume entry point yet. No runtime dependencies or environment have been installed for this project. The repository can be retrieved with Git:
+Clone the repository:
 
 ```sh
 git clone https://github.com/Quinten-Wu504/RobotDynamics-CS224W-Stanford.git
 cd RobotDynamics-CS224W-Stanford
 ```
 
-Hardware requirements and local/remote installation instructions will be documented after the resource and compatibility audit. There are currently no generated outputs or checkpoints.
+There is no training entry point yet. Installation and run commands will be added with the implementation, after checking the MimicGen, robosuite, and MuJoCo versions on the available hardware.
 
-## Next stage
+## Next steps
 
-Stage 1 will audit CPU, RAM, GPU, disk, Python, and platform compatibility; verify compatible dependency versions; define the experiment protocol; and prepare an isolated minimal environment with import and device smoke tests. Dataset extraction and training belong to later stages.
+Check local resources and platform compatibility, write the experiment protocol, and set up an isolated environment. The first checks will cover dependency imports and device access; data processing comes next.
 
 ## Data and references
 
-Data must be obtained from its official source under the applicable terms. Raw datasets, credentials, environments, large checkpoints, and private course materials are not distributed here. Repository visibility is public at the owner's request; data and third-party materials retain their respective usage conditions.
+Download data from the official source and follow its usage terms. Raw datasets, checkpoints, and private course materials are kept out of this repository.
 
-These are planned references; dependency versions and data semantics have not yet been audited:
+Starting references:
 
 - [MimicGen datasets](https://mimicgen.github.io/docs/datasets/mimicgen_corl_2023.html)
 - [MimicGen installation](https://mimicgen.github.io/docs/introduction/installation.html)
