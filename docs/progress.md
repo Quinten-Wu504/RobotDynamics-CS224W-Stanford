@@ -4,8 +4,8 @@
 
 | Stage | Scope | Status |
 | --- | --- | --- |
-| 0 | Repository setup | CHECKING |
-| 1 | Protocol, resource audit, minimal environment | NOT_STARTED |
+| 0 | Repository setup | DONE |
+| 1 | Protocol, resource audit, minimal environment | BLOCKED_COMPUTE |
 | 2 | Data audit, state recovery, visualization | NOT_STARTED |
 | 3 | Splits, windows, evaluation, non-learning baselines | NOT_STARTED |
 | 4 | Non-graph learning baselines | NOT_STARTED |
@@ -18,8 +18,8 @@
 
 ## Current notes
 
-Repository setup is complete; the documentation is being checked. `CHECKING` marks this final pass before a stage is closed.
+The task protocol and configuration are written. The Windows base environment is installed and the configuration checks pass. The full simulation environment is blocked by an `egl-probe` build failure. No data has been downloaded and no model has been trained.
 
-The codebase currently contains documentation and ignore rules only. No experiments have run. Hardware, dependencies, and dataset details still need checking.
+Stage 1 remains open. Next: run the full environment check on Linux, return its logs and dependency snapshot, and check the results before starting data work. See [environment notes](environment.md) and [handoff commands](stage_1_handoff.md).
 
-Next up: define the task protocol, check the available hardware, and test a minimal environment. See the [setup notes](stage_0.md) for the initial repository checks.
+`CHECKING` means a final pass is in progress; `DONE` means the stage is closed. `BLOCKED_COMPUTE` includes platform or runtime limitations. Stage 0 was closed when stage 1 began.

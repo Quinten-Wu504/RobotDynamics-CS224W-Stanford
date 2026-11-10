@@ -10,11 +10,11 @@ Models will take state histories and planned actions as input and predict positi
 
 ## Current status
 
-The repository is initialized. Implementation and experiments have not started. See the [project progress](docs/progress.md) for the remaining work.
+The [experiment protocol](docs/experiment_protocol.md) and initial configuration are in place. The base environment works on Windows, but the simulation stack is blocked by a dependency build failure. See [project progress](docs/progress.md).
 
-- **Code:** documentation and ignore rules are in place and checked. No data pipeline or models yet.
-- **Experiments:** none run; no results yet.
-- **Environment:** dependency versions and hardware requirements still need checking.
+- **Code:** configuration checks, a resource-audit script, and an environment smoke-test script. No data pipeline or models yet.
+- **Experiments:** no prediction experiments or results. Environment checks are separate from model evaluation.
+- **Environment:** Python 3.10 base dependencies are installed and locked. Full simulation imports and PyTorch CPU/CUDA checks still need a compatible host.
 
 ## Evaluation plan
 
@@ -29,11 +29,25 @@ git clone https://github.com/Quinten-Wu504/RobotDynamics-CS224W-Stanford.git
 cd RobotDynamics-CS224W-Stanford
 ```
 
-There is no training entry point yet. Installation and run commands will be added with the implementation, after checking the MimicGen, robosuite, and MuJoCo versions on the available hardware.
+For the tested Windows base environment, use Python 3.10:
+
+```powershell
+D:\ProgramData\anaconda3\python.exe -m venv .venv
+.venv\Scripts\python.exe -m pip install -r requirements/windows-base.lock.txt
+.venv\Scripts\python.exe -m robot_dynamics.config
+.venv\Scripts\python.exe -m pytest -q
+.venv\Scripts\python.exe scripts/smoke_environment.py --device numpy --output outputs/base_smoke.json
+```
+
+The smoke check tests imports and an in-memory HDF5 round trip. It does not train a model. Output files are not overwritten; use a new output path for a repeat run. `--require-audited` on the config command intentionally fails until the stage 2 data checks are complete.
+
+The full environment uses pinned MimicGen and robomimic commits, robosuite 1.4.1, and MuJoCo 2.3.2. Its `egl-probe` dependency fails to build on this Windows machine. [Environment notes](docs/environment.md) contain the error and version choices; [Linux handoff](docs/stage_1_handoff.md) contains installation, CPU/CUDA smoke checks, and export commands. The full stack has not yet been verified.
+
+Local hardware: i7-10750H, 15.76 GiB RAM (2.46 GiB available during the audit), Quadro T1000 Max-Q with 4 GiB VRAM, and 77.8 GiB free on the project drive. Formal training requirements have not been measured. There are no dataset preparation, training, evaluation, or checkpoint-resume commands yet.
 
 ## Next steps
 
-Check local resources and platform compatibility, write the experiment protocol, and set up an isolated environment. The first checks will cover dependency imports and device access; data processing comes next.
+Finish the full environment checks on a compatible Linux host. After that, the next stage will audit Square D0/D1 data, confirm actions and timing, restore world poses, and inspect sample trajectories.
 
 ## Data and references
 

@@ -21,6 +21,8 @@ data/
 datasets/
 checkpoints/
 outputs/
+/outputs-*.log
+/stage1-results.tar.gz
 runs/
 wandb/
 *.h5

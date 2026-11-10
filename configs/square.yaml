@@ -1,0 +1,25 @@
+task: square
+dataset_type: core
+train_distribution: square_d0
+test_distribution: square_d1
+history_steps: 4
+one_step: true
+horizons_seconds: [0.25, 0.5]
+control_frequency_hz: null
+action_conditioning: planned_sequence
+position_unit: m
+coordinate_frame: world
+target_entities: [end_effector, square_nut]
+target: position_delta
+split:
+  unit: episode
+  seed: 224
+  d0_fractions: [0.8, 0.1, 0.1]
+  d1_role: final_test_only
+train_fractions: [0.1, 0.25, 1.0]
+formal_seeds: [0, 1, 2]
+audit:
+  observation_fields: false
+  controller_semantics: false
+  time_alignment: false
+  fixture_world_poses: false

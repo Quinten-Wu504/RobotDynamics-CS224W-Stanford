@@ -1,0 +1,11 @@
+-r base.txt
+numba==0.59.1
+mujoco==2.3.2
+opencv-python==4.9.0.80
+gym==0.26.2
+egl-probe==1.0.2
+torch==2.5.1
+torchvision==0.20.1
+robosuite @ git+https://github.com/ARISE-Initiative/robosuite.git@b9d8d3de5e3dfd1724f4a0e6555246c460407daa
+robomimic @ git+https://github.com/ARISE-Initiative/robomimic.git@d0b37cf214bd24fb590d182edb6384333f67b661
+mimicgen @ git+https://github.com/NVlabs/mimicgen.git@c0fbff22ba40060f05a917a80817f3f5c20731e7
