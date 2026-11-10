@@ -1,0 +1,42 @@
+# Local environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Credentials and machine-local configuration
+.env
+.env.*
+!.env.example
+.aws/
+*.pem
+*.key
+
+# Raw data and generated training artifacts
+data/
+datasets/
+checkpoints/
+outputs/
+runs/
+wandb/
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.ckpt
+
+# Local course materials and execution instructions
+/EXPERIMENT_EXECUTION_PLAN.md
+/CS 224W Course Project 2026.docx.pdf
+/CS224W_Project_Proposal.pdf
+/Project grading rubric.pdf
+
+# Editor and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
