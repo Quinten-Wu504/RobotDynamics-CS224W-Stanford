@@ -16,6 +16,8 @@ The [experiment protocol](docs/experiment_protocol.md) and initial configuration
 - **Experiments:** no prediction experiments or results. Environment checks are separate from model evaluation.
 - **Environment:** Python 3.10 base dependencies are installed and locked. Full simulation imports and PyTorch CPU/CUDA checks still need a compatible host.
 
+The [stage 1 check record](reports/stage1/validation.md) includes nine passing tests and the base smoke-test output with its source commit.
+
 ## Evaluation plan
 
 We will report end-effector and object position errors separately in cm, averaging by episode and excluding static fixtures from the main metric. Splits will be made by trajectory before generating windows. Formal comparisons will use at least three seeds and nested training subsets, with model selection based on validation data. Results will include the data split, sample counts, prediction horizon, configuration, and code commit.

@@ -22,4 +22,6 @@ The task protocol and configuration are written. The Windows base environment is
 
 Stage 1 remains open. Next: run the full environment check on Linux, return its logs and dependency snapshot, and check the results before starting data work. See [environment notes](environment.md) and [handoff commands](stage_1_handoff.md).
 
+Local verification: nine configuration tests pass; the base import/HDF5 smoke check passed from commit `74cb4d3`. [Check record](../reports/stage1/validation.md).
+
 `CHECKING` means a final pass is in progress; `DONE` means the stage is closed. `BLOCKED_COMPUTE` includes platform or runtime limitations. Stage 0 was closed when stage 1 began.

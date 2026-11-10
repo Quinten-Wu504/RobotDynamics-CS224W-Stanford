@@ -1,0 +1,21 @@
+{
+  "kind": "environment_smoke_test",
+  "source_commit": "74cb4d306f480c4bcb14c8b5398505fad7e312ec",
+  "working_tree_dirty": false,
+  "python": "3.10.9",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "versions": {
+    "numpy": "1.26.4",
+    "h5py": "3.11.0",
+    "scipy": "1.11.4",
+    "matplotlib": "3.8.4",
+    "PyYAML": "6.0.2"
+  },
+  "device": "numpy",
+  "device_name": "numpy",
+  "cuda_runtime": null,
+  "simulation_imports_and_step": false,
+  "simulation_classes": [],
+  "gradient": "not_run",
+  "hdf5_roundtrip": "passed"
+}
