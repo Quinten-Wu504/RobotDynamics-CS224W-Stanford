@@ -10,13 +10,11 @@ Models will take state histories and planned actions as input and predict positi
 
 ## Current status
 
-The [experiment protocol](docs/experiment_protocol.md) and initial configuration are in place. The base environment works on Windows, but the simulation stack is blocked by a dependency build failure. See [project progress](docs/progress.md).
+Stage 1 environment checks pass on AutoDL: Ubuntu 22.04, Python 3.10.8, and an RTX 4090 D. The [experiment protocol](docs/experiment_protocol.md) defines the initial task; the [check record](reports/stage1/autodl/README.md) contains the results.
 
-- **Code:** configuration checks, a resource-audit script, and an environment smoke-test script. No data pipeline or models yet.
-- **Experiments:** no prediction experiments or results. Environment checks are separate from model evaluation.
-- **Environment:** Python 3.10 base dependencies are installed and locked. Full simulation imports and PyTorch CPU/CUDA checks still need a compatible host.
-
-The [stage 1 check record](reports/stage1/validation.md) includes nine passing tests and the base smoke-test output with its source commit.
+- **Code:** configuration validation, resource auditing, and environment smoke checks. Eleven tests pass. Data processing and models are not implemented yet.
+- **Experiments:** no prediction experiments or results. CPU/CUDA and simulator checks are setup tests only.
+- **Environment:** the full Linux dependency snapshot is locked. Windows still supports the base checks only.
 
 ## Evaluation plan
 
@@ -24,32 +22,32 @@ We will report end-effector and object position errors separately in cm, averagi
 
 ## Setup
 
-Clone the repository:
+Clone the repository and follow the [environment setup](docs/stage_1_handoff.md) for installation, the project-local EGL library, and mirror options:
 
 ```sh
 git clone https://github.com/Quinten-Wu504/RobotDynamics-CS224W-Stanford.git
 cd RobotDynamics-CS224W-Stanford
 ```
 
-For the tested Windows base environment, use Python 3.10:
+The existing AutoDL installation is at `/root/autodl-tmp/RobotDynamics-CS224W-Stanford`. From that directory:
 
-```powershell
-D:\ProgramData\anaconda3\python.exe -m venv .venv
-.venv\Scripts\python.exe -m pip install -r requirements/windows-base.lock.txt
-.venv\Scripts\python.exe -m robot_dynamics.config
-.venv\Scripts\python.exe -m pytest -q
-.venv\Scripts\python.exe scripts/smoke_environment.py --device numpy --output outputs/base_smoke.json
+```bash
+export LD_LIBRARY_PATH="$PWD/.venv/native/usr/lib/x86_64-linux-gnu${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+.venv/bin/python -m pytest -q
+.venv/bin/python -m robot_dynamics.config
+.venv/bin/python scripts/smoke_environment.py --device cpu --output outputs/cpu_check.json
+MUJOCO_GL=egl .venv/bin/python scripts/smoke_environment.py --device cuda --simulation --output outputs/cuda_check.json
 ```
 
-The smoke check tests imports and an in-memory HDF5 round trip. It does not train a model. Output files are not overwritten; use a new output path for a repeat run. `--require-audited` on the config command intentionally fails until the stage 2 data checks are complete.
+Use a new output filename for repeat checks; existing results are protected against overwrite. The config command's `--require-audited` option intentionally fails until the data audit is finished.
 
-The full environment uses pinned MimicGen and robomimic commits, robosuite 1.4.1, and MuJoCo 2.3.2. Its `egl-probe` dependency fails to build on this Windows machine. [Environment notes](docs/environment.md) contain the error and version choices; [Linux handoff](docs/stage_1_handoff.md) contains installation, CPU/CUDA smoke checks, and export commands. The full stack has not yet been verified.
+The container has a 16-core CPU quota, 80 GiB RAM, and 24 GiB VRAM. Its host-visible CPU and memory totals are larger than these limits. At the end of setup, the data disk had about 13 GiB free and file storage about 197 GiB free. Formal training requirements have not been measured.
 
-Local hardware: i7-10750H, 15.76 GiB RAM (2.46 GiB available during the audit), Quadro T1000 Max-Q with 4 GiB VRAM, and 77.8 GiB free on the project drive. Formal training requirements have not been measured. There are no dataset preparation, training, evaluation, or checkpoint-resume commands yet.
+For Windows base-only checks, use Python 3.10 with `requirements/windows-base.lock.txt` and `--device numpy`. Full simulator support was verified on Linux. [Environment notes](docs/environment.md) describe both machines and the resolved setup issues.
 
 ## Next steps
 
-Finish the full environment checks on a compatible Linux host. After that, the next stage will audit Square D0/D1 data, confirm actions and timing, restore world poses, and inspect sample trajectories.
+Stage 2 will inspect Square D0/D1 data, confirm actions and time alignment, recover world poses, and plot sample trajectories. No dataset has been downloaded. There are no preprocessing, training, prediction evaluation, or checkpoint-resume commands yet.
 
 ## Data and references
 

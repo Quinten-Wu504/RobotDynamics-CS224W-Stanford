@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/root/autodl-tmp/RobotDynamics-CS224W-Stanford/scripts/smoke_environment.py", line 97, in <module>
+    main()
+  File "/root/autodl-tmp/RobotDynamics-CS224W-Stanford/scripts/smoke_environment.py", line 53, in main
+    importlib.import_module(module)
+  File "/root/miniconda3/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/autodl-tmp/RobotDynamics-CS224W-Stanford/.venv/lib/python3.10/site-packages/mujoco/__init__.py", line 46, in <module>
+    from mujoco.gl_context import *
+  File "/root/autodl-tmp/RobotDynamics-CS224W-Stanford/.venv/lib/python3.10/site-packages/mujoco/gl_context.py", line 41, in <module>
+    from mujoco.egl import GLContext as _GLContext
+  File "/root/autodl-tmp/RobotDynamics-CS224W-Stanford/.venv/lib/python3.10/site-packages/mujoco/egl/__init__.py", line 31, in <module>
+    from mujoco.egl import egl_ext as EGL
+  File "/root/autodl-tmp/RobotDynamics-CS224W-Stanford/.venv/lib/python3.10/site-packages/mujoco/egl/egl_ext.py", line 27, in <module>
+    from OpenGL import EGL
+  File "/root/autodl-tmp/RobotDynamics-CS224W-Stanford/.venv/lib/python3.10/site-packages/OpenGL/EGL/__init__.py", line 2, in <module>
+    from OpenGL.raw.EGL._types import *
+  File "/root/autodl-tmp/RobotDynamics-CS224W-Stanford/.venv/lib/python3.10/site-packages/OpenGL/raw/EGL/_types.py", line 87, in <module>
+    raw_eglQueryString = _p.PLATFORM.EGL.eglQueryString
+AttributeError: 'NoneType' object has no attribute 'eglQueryString'

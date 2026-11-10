@@ -1,0 +1,35 @@
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /root/autodl-tmp/RobotDynamics-CS224W-Stanford/.venv/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+WARNING: robosuite task zoo environments not imported, possibly because robosuite_task_zoo is not installed...
+Got error: No module named 'robosuite_task_zoo'
+{
+  "kind": "environment_smoke_test",
+  "source_commit": "6344eeb4187457639ff65332fdeaf3a1c8dc3ebc",
+  "working_tree_dirty": false,
+  "python": "3.10.8",
+  "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.35",
+  "versions": {
+    "numpy": "1.26.4",
+    "h5py": "3.11.0",
+    "scipy": "1.11.4",
+    "matplotlib": "3.8.4",
+    "PyYAML": "6.0.2",
+    "torch": "2.5.1+cu121",
+    "torchvision": "0.20.1+cu121",
+    "mujoco": "2.3.2",
+    "robosuite": "1.4.1",
+    "robomimic": "0.3.0",
+    "mimicgen": "1.0.0"
+  },
+  "device": "cuda",
+  "device_name": "NVIDIA GeForce RTX 4090 D",
+  "cuda_runtime": "12.1",
+  "simulation_imports_and_step": true,
+  "simulation_classes": [
+    "Square_D0",
+    "Square_D1"
+  ],
+  "gradient": "passed",
+  "hdf5_roundtrip": "passed"
+}

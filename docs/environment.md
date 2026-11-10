@@ -1,5 +1,32 @@
 # Environment notes
 
+## AutoDL validation
+
+The full environment passed on an existing AutoDL instance. See [the results](../reports/stage1/autodl/README.md) and [setup commands](stage_1_handoff.md).
+
+| Item | Observed |
+| --- | --- |
+| OS | Ubuntu 22.04.1 LTS, x86-64 |
+| CPU quota | 16 cores; cgroup `cpu.max` = 1600000 / 100000 |
+| RAM limit | 80 GiB; cgroup `memory.max` = 85899345920 |
+| GPU | NVIDIA GeForce RTX 4090 D, 24564 MiB |
+| Driver | 580.105.08 |
+| Python | 3.10.8 in project `.venv` |
+| CMake | 3.22.1 |
+| Remaining storage after setup | About 13 GiB system, 13 GiB data, 197 GiB file storage |
+
+The project is at `/root/autodl-tmp/RobotDynamics-CS224W-Stanford`. Package caches and build files use `/root/autodl-fs/RobotDynamics-CS224W-Stanford-cache`. Other project files and Python environments were left in place. Another existing workload was active on the GPU at the final resource check; no training or performance benchmark was run for this project.
+
+Host-visible memory is roughly 1 TiB, but the container limit is 80 GiB. The resource script reports cgroup limits separately to avoid treating host totals as the allocation.
+
+GitHub access required AutoDL's academic network accelerator. The direct PyTorch download was slow and the SJTU mirror timed out. The NJU mirror installed the same `torch==2.5.1+cu121` and `torchvision==0.20.1+cu121` builds. All three simulation repositories were installed at the specified commits.
+
+The first combined CUDA/simulation check failed because `libEGL.so.1` was missing. The NVIDIA EGL vendor library was already present. An apt dry run proposed Mesa upgrades, so only the Ubuntu `libegl1=1.4.0-1` package was downloaded and extracted under `.venv/native`. A project-scoped `LD_LIBRARY_PATH` fixed the import. No system graphics packages were installed or upgraded.
+
+CPU and CUDA gradients, HDF5 round trips, Square D0/D1 imports, and a small MuJoCo step passed from a clean checkout of `6344eeb4187457639ff65332fdeaf3a1c8dc3ebc`. Eleven tests, Ruff, and `pip check` passed. Rendering, dataset replay, and training have not been tested.
+
+The full installed Python snapshot is [linux-cu121.lock.txt](../requirements/linux-cu121.lock.txt). The native package version and checksum are in [native_runtime.txt](../reports/stage1/autodl/native_runtime.txt). Warnings about private robosuite macros and optional task-zoo environments do not prevent the tested Square imports.
+
 ## Local machine
 
 Audit date: 2026-11-10, America/Los_Angeles.
@@ -29,13 +56,13 @@ CPU model was read from the processor registry entry. Core count, RAM, platform,
 | MuJoCo | 2.3.2 | MimicGen's recommended simulator version |
 | NumPy / SciPy | 1.26.4 / 1.11.4 | Keep the older simulation stack on NumPy 1.x |
 | Numba | 0.59.1 | Compatible with this Python and NumPy selection |
-| PyTorch / torchvision | 2.5.1 / 0.20.1, CUDA 12.1 wheels | Official matched pair; pending device validation |
+| PyTorch / torchvision | 2.5.1 / 0.20.1, CUDA 12.1 wheels | Official matched pair; CPU/CUDA checks passed on AutoDL |
 
 MimicGen's installation guide lists macOS/Linux and warns against robosuite 1.5+. The documented source revisions were preferred over current releases. Python 3.10 is a practical choice here, not an upstream claim that the whole stack is tested on Windows.
 
-`requirements/windows-base.lock.txt` is the full installed base dependency snapshot, including build tools. It does not contain a working simulation or PyTorch installation. `requirements/simulation.txt` and `requirements/torch.txt` pin the intended full stack; its transitive dependency lock must be exported on the successful Linux host. `robosuite_task_zoo` and pygame are not needed for the Square environment checks.
+`requirements/windows-base.lock.txt` is the full installed base dependency snapshot, including build tools. It does not contain a working simulation or PyTorch installation. `requirements/simulation.txt` and `requirements/torch.txt` pin the intended full stack; the tested Linux transitive dependency snapshot is now saved separately. `robosuite_task_zoo` and pygame are not needed for the Square environment checks.
 
-## Checks and blocker
+## Earlier Windows checks
 
 Base dependency installation succeeded. The configuration checks passed, and `pip check` found no broken requirements. The config readiness command correctly rejected all five unfinished data checks. Formatting was applied and checked with Ruff. No models or data were used.
 
@@ -51,7 +78,7 @@ ERROR: Failed building wheel for egl-probe
 
 Its build command assumes POSIX shell syntax. The selected robomimic revision requires `egl_probe>=1.0.1`. The failure blocks the full simulator stack on this host; it is not a demonstrated GPU memory failure. The raw local log is `outputs-egl-install.log` (ignored by Git). No third-party setup files were patched, no dependencies were silently omitted, and no further simulation install attempts were made after this failure.
 
-Stage 1 is **BLOCKED_COMPUTE**. The protocol and base configuration are available, but full simulation imports, a MuJoCo step, and PyTorch CPU/CUDA checks remain unverified. No dataset was downloaded and no training job is running. The [handoff](stage_1_handoff.md) covers the remaining checks.
+This initially blocked stage 1 on Windows. The AutoDL checks above resolve the stage's environment blocker. Windows remains a base-only environment. No dataset or training run was started.
 
 ## Sources
 
@@ -60,3 +87,6 @@ Stage 1 is **BLOCKED_COMPUTE**. The protocol and base configuration are availabl
 - [MuJoCo 2.3.2 files](https://pypi.org/project/mujoco/2.3.2/#files)
 - [PyTorch previous versions](https://pytorch.org/get-started/previous-versions/)
 - [egl-probe source](https://github.com/StanfordVL/egl_probe)
+
+- [AutoDL academic network acceleration](https://api.autodl.com/docs/network_turbo/)
+- [NJU PyTorch mirror](https://help.mirrors.nju.edu.cn/pytorch/)

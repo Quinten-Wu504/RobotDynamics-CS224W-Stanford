@@ -1,0 +1,4 @@
+Package: libegl1
+Version: 1.4.0-1
+Architecture: amd64
+4a35c0e925e15a076e7ce11d7c76f8ecb16615fc347c2c09afa4c205a7ca8ec4  outputs/stage1_autodl/native-package/libegl1_1.4.0-1_amd64.deb

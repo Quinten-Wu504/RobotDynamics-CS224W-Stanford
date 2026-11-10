@@ -5,7 +5,7 @@
 | Stage | Scope | Status |
 | --- | --- | --- |
 | 0 | Repository setup | DONE |
-| 1 | Protocol, resource audit, minimal environment | BLOCKED_COMPUTE |
+| 1 | Protocol, resource audit, minimal environment | CHECKING |
 | 2 | Data audit, state recovery, visualization | NOT_STARTED |
 | 3 | Splits, windows, evaluation, non-learning baselines | NOT_STARTED |
 | 4 | Non-graph learning baselines | NOT_STARTED |
@@ -18,10 +18,10 @@
 
 ## Current notes
 
-The task protocol and configuration are written. The Windows base environment is installed and the configuration checks pass. The full simulation environment is blocked by an `egl-probe` build failure. No data has been downloaded and no model has been trained.
+Stage 1 checks are complete on AutoDL. Eleven tests, dependency checks, CPU/CUDA gradients, HDF5 round trips, simulation imports, and a small MuJoCo step passed. The [results](../reports/stage1/autodl/README.md) identify source commit `6344eeb`.
 
-Stage 1 remains open. Next: run the full environment check on Linux, return its logs and dependency snapshot, and check the results before starting data work. See [environment notes](environment.md) and [handoff commands](stage_1_handoff.md).
+The Windows `egl-probe` build failure was resolved by using Linux. A missing EGL loader on AutoDL was added inside the project environment; existing system graphics packages were not upgraded. The Linux package snapshot is saved in `requirements/linux-cu121.lock.txt`.
 
-Local verification: nine configuration tests pass; the base import/HDF5 smoke check passed from commit `74cb4d3`. [Check record](../reports/stage1/validation.md).
+The protocol and configuration are ready for the data audit. Data fields, controller semantics, control frequency, timing, and fixture poses still need verification against the dataset. No data or model experiment has run.
 
-`CHECKING` means a final pass is in progress; `DONE` means the stage is closed. `BLOCKED_COMPUTE` includes platform or runtime limitations. Stage 0 was closed when stage 1 began.
+Next: stage 2 data inspection and state recovery. `CHECKING` marks a stage's final review; `DONE` marks a closed stage.
