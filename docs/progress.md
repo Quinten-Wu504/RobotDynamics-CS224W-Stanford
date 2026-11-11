@@ -10,8 +10,8 @@
 | 3 | Splits, windows, evaluation, non-learning baselines | DONE |
 | 4 | Non-graph learning baselines | DONE |
 | 5 | Scene graphs and temporal GNNs | DONE |
-| 6 | Geometric equivariance | CHECKING |
-| 7 | JEPA and pretraining controls | NOT_STARTED |
+| 6 | Geometric equivariance | DONE |
+| 7 | JEPA and pretraining controls | IN_PROGRESS |
 | 8 | Frozen protocol and formal experiments | NOT_STARTED |
 | 9 | Evidence-driven robustness or extension | NOT_STARTED |
 | 10 | Reproduction and final deliverables | NOT_STARTED |
@@ -32,4 +32,4 @@ Stage 5 completed single-frame and temporal graph pilots, plus message-removal a
 
 Stage 6 completed canonical-frame Temporal GNN and GRU pilots. Both passed full-chain yaw/translation checks, exact continuation, and independent reloads. The Linux suite has 39 passing tests. The [equivariance report](../reports/stage6/README.md) separates coordinate consistency from the mixed prediction result and limited real-placement diagnostic. D1 and held-out D0 remain reserved for formal testing.
 
-Next: stage 7 JEPA and pretraining controls. No stage 7 jobs have started. `CHECKING` marks a stage's final review; `DONE` marks a closed stage.
+Stage 7 is implementing predictive pretraining, direct-state and longer-supervision controls, and representation diagnostics. `CHECKING` marks a stage's final review; `DONE` marks a closed stage.

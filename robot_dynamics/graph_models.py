@@ -72,7 +72,7 @@ class SceneGraphPredictor(nn.Module):
         )
         self._topologies = {}
 
-    def forward_graph(self, nodes, context, edges=None, node_ids=None):
+    def encode_graph(self, nodes, context, edges=None):
         if not self.temporal:
             nodes = nodes[:, -1:]
         b, t, n, _ = nodes.shape
@@ -103,6 +103,14 @@ class SceneGraphPredictor(nn.Module):
             h = last[-1].reshape(b, n, 64)
         else:
             h = h[:, -1]
+        return h, actions
+
+    def encode(self, state, context):
+        return self.encode_graph(scene_nodes(state, context), context)[0]
+
+    def forward_graph(self, nodes, context, edges=None, node_ids=None):
+        h, actions = self.encode_graph(nodes, context, edges)
+        b, n, _ = h.shape
         output = self.head(torch.cat([h, actions[:, None].expand(b, n, -1)], -1))
         if node_ids is not None:
             output = output[:, torch.argsort(node_ids)]

@@ -1,0 +1,15 @@
+seed: 0
+mode: pilot
+device: cuda
+train_fraction: '0.1'
+train_episodes: 80
+history: 4
+horizons: [1, 5, 10]
+pretrain_epochs: 10
+finetune_epochs: 30
+batch_size: 256
+learning_rate: 0.001
+weight_decay: 0.0001
+gradient_clip: 1.0
+cpu_threads: 4
+ema_momentum: 0.99
