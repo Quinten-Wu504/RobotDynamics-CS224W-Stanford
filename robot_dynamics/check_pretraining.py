@@ -73,6 +73,15 @@ def main():
             b = torch.load(resumed / "last.pt", map_location="cpu", weights_only=True)
             ma = json.loads((full / "metrics.json").read_text())
             mb = json.loads((resumed / "metrics.json").read_text())
+            (full / "metrics.json").rename(full / "metrics_before_finalization.json")
+            with (args.output / f"{key}_finalization.log").open("w") as log:
+                subprocess.run(
+                    base + ["--output", str(full), "--resume", str(full / "last.pt")],
+                    stdout=log,
+                    stderr=subprocess.STDOUT,
+                    check=True,
+                )
+            finalized = json.loads((full / "metrics.json").read_text())
             checks = {
                 name: identical(a[name], b[name])
                 for name in (
@@ -89,6 +98,11 @@ def main():
                 ma["prediction_sha256"] == mb["prediction_sha256"]
             )
             checks["best_summary"] = ma["summary"] == mb["summary"]
+            checks["completed_checkpoint_finalization"] = (
+                finalized["prediction_sha256"] == ma["prediction_sha256"]
+                and finalized["summary"] == ma["summary"]
+                and finalized["logs"] == ma["logs"]
+            )
             record = {"model": model, "method": method, "checks": checks}
             records.append(record)
             (args.output / "checks.json").write_text(

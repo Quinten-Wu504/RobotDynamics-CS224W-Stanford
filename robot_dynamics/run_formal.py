@@ -110,6 +110,21 @@ def main():
                 return
             config_path = args.output / "configs" / f"{name}.yaml"
             config_path.write_text(yaml.safe_dump(run["config"]))
+            if directory.exists() and not (directory / "last.pt").exists():
+                archived = (
+                    args.output
+                    / "interrupted_before_checkpoint"
+                    / f"{name}_{time.time_ns()}"
+                )
+                archived.parent.mkdir(exist_ok=True)
+                directory.rename(archived)
+                state["events"].append(
+                    {
+                        "run": name,
+                        "event": "preserved_incomplete_start",
+                        "directory": str(archived),
+                    }
+                )
             command = [
                 sys.executable,
                 "-m",

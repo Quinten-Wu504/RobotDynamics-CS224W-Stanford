@@ -279,6 +279,14 @@ def main():
         if not baseline:
             diagnostic_path = output / f"{name}_diagnostics.json"
             if diagnostic_path.exists():
+                previous = json.loads(diagnostic_path.read_text())
+                if (
+                    previous["identity"] != identity
+                    or previous["checkpoint_sha256"] != checkpoint_hash
+                ):
+                    raise ValueError(
+                        "Saved diagnostics differ from selected checkpoint"
+                    )
                 continue
             diagnostics = {
                 "run_id": name,

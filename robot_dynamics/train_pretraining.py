@@ -240,7 +240,7 @@ def main():
         diagnostics.append({"epoch": 0, **diagnose(model, auxiliary, data)})
     total_epochs = cfg["pretrain_epochs"] + cfg["finetune_epochs"]
     end = min(total_epochs, args.stop_after_epoch or total_epochs)
-    if end <= first:
+    if end < first or (end == first and end != total_epochs):
         raise ValueError("No new epoch requested")
     torch.cuda.reset_peak_memory_stats()
     run_start = time.perf_counter()
