@@ -1,0 +1,22 @@
+{
+  "checks": [
+    {
+      "model": "gnn",
+      "last_model_exact": true,
+      "optimizer_exact": true,
+      "sampler_state_exact": true,
+      "best_predictions_exact": true,
+      "best_metrics_exact": true
+    },
+    {
+      "model": "temporal_gnn",
+      "last_model_exact": true,
+      "optimizer_exact": true,
+      "sampler_state_exact": true,
+      "best_predictions_exact": true,
+      "best_metrics_exact": true
+    }
+  ],
+  "source_commit": "63f28343c48f5976cc2c2e42935c8a50f70ff8fa",
+  "working_tree_dirty": false
+}

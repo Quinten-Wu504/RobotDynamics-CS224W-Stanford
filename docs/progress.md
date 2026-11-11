@@ -9,7 +9,7 @@
 | 2 | Data audit, state recovery, visualization | DONE |
 | 3 | Splits, windows, evaluation, non-learning baselines | DONE |
 | 4 | Non-graph learning baselines | DONE |
-| 5 | Scene graphs and temporal GNNs | IN_PROGRESS |
+| 5 | Scene graphs and temporal GNNs | CHECKING |
 | 6 | Geometric equivariance | NOT_STARTED |
 | 7 | JEPA and pretraining controls | NOT_STARTED |
 | 8 | Frozen protocol and formal experiments | NOT_STARTED |
@@ -28,4 +28,6 @@ Stage 3 fixed the split and nested training subsets, fitted training-only normal
 
 Stage 4 completed current-state MLP, history MLP, and GRU fitting checks and seed-0 pilots on 80 training episodes. All three passed exact continuation and standalone reload checks. Twenty-nine Linux tests pass. The [learning report](../reports/stage4/README.md) records results on 100 validation episodes, measured costs, and limits. D0 test and D1 remain untouched by prediction evaluation.
 
-Stage 5 is implementing scene graphs and temporal GNNs with matched pilot settings and message/edge controls. `CHECKING` marks a stage's final review; `DONE` marks a closed stage.
+Stage 5 completed single-frame and temporal graph pilots, plus message-removal and full-edge controls. All four fit checks and standalone reloads passed; both main graph architectures also passed exact continuation checks. The Linux suite has 36 passing tests. The [graph report](../reports/stage5/README.md) records the mixed comparison with GRU, motion-group results, the sparse proximity group, and actual costs. No configuration search or test-set prediction evaluation was added.
+
+Next: stage 6 geometric equivariance. No stage 6 jobs have started. `CHECKING` marks a stage's final review; `DONE` marks a closed stage.

@@ -15,7 +15,7 @@ The full environment passed on an existing AutoDL instance. See [the results](..
 | CMake | 3.22.1 |
 | Remaining storage after setup | About 13 GiB system, 13 GiB data, 197 GiB file storage |
 
-The project is at `/root/autodl-tmp/RobotDynamics-CS224W-Stanford`. Package caches and build files use `/root/autodl-fs/RobotDynamics-CS224W-Stanford-cache`. Other project files and Python environments were left in place. Another existing workload was active on the GPU at the final resource check; no training or performance benchmark was run for this project.
+The project is at `/root/autodl-tmp/RobotDynamics-CS224W-Stanford`. Package caches and build files use `/root/autodl-fs/RobotDynamics-CS224W-Stanford-cache`. Other project files and Python environments were left in place. Another existing workload was active at the stage 1 resource check; that setup stage did not include training benchmarks. The GPU was idle before the stage 4 and 5 learning experiments.
 
 Host-visible memory is roughly 1 TiB, but the container limit is 80 GiB. The resource script reports cgroup limits separately to avoid treating host totals as the allocation.
 
@@ -23,9 +23,11 @@ GitHub access required AutoDL's academic network accelerator. The direct PyTorch
 
 The first combined CUDA/simulation check failed because `libEGL.so.1` was missing. The NVIDIA EGL vendor library was already present. An apt dry run proposed Mesa upgrades, so only the Ubuntu `libegl1=1.4.0-1` package was downloaded and extracted under `.venv/native`. A project-scoped `LD_LIBRARY_PATH` fixed the import. No system graphics packages were installed or upgraded.
 
-CPU and CUDA gradients, HDF5 round trips, Square D0/D1 imports, and a small MuJoCo step passed from a clean checkout of `6344eeb4187457639ff65332fdeaf3a1c8dc3ebc`. Eleven tests, Ruff, and `pip check` passed. Rendering, dataset replay, and training have not been tested.
+CPU and CUDA gradients, HDF5 round trips, Square D0/D1 imports, and a small MuJoCo step passed from a clean checkout of `6344eeb4187457639ff65332fdeaf3a1c8dc3ebc`. Eleven tests, Ruff, and `pip check` passed at stage 1. Data replay was subsequently checked in stage 2, and learned baselines in stage 4.
 
 The full installed Python snapshot is [linux-cu121.lock.txt](../requirements/linux-cu121.lock.txt). The native package version and checksum are in [native_runtime.txt](../reports/stage1/autodl/native_runtime.txt). Warnings about private robosuite macros and optional task-zoo environments do not prevent the tested Square imports.
+
+Stage 5 adds `torch-geometric==2.6.1` and its Python dependencies without changing the installed PyTorch or simulator versions. The expanded snapshot, including build tools, is [linux-stage5.lock.txt](../requirements/linux-stage5.lock.txt). `pip check` passes. Graph batching uses PyG; message aggregation uses PyTorch and needs no compiled scatter extension.
 
 ## Local machine
 

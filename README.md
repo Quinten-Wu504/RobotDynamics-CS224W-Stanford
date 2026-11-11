@@ -12,10 +12,10 @@ Models will take state histories and planned actions as input and predict positi
 
 The environment and Square data audit are complete on AutoDL: Ubuntu 22.04, Python 3.10.8, and an RTX 4090 D. The [experiment protocol](docs/experiment_protocol.md) defines the task; the [data report](reports/stage2/README.md) contains statistics, checksums, and recovery plots.
 
-- **Code:** data auditing and recovery, fixed splits, causal windows, shared evaluation, and action-conditioned current-state MLP, history MLP, and GRU training with checkpoint recovery. All 29 Linux tests pass.
+- **Code:** data processing, fixed splits, causal windows, shared evaluation, MLP/GRU baselines, and single-frame/temporal GNNs with PyG batching and checkpoint recovery. All 36 Linux tests pass.
 - **Data:** 1,000 D0 and 1,000 D1 episodes scanned, with 153,477 and 152,400 recorded states respectively. No nonfinite values or inconsistent field layouts were found. Six complete trajectories (905 frames) passed state recovery checks.
-- **Experiments:** all three learned baselines completed two-episode fitting checks and 80-episode training pilots, evaluated on the same 100 D0 validation episodes as hold and constant velocity. Recovery and standalone reload checks passed. D0 test and D1 remain reserved for formal evaluation.
-- **Environment:** the full Linux dependency snapshot is locked. Windows still supports the base checks only.
+- **Experiments:** three non-graph models and four graph variants completed fitting checks and 80-episode training pilots on the same 100 D0 validation episodes. Message/edge controls, motion-group analysis, recovery, and reload checks are recorded. D0 test and D1 remain reserved for formal evaluation.
+- **Environment:** the Linux snapshot now includes PyG 2.6.1. Windows supports the base checks and plotting only.
 
 ## Evaluation plan
 
@@ -27,7 +27,9 @@ On D0 validation, mean end-effector errors at 0.05 / 0.25 / 0.5 s are **0.715 / 
 
 Constant velocity is a strong short-horizon baseline, but its advantage is smaller over 0.5 s and disappears in some low-motion groups. The [baseline report](reports/stage3/README.md) contains episode-bootstrap intervals, motion breakdowns, example predictions, and limitations. These are validation results, not final-test claims.
 
-The seed-0 learning pilots reach 0.5-second end-effector / nut errors of **0.550 / 0.455 cm** (current-state MLP), **0.518 / 0.446 cm** (history MLP), and **0.496 / 0.437 cm** (GRU). GRU has the lowest overall validation error in this run, but the differences between learned models are small. They use planned actions, which the non-learning baselines ignore. The [learning report](reports/stage4/README.md) includes all horizons, learning curves, confidence intervals, resource measurements, and reproducibility checks. These single-seed pilots do not establish graph or temporal-model superiority.
+The seed-0 learning pilots reach 0.5-second end-effector / nut errors of **0.550 / 0.455 cm** (current-state MLP), **0.518 / 0.446 cm** (history MLP), and **0.496 / 0.437 cm** (GRU). Among these three non-graph baselines, GRU has the lowest overall validation error, but the differences are small. They use planned actions, which the non-learning baselines ignore. The [learning report](reports/stage4/README.md) includes all horizons, learning curves, confidence intervals, resource measurements, and reproducibility checks. These single-seed pilots do not establish graph or temporal-model superiority.
+
+The [graph pilots](reports/stage5/README.md) give a mixed result. Temporal GNN reaches **0.537 / 0.439 cm** at 0.5 seconds and a six-error mean of **0.329 cm**, close to GRU's **0.333 cm**. Closing messages raises that mean to 0.346 cm; adding the static fixture edges gives 0.331 cm. Temporal GNN improves low-motion nut prediction but trails GRU on moving windows, and much of the low-motion gain remains without messages. The predefined 5 cm proximity group has only four episodes, so it does not support a contact-stage claim. No model is a clear overall winner across accuracy and cost.
 
 ## Setup
 
@@ -56,13 +58,19 @@ The [baseline commands](docs/baseline_protocol.md) reproduce splitting, normaliz
 
 The [learning commands](docs/learning_baselines.md) cover fitting, pilot training, checkpoint evaluation, recovery, and report generation. The three 30-epoch pilots took about 159 seconds of measured run time in total, plus 26 seconds of input preparation. Checkpoints remain in AutoDL `outputs/stage4`; metrics and plots are committed under `reports/stage4`.
 
+For graph models, follow the [graph protocol and commands](docs/graph_baselines.md), including installation of `torch-geometric==2.6.1`. The full environment is recorded in [linux-stage5.lock.txt](requirements/linux-stage5.lock.txt). Four graph pilots took about 12.6 minutes of measured run time plus 34 seconds of input preparation. Graph checkpoints remain in AutoDL `outputs/stage5`, and small results are in `reports/stage5`. Figures can be regenerated on CPU without data or checkpoints:
+
+```bash
+python -m robot_dynamics.plot_graphs reports/stage5/analysis/analysis.json --output outputs/stage5_figures
+```
+
 The container has a 16-core CPU quota, 80 GiB RAM, and 24 GiB VRAM. Its host-visible CPU and memory totals are larger than these limits. At the end of setup, the data disk had about 13 GiB free and file storage about 197 GiB free. Formal training requirements have not been measured.
 
 For Windows base-only checks, use Python 3.10 with `requirements/windows-base.lock.txt` and `--device numpy`. Full simulator support was verified on Linux. [Environment notes](docs/environment.md) describe both machines and the resolved setup issues.
 
 ## Next steps
 
-Stage 4 is complete. Stage 5 will add scene graphs, single-frame and temporal GNNs, and checks for node ordering, batching, and interaction messages. Comparisons will reuse the established inputs and evaluation protocol. No stage 5 jobs are running.
+Stage 5 is complete. Stage 6 will implement and test geometric equivariance for the full prediction pipeline, with an explicit choice of supported transformations. No stage 6 jobs are running. The formal multi-seed matrix and final-test evaluation remain later work.
 
 ## Data and references
 

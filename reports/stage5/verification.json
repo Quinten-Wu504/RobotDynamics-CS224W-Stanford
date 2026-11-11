@@ -1,0 +1,8 @@
+{
+  "source_commit": "b2a1f3da5f79855ca89915069ba184733c6b3338",
+  "working_tree_dirty": false,
+  "analysis_sha256": "85280c9fda35f71f275c64fe33dbe8c8ce1765d7ee16b7ea6641ce3e7a240076",
+  "tests": "....................................                                     [100%]\n36 passed in 3.45s\n",
+  "lint": "All checks passed!\n",
+  "format": "33 files already formatted\n"
+}
