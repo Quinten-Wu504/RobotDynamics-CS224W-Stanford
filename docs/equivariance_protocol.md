@@ -50,3 +50,12 @@ done
 ```
 
 Resume an interrupted run in its original directory with `--resume <output>/last.pt`. No stage 7 work is included.
+
+After the pilots finish, compare original-space predictions and run full-chain coordinate checks:
+
+```bash
+.venv/bin/python -m robot_dynamics.analyze_equivariance "$CACHE" --output outputs/stage6/analysis
+.venv/bin/python -m robot_dynamics.plot_equivariance outputs/stage6/analysis/analysis.json
+```
+
+Analysis reloads the original GRU and Temporal GNN from their stage 4/5 output directories, verifies their recorded source and complete prediction hashes, and does not retrain them. All four models must share the exact pilot configuration, normalizer, split, and update count. Figures can also be regenerated from the exported analysis JSON using a base Python environment without torch or a GPU.
