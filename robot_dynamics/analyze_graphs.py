@@ -353,6 +353,24 @@ def main():
     fig.savefig(args.output / "groups.png", dpi=180)
     fig.savefig(args.output / "groups.pdf")
     plt.close(fig)
+    fig, axes = plt.subplots(1, 2, figsize=(11, 4))
+    for kind in GRAPH_MODELS:
+        logs = runs[kind]["logs"]
+        axes[0].plot(
+            [r["epoch"] for r in logs], [r["train_mse"] for r in logs], label=kind
+        )
+        axes[1].plot(
+            [r["epoch"] for r in logs], [r["selection_cm"] for r in logs], label=kind
+        )
+    axes[0].set(xlabel="Epoch", ylabel="Normalized training MSE", yscale="log")
+    axes[1].set(xlabel="Epoch", ylabel="Validation selection score (cm)")
+    for ax in axes:
+        ax.grid(alpha=0.2)
+        ax.legend(fontsize=7)
+    fig.tight_layout()
+    fig.savefig(args.output / "learning_curves.png", dpi=180)
+    fig.savefig(args.output / "learning_curves.pdf")
+    plt.close(fig)
 
 
 if __name__ == "__main__":
