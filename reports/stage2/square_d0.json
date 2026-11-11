@@ -1,0 +1,319 @@
+{
+  "issues": [],
+  "file": "square_d0.hdf5",
+  "sha256": "41fc24bce0f88343099c0b1b5bf6eee08cbc35851e71276d4509a01c9b75481c",
+  "bytes": 1621351476,
+  "environment": {
+    "env_name": "Square_D0",
+    "env_version": "1.4.1",
+    "type": 1,
+    "env_kwargs": {
+      "has_renderer": false,
+      "has_offscreen_renderer": true,
+      "ignore_done": true,
+      "use_object_obs": true,
+      "use_camera_obs": true,
+      "control_freq": 20,
+      "controller_configs": {
+        "type": "OSC_POSE",
+        "input_max": 1,
+        "input_min": -1,
+        "output_max": [
+          0.05,
+          0.05,
+          0.05,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "output_min": [
+          -0.05,
+          -0.05,
+          -0.05,
+          -0.5,
+          -0.5,
+          -0.5
+        ],
+        "kp": 150,
+        "damping": 1,
+        "impedance_mode": "fixed",
+        "kp_limits": [
+          0,
+          300
+        ],
+        "damping_limits": [
+          0,
+          10
+        ],
+        "position_limits": null,
+        "orientation_limits": null,
+        "uncouple_pos_ori": true,
+        "control_delta": true,
+        "interpolation": null,
+        "ramp_ratio": 0.2
+      },
+      "robots": [
+        "Panda"
+      ],
+      "camera_depths": false,
+      "camera_heights": 84,
+      "camera_widths": 84,
+      "render_gpu_device_id": 0,
+      "reward_shaping": false,
+      "camera_names": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ]
+    }
+  },
+  "declared_total": 153477,
+  "episode_count": 1000,
+  "sample_count": 153477,
+  "length_percentiles": {
+    "min": 135.0,
+    "p25": 139.0,
+    "median": 156.0,
+    "p75": 166.0,
+    "max": 172.0
+  },
+  "schemas": [
+    {
+      "count": 1000,
+      "fields": {
+        "actions": [
+          7
+        ],
+        "dones": [],
+        "obs/agentview_image": [
+          84,
+          84,
+          3
+        ],
+        "obs/object": [
+          14
+        ],
+        "obs/robot0_eef_pos": [
+          3
+        ],
+        "obs/robot0_eef_quat": [
+          4
+        ],
+        "obs/robot0_eef_vel_ang": [
+          3
+        ],
+        "obs/robot0_eef_vel_lin": [
+          3
+        ],
+        "obs/robot0_eye_in_hand_image": [
+          84,
+          84,
+          3
+        ],
+        "obs/robot0_gripper_qpos": [
+          2
+        ],
+        "obs/robot0_gripper_qvel": [
+          2
+        ],
+        "obs/robot0_joint_pos": [
+          7
+        ],
+        "obs/robot0_joint_pos_cos": [
+          7
+        ],
+        "obs/robot0_joint_pos_sin": [
+          7
+        ],
+        "obs/robot0_joint_vel": [
+          7
+        ],
+        "rewards": [],
+        "states": [
+          45
+        ]
+      }
+    }
+  ],
+  "unique_xml_count": 1,
+  "duplicate_trajectory_groups": {},
+  "mask_names": [],
+  "source_commit": "36fcf0bbc071591a5fa9402e3bd2f9e9f70a9384",
+  "working_tree_dirty": false,
+  "field_ranges": {
+    "actions": {
+      "min": -1.0,
+      "max": 1.0,
+      "nonfinite": 0
+    },
+    "dones": {
+      "min": 0.0,
+      "max": 1.0,
+      "nonfinite": 0
+    },
+    "obs/agentview_image": {
+      "min": 0.0,
+      "max": 255.0,
+      "nonfinite": 0
+    },
+    "obs/object": {
+      "min": -0.9999998211860657,
+      "max": 1.0885345779151077,
+      "nonfinite": 0
+    },
+    "obs/robot0_eef_pos": {
+      "min": -0.2516110674227821,
+      "max": 1.1032227260894791,
+      "nonfinite": 0
+    },
+    "obs/robot0_eef_quat": {
+      "min": -0.9276167216646655,
+      "max": 0.9999998943191561,
+      "nonfinite": 0
+    },
+    "obs/robot0_eef_vel_ang": {
+      "min": -1.6143322156648718,
+      "max": 1.5930708523793708,
+      "nonfinite": 0
+    },
+    "obs/robot0_eef_vel_lin": {
+      "min": -0.528720043726612,
+      "max": 0.6851215561470513,
+      "nonfinite": 0
+    },
+    "obs/robot0_eye_in_hand_image": {
+      "min": 5.0,
+      "max": 255.0,
+      "nonfinite": 0
+    },
+    "obs/robot0_gripper_qpos": {
+      "min": -0.041552131305040006,
+      "max": 0.041697600453557894,
+      "nonfinite": 0
+    },
+    "obs/robot0_gripper_qvel": {
+      "min": -0.20003751359270502,
+      "max": 0.22143616642005529,
+      "nonfinite": 0
+    },
+    "obs/robot0_joint_pos": {
+      "min": -2.9756177725461628,
+      "max": 3.505369937903292,
+      "nonfinite": 0
+    },
+    "obs/robot0_joint_pos_cos": {
+      "min": -0.9999999999909588,
+      "max": 0.9999999999999734,
+      "nonfinite": 0
+    },
+    "obs/robot0_joint_pos_sin": {
+      "min": -0.9999999999999999,
+      "max": 0.9999999999946485,
+      "nonfinite": 0
+    },
+    "obs/robot0_joint_vel": {
+      "min": -4.517959013533065,
+      "max": 3.330353991098894,
+      "nonfinite": 0
+    },
+    "rewards": {
+      "min": 0.0,
+      "max": 1.0,
+      "nonfinite": 0
+    },
+    "states": {
+      "min": -33.05389031381071,
+      "max": 23.750692130769245,
+      "nonfinite": 0
+    }
+  },
+  "dt_min": 0.04999999999999449,
+  "dt_max": 0.0500000000000167,
+  "valid_one_step_transitions": 152477,
+  "cache": {
+    "file": "square_d0.hdf5",
+    "sha256": "9dcf50fbf0eda065fac02eb66a2d9b79fa574a57db7e86e880efe61dfd657f98",
+    "bytes": 133193399,
+    "source_commit": "36fcf0bbc071591a5fa9402e3bd2f9e9f70a9384",
+    "working_tree_dirty": false
+  },
+  "canonical_ranges": {
+    "eef_position": {
+      "min": [
+        -0.2516110674227821,
+        -0.13405031753909188,
+        0.8284238565867613
+      ],
+      "max": [
+        0.2557046214942883,
+        0.4490866793572466,
+        1.1032227260894791
+      ]
+    },
+    "nut_position": {
+      "min": [
+        -0.1421263859505612,
+        -0.08528471404311465,
+        0.8209558950302361
+      ],
+      "max": [
+        0.271328032608095,
+        0.40349706327041934,
+        1.0885345779151077
+      ]
+    },
+    "gripper_qpos": {
+      "min": [
+        0.0025127624313164175,
+        -0.041552131305040006
+      ],
+      "max": [
+        0.041697600453557894,
+        0.000160968994151897
+      ]
+    },
+    "robot_joint_qpos": {
+      "min": [
+        -0.2568009444652356,
+        -0.017062080432129062,
+        -0.38456239022384364,
+        -2.9756177725461628,
+        -1.2392116843679026,
+        1.6450862708378378,
+        -0.5880714310757289
+      ],
+      "max": [
+        0.9101179792212031,
+        1.753898426346917,
+        0.4639669177770102,
+        -0.0585683395451746,
+        0.8350919018122581,
+        3.505369937903292,
+        2.902766138725929
+      ]
+    },
+    "peg1/position": {
+      "min": [
+        0.23,
+        0.1,
+        0.85
+      ],
+      "max": [
+        0.23,
+        0.1,
+        0.85
+      ]
+    },
+    "table/surface_position": {
+      "min": [
+        0.0,
+        0.0,
+        0.8200000000000001
+      ],
+      "max": [
+        0.0,
+        0.0,
+        0.8200000000000001
+      ]
+    }
+  }
+}

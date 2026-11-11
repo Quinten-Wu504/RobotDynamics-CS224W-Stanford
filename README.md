@@ -6,14 +6,15 @@ CS224W course project at Stanford. We study graph-based prediction of robot and 
 
 The main question is whether graph structure helps predict manipulation dynamics compared with MLP and GRU baselines. We will also compare geometric equivariance and JEPA pretraining, keeping input information and training budgets comparable.
 
-Models will take state histories and planned actions as input and predict position changes for the end effector and manipulated object. We will start with one-step prediction, then use 0.25 s and 0.5 s horizons once the data's control frequency is confirmed. D0 will be used for training and development; held-out D0 and D1 trajectories will test generalization.
+Models will take state histories and planned actions as input and predict position changes for the end effector and manipulated object. The verified control frequency is 20 Hz: the initial horizons are 1, 5, and 10 steps (0.05, 0.25, and 0.5 s). D0 will be used for training and development; held-out D0 and D1 trajectories will test generalization.
 
 ## Current status
 
-Stage 1 environment checks pass on AutoDL: Ubuntu 22.04, Python 3.10.8, and an RTX 4090 D. The [experiment protocol](docs/experiment_protocol.md) defines the initial task; the [check record](reports/stage1/autodl/README.md) contains the results.
+The environment and Square data audit are complete on AutoDL: Ubuntu 22.04, Python 3.10.8, and an RTX 4090 D. The [experiment protocol](docs/experiment_protocol.md) defines the task; the [data report](reports/stage2/README.md) contains statistics, checksums, and recovery plots.
 
-- **Code:** configuration validation, resource auditing, environment checks, and the Square data-processing tools. Seventeen tests pass. Data validation is in progress; models are not implemented yet.
-- **Experiments:** no prediction experiments or results. CPU/CUDA and simulator checks are setup tests only.
+- **Code:** verified download, full-file audit, numeric state extraction, simulator recovery, and trajectory plots. Seventeen tests pass. Splits, prediction windows, and models are not implemented yet.
+- **Data:** 1,000 D0 and 1,000 D1 episodes scanned, with 153,477 and 152,400 recorded states respectively. No nonfinite values or inconsistent field layouts were found. Six complete trajectories (905 frames) passed state recovery checks.
+- **Experiments:** no prediction experiments or results. Recovery checks and short action replays validate data handling; they are not model evaluation.
 - **Environment:** the full Linux dependency snapshot is locked. Windows still supports the base checks only.
 
 ## Evaluation plan
@@ -39,7 +40,9 @@ export LD_LIBRARY_PATH="$PWD/.venv/native/usr/lib/x86_64-linux-gnu${LD_LIBRARY_P
 MUJOCO_GL=egl .venv/bin/python scripts/smoke_environment.py --device cuda --simulation --output outputs/cuda_check.json
 ```
 
-Use a new output filename for repeat checks; existing results are protected against overwrite. The config command's `--require-audited` option intentionally fails until the data audit is finished.
+Use a new output filename for repeat checks; existing results are protected against overwrite. The configuration now passes `--require-audited` for the pinned Square release.
+
+For data acquisition and processing, follow the [tested commands](docs/data_processing.md). The two raw HDF5 files and numeric caches are stored under `/root/autodl-fs/RobotDynamics-CS224W-Stanford-data`, outside Git. The [field table](docs/state_fields.md) explains the different D0/D1 observation layouts, world-coordinate fixtures, and end-effector orientation convention.
 
 The container has a 16-core CPU quota, 80 GiB RAM, and 24 GiB VRAM. Its host-visible CPU and memory totals are larger than these limits. At the end of setup, the data disk had about 13 GiB free and file storage about 197 GiB free. Formal training requirements have not been measured.
 
@@ -47,7 +50,7 @@ For Windows base-only checks, use Python 3.10 with `requirements/windows-base.lo
 
 ## Next steps
 
-Stage 2 is inspecting Square D0/D1 data, confirming actions and time alignment, recovering world poses, and plotting sample trajectories. D0 has been downloaded and scanned. [Data processing commands](docs/data_processing.md) describe the current tools. There are no training, prediction evaluation, or checkpoint-resume commands yet.
+Stage 3 will create episode splits, causal windows, and a common evaluation path for position-hold and constant-velocity baselines. Normalization will use training episodes only. D1 remains reserved for final testing; its inspection so far concerns decoding and integrity. There are no training, prediction evaluation, or checkpoint-resume commands yet.
 
 ## Data and references
 

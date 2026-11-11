@@ -1,0 +1,8 @@
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /root/autodl-tmp/RobotDynamics-CS224W-Stanford/.venv/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+WARNING: robosuite task zoo environments not imported, possibly because robosuite_task_zoo is not installed...
+Got error: No module named 'robosuite_task_zoo'
+demo_0 136 {'robot0_eef_pos': 0, 'robot0_eef_quat': 0, 'robot0_gripper_qpos': 0, 'robot_joint_qpos': 0, 'object_vector': 1.1920928955078125e-07, 'eef_world_position': 0, 'eef_world_rotation': 5.551115123125783e-16, 'nut_world_position': 0, 'nut_world_rotation': 5.551115123125783e-16, 'peg_world_position': 0, 'peg_world_rotation': 0, 'table_geom_position': 0, 'table_geom_rotation': 0, 'table_half_size': 0}
+demo_499 164 {'robot0_eef_pos': 0, 'robot0_eef_quat': 0, 'robot0_gripper_qpos': 0, 'robot_joint_qpos': 0, 'object_vector': 3.5762786865234375e-07, 'eef_world_position': 0, 'eef_world_rotation': 6.661338147750939e-16, 'nut_world_position': 0, 'nut_world_rotation': 6.661338147750939e-16, 'peg_world_position': 0, 'peg_world_rotation': 0, 'table_geom_position': 0, 'table_geom_rotation': 0, 'table_half_size': 0}
+demo_999 162 {'robot0_eef_pos': 0, 'robot0_eef_quat': 0, 'robot0_gripper_qpos': 0, 'robot_joint_qpos': 0, 'object_vector': 1.4901161193847656e-07, 'eef_world_position': 0, 'eef_world_rotation': 5.551115123125783e-16, 'nut_world_position': 0, 'nut_world_rotation': 6.661338147750939e-16, 'peg_world_position': 0, 'peg_world_rotation': 0, 'table_geom_position': 0, 'table_geom_rotation': 0, 'table_half_size': 0}

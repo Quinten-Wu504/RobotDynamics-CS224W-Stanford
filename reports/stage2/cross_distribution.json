@@ -1,0 +1,6 @@
+{
+  "identical_state_action_trajectories": [],
+  "limitation": "Exact byte equality only; shared source-demonstration ancestry is not present in the released files.",
+  "source_commit": "058d7a034fd03c2ab225afcef6ed7acdd84572e7",
+  "working_tree_dirty": false
+}

@@ -60,9 +60,9 @@ From the project root:
 MUJOCO_GL=egl .venv/bin/python scripts/smoke_environment.py --device cuda --simulation --output outputs/cuda_check.json
 ```
 
-The smoke check imports packages and Square classes, steps a small MuJoCo model, checks gradients, and round-trips an in-memory HDF5 array. It does not render images or replay dataset trajectories. `--require-audited` on the configuration command must still fail: the five dataset checks belong to stage 2.
+The smoke check imports packages and Square classes, steps a small MuJoCo model, checks gradients, and round-trips an in-memory HDF5 array. It does not render images or replay dataset trajectories. At stage 1, `--require-audited` intentionally failed. The stage 2 data audit has since verified those fields, and the current configuration passes that check.
 
-Existing result files are not overwritten; choose a new output filename for repeat runs. There is no model checkpoint to resume. Dataset download, extraction, training, and prediction evaluation are not implemented yet.
+Existing result files are not overwritten; choose a new output filename for repeat runs. There is no model checkpoint to resume. Dataset download and extraction are now described in [data processing](data_processing.md); training and prediction evaluation are not implemented yet.
 
 ## Export
 
