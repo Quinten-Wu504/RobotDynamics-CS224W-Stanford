@@ -14,11 +14,19 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("cache", type=Path)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--include-non-graph", action="store_true")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
     records = []
-    for model in ("temporal_gnn", "canonical_temporal_gnn"):
-        for method in ("jepa", "state", "supervised"):
+    models = ["temporal_gnn", "canonical_temporal_gnn"]
+    if args.include_non_graph:
+        models += ["history_mlp", "gru"]
+    for model in models:
+        for method in (
+            ("supervised",)
+            if model in ("history_mlp", "gru")
+            else ("jepa", "state", "supervised")
+        ):
             key = f"{model}_{method}"
             full = args.output / f"{key}_continuous"
             resumed = args.output / f"{key}_resumed"

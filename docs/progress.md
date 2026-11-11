@@ -11,8 +11,8 @@
 | 4 | Non-graph learning baselines | DONE |
 | 5 | Scene graphs and temporal GNNs | DONE |
 | 6 | Geometric equivariance | DONE |
-| 7 | JEPA and pretraining controls | CHECKING |
-| 8 | Frozen protocol and formal experiments | NOT_STARTED |
+| 7 | JEPA and pretraining controls | DONE |
+| 8 | Frozen protocol and formal experiments | IN_PROGRESS |
 | 9 | Evidence-driven robustness or extension | NOT_STARTED |
 | 10 | Reproduction and final deliverables | NOT_STARTED |
 
@@ -33,5 +33,7 @@ Stage 5 completed single-frame and temporal graph pilots, plus message-removal a
 Stage 6 completed canonical-frame Temporal GNN and GRU pilots. Both passed full-chain yaw/translation checks, exact continuation, and independent reloads. The Linux suite has 39 passing tests. The [equivariance report](../reports/stage6/README.md) separates coordinate consistency from the mixed prediction result and limited real-placement diagnostic. D1 and held-out D0 remain reserved for formal testing.
 
 Stage 7 completed six ordinary/canonical Temporal GNN pilots: JEPA, direct-state pretraining, and 40-epoch supervision for each architecture. Both JEPA variants pass the declared collapse screen, and the canonical variants retain full-chain coordinate consistency. All six exact-resume and independent reload checks pass; the Linux suite has 43 passing tests. The [pretraining report](../reports/stage7/README.md) records that JEPA beats direct-state pretraining but trails longer supervision in both architectures. No extra settings were searched to reverse that result. D0 test and D1 remain reserved, and stage 8 has not started.
+
+Stage 8 has a fixed 60-configuration matrix and a resumable train/select/test/analyze pipeline. The full-data resource probe completed on AutoDL; workflow verification and launch are being prepared. Formal test results are not yet available. The [formal protocol](formal_protocol.md) records all 36 core configurations, MLP/GRU controls, limited state-pretraining controls, and test-use rules.
 
 `CHECKING` marks a stage's final review; `DONE` marks a closed stage.

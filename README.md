@@ -86,7 +86,7 @@ For Windows base-only checks, use Python 3.10 with `requirements/windows-base.lo
 
 ## Next steps
 
-Stage 7 is complete. Stage 8 will freeze the formal configurations, training budgets, and test-use rules before running repeated seeds and the predefined data fractions. It must retain non-graph baselines and pretraining controls rather than relying on the favorable comparisons alone. No stage 8 jobs have started.
+Stage 7 is complete. Stage 8 is preparing the [frozen formal protocol](docs/formal_protocol.md): 36 core configurations, 18 MLP/GRU controls, and six small-data state-pretraining controls, using seeds 0/1/2. The train/select/test/analyze script is implemented, and a full-data resource probe has completed. Workflow verification and full-matrix launch are pending; no formal test results are available yet.
 
 ## Data and references
 

@@ -79,6 +79,8 @@ def snapshot(
 
 @torch.no_grad()
 def diagnose(model, auxiliary, data):
+    if model.kind in ("history_mlp", "gru"):
+        return {}
     ids = torch.linspace(
         0,
         len(data["state"]) - 1,
@@ -116,7 +118,9 @@ def main():
     parser.add_argument("cache", type=Path)
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument(
-        "--model", choices=["temporal_gnn", "canonical_temporal_gnn"], required=True
+        "--model",
+        choices=["temporal_gnn", "canonical_temporal_gnn", "history_mlp", "gru"],
+        required=True,
     )
     parser.add_argument(
         "--method", choices=["jepa", "state", "supervised"], required=True
@@ -125,6 +129,8 @@ def main():
     parser.add_argument("--resume", type=Path)
     parser.add_argument("--stop-after-epoch", type=int)
     args = parser.parse_args()
+    if args.model in ("history_mlp", "gru") and args.method != "supervised":
+        raise ValueError("Non-graph controls use direct supervision")
     if args.resume and args.resume.resolve().parent != args.output.resolve():
         raise ValueError("Resume in the original directory")
     if not args.resume:
@@ -133,7 +139,7 @@ def main():
     if (
         cfg["history"] != 4
         or cfg["horizons"] != [1, 5, 10]
-        or cfg["mode"] not in ("fit", "pilot")
+        or cfg["mode"] not in ("fit", "pilot", "formal")
     ):
         raise ValueError("Expected the fixed window protocol")
     setup(cfg["seed"], cfg["cpu_threads"])
@@ -165,7 +171,12 @@ def main():
     data.update({k: torch.from_numpy(v).to(cfg["device"]) for k, v in future.items()})
     val_data = data if cfg["mode"] == "fit" else tensors(validation, cfg["device"])
     model = DynamicsPredictor(args.model).to(cfg["device"])
-    initial_head = copy.deepcopy(graph_backbone(model).head.state_dict())
+    head = (
+        model.head
+        if args.model in ("history_mlp", "gru")
+        else graph_backbone(model).head
+    )
+    initial_head = copy.deepcopy(head.state_dict())
     auxiliary = None
     if args.method == "jepa":
         auxiliary = JointEmbedding(model).to(cfg["device"])

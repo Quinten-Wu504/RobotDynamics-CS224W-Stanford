@@ -1,0 +1,39 @@
+version: 1
+purpose: formal_stage8
+seeds: [0, 1, 2]
+fractions: ['0.1', '0.25', '1.0']
+core_models: [temporal_gnn, canonical_temporal_gnn]
+core_methods: [supervised, jepa]
+non_graph_models: [history_mlp, gru]
+state_control_fractions: ['0.1']
+training:
+  mode: formal
+  device: cuda
+  history: 4
+  horizons: [1, 5, 10]
+  pretrain_epochs: 10
+  finetune_epochs: 30
+  batch_size: 256
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  gradient_clip: 1.0
+  cpu_threads: 4
+  ema_momentum: 0.99
+evaluation:
+  splits: [d0_test, d1_final_test]
+  baselines: [hold, constant_velocity]
+  segments: [all, low_motion, moving, near_object, far_object]
+  motion_threshold_source: reports/stage3/normalization.json
+  motion_threshold_subset: '1.0'
+  near_object_distance_m: 0.05
+  bootstrap_seed: 224
+  bootstrap_resamples: 2000
+  coordinate_windows: 96
+  coordinate_transform_seed: 606
+  coordinate_max_abs_m: 0.00002
+selection:
+  dataset: d0_validation
+  eligible_epochs: [11, 40]
+  metric: equal_episode_entity_horizon_mean_cm
+  tie_break: earliest_epoch
+  test_access: after_all_checkpoints_sealed
