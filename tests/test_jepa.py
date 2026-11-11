@@ -75,6 +75,10 @@ def test_stop_gradient_ema_and_physical_target_shapes(kind):
         for p in graph_backbone(model).encoder.parameters()
     )
     assert all(p.grad is None for p in graph_backbone(model).head.parameters())
+    assert all(
+        r["effective_rank"] > 1
+        for r in representation_stats(encode(model, state, context))
+    )
     before = {k: p.clone() for k, p in auxiliary.target.named_parameters()}
     with torch.no_grad():
         for p in graph_backbone(model).parameters():
@@ -85,7 +89,8 @@ def test_stop_gradient_ema_and_physical_target_shapes(kind):
         torch.testing.assert_close(p, before[name] * 0.9 + online[name] * 0.1)
     targets, mask = physical_targets(model, future, target_context)
     assert targets.shape == (16, 2, 84) and mask.sum() == 132
-    assert all(
-        r["effective_rank"] > 1
-        for r in representation_stats(encode(model, state, context))
-    )
+
+
+def test_representation_screen_detects_constant_node_latents():
+    collapsed = representation_stats(torch.zeros(32, 4, 64))
+    assert all(r["mean_std"] == 0 and r["effective_rank"] < 2 for r in collapsed)
