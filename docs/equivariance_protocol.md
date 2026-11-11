@@ -28,6 +28,8 @@ Full-chain coordinate checks use 96 validation windows spread across episodes an
 
 Report original D0 validation prediction errors separately from coordinate-consistency error. A coordinate-transformed validation window is not a new physical rollout or an OOD dataset. D1 and held-out D0 remain reserved for stage 8; physical distribution-shift performance is explicitly unmeasured here. Exact continuation and independent reload checks follow the existing protocol.
 
+A separate physical-placement diagnostic uses real D0 validation trajectories. Before inspecting grouped errors, define the convex hull of the 80 training episodes' initial nut XY positions in the peg frame. Group validation episodes by whether their initial placement lies inside or outside that hull, and report the same episode-averaged errors and counts for all four models. This tests finite-training-set placement coverage, not a new data-generating distribution; an outside-hull episode must not be labeled D1 or a general OOD result. The hull is fitted to training positions only and has no error-selected threshold.
+
 ## Commands
 
 Use the stage 5 Linux environment and the existing numeric cache:
@@ -56,6 +58,7 @@ After the pilots finish, compare original-space predictions and run full-chain c
 ```bash
 .venv/bin/python -m robot_dynamics.analyze_equivariance "$CACHE" --output outputs/stage6/analysis
 .venv/bin/python -m robot_dynamics.plot_equivariance outputs/stage6/analysis/analysis.json
+.venv/bin/python -m robot_dynamics.analyze_support "$CACHE" --output outputs/stage6/analysis/physical_support.json
 ```
 
 Analysis reloads the original GRU and Temporal GNN from their stage 4/5 output directories, verifies their recorded source and complete prediction hashes, and does not retrain them. All four models must share the exact pilot configuration, normalizer, split, and update count. Figures can also be regenerated from the exported analysis JSON using a base Python environment without torch or a GPU.
