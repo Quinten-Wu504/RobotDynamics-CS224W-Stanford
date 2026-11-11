@@ -12,9 +12,9 @@ Models will take state histories and planned actions as input and predict positi
 
 The environment and Square data audit are complete on AutoDL: Ubuntu 22.04, Python 3.10.8, and an RTX 4090 D. The [experiment protocol](docs/experiment_protocol.md) defines the task; the [data report](reports/stage2/README.md) contains statistics, checksums, and recovery plots.
 
-- **Code:** data processing, fixed splits, causal windows, shared evaluation, MLP/GRU and graph baselines, plus canonical-frame equivariant Temporal GNN/GRU models. Checkpoint recovery and full-chain coordinate checks are implemented. All 39 Linux tests pass.
+- **Code:** data processing, fixed splits, causal windows, shared evaluation, MLP/GRU and graph baselines, canonical-frame equivariant models, and JEPA/direct-state pretraining. EMA targets, full fine-tuning, checkpoint recovery, representation diagnostics, and full-chain coordinate checks are implemented. The Linux suite has 43 passing tests.
 - **Data:** 1,000 D0 and 1,000 D1 episodes scanned, with 153,477 and 152,400 recorded states respectively. No nonfinite values or inconsistent field layouts were found. Six complete trajectories (905 frames) passed state recovery checks.
-- **Experiments:** the non-graph, graph, and two canonical-frame models completed fitting checks and 80-episode training pilots on the same 100 D0 validation episodes. Structural controls, motion/placement groups, coordinate consistency, recovery, and reload checks are recorded. D0 test and D1 remain reserved for formal evaluation.
+- **Experiments:** non-graph, graph, and canonical-frame pilots are complete, along with six pretraining/control runs on the same 80 training and 100 D0 validation episodes. Structural controls, representation diagnostics, coordinate consistency, recovery, and reload checks are recorded. D0 test and D1 remain reserved for formal evaluation.
 - **Environment:** the Linux snapshot now includes PyG 2.6.1. Windows supports the base checks and plotting only.
 
 ## Evaluation plan
@@ -32,6 +32,8 @@ The seed-0 learning pilots reach 0.5-second end-effector / nut errors of **0.550
 The [graph pilots](reports/stage5/README.md) give a mixed result. Temporal GNN reaches **0.537 / 0.439 cm** at 0.5 seconds and a six-error mean of **0.329 cm**, close to GRU's **0.333 cm**. Closing messages raises that mean to 0.346 cm; adding the static fixture edges gives 0.331 cm. Temporal GNN improves low-motion nut prediction but trails GRU on moving windows, and much of the low-motion gain remains without messages. The predefined 5 cm proximity group has only four episodes, so it does not support a contact-stage claim. No model is a clear overall winner across accuracy and cost.
 
 The [equivariance pilots](reports/stage6/README.md) use the known peg frame, without adding parameters. Canonical Temporal GNN reaches a six-error mean of **0.325 cm**, a small improvement over ordinary Temporal GNN; canonical GRU worsens to **0.347 cm**. Both pass full-chain yaw/translation consistency checks below 3.5e-8 m maximum discrepancy. This verifies a coordinate property, not physical OOD performance. The real D0 placement-coverage diagnostic has only five outside-hull episodes and shows no consistent benefit; D1 remains untested. The construction uses canonicalization, not an EGNN message layer.
+
+The [pretraining pilots](reports/stage7/README.md) do not show an extra JEPA benefit at this budget. With 10 pretraining plus 30 fine-tuning epochs, ordinary/canonical JEPA reaches **0.325 / 0.320 cm**. Direct-state pretraining gives **0.333 / 0.340 cm**, while 40 epochs of direct supervision gives **0.305 / 0.310 cm**. JEPA beats the state-pretraining control but trails longer supervision in both architectures, despite using slightly more update time. Both JEPA variants pass the declared collapse screen. These are fixed-budget, seed-0 validation results; the earlier GRU used only 30 epochs, so this comparison does not establish graph superiority.
 
 ## Setup
 
@@ -72,13 +74,19 @@ The [equivariance protocol](docs/equivariance_protocol.md) provides stage 6 trai
 python -m robot_dynamics.plot_equivariance reports/stage6/analysis/analysis.json --output outputs/stage6_figures
 ```
 
+The [pretraining protocol](docs/pretraining_protocol.md) provides the six stage 7 training commands, exact-resume checks, independent evaluation, and paired analysis. It uses the same Linux environment, with no new dependencies. Checkpoints remain in AutoDL `outputs/stage7`; small results are in `reports/stage7`. Figures can be redrawn on CPU:
+
+```bash
+python -m robot_dynamics.plot_pretraining reports/stage7/analysis/analysis.json --output outputs/stage7_figures
+```
+
 The container has a 16-core CPU quota, 80 GiB RAM, and 24 GiB VRAM. Its host-visible CPU and memory totals are larger than these limits. At the end of setup, the data disk had about 13 GiB free and file storage about 197 GiB free. Formal training requirements have not been measured.
 
 For Windows base-only checks, use Python 3.10 with `requirements/windows-base.lock.txt` and `--device numpy`. Full simulator support was verified on Linux. [Environment notes](docs/environment.md) describe both machines and the resolved setup issues.
 
 ## Next steps
 
-Stage 6 is complete for the declared yaw/translation coordinate transformations. Stage 7 will add JEPA and pretraining controls, with checks for representation collapse and preservation of equivariance. No stage 7 jobs are running. The formal multi-seed matrix and final-test evaluation remain later work.
+Stage 7 is complete. Stage 8 will freeze the formal configurations, training budgets, and test-use rules before running repeated seeds and the predefined data fractions. It must retain non-graph baselines and pretraining controls rather than relying on the favorable comparisons alone. No stage 8 jobs have started.
 
 ## Data and references
 

@@ -1,0 +1,88 @@
+.......................FF.................                               [100%]
+=================================== FAILURES ===================================
+_______ test_stop_gradient_ema_and_physical_target_shapes[temporal_gnn] ________
+
+kind = 'temporal_gnn'
+
+    @pytest.mark.parametrize("kind", ["temporal_gnn", "canonical_temporal_gnn"])
+    def test_stop_gradient_ema_and_physical_target_shapes(kind):
+        torch.manual_seed(0)
+        model = DynamicsPredictor(kind)
+        auxiliary = JointEmbedding(model)
+        state = torch.randn(16, 4, 42)
+        context = torch.randn(16, 121)
+        context[:, 3:12] = torch.eye(3).flatten()
+        future = state + torch.randn_like(state) * 0.1
+        target_context = context.clone()
+        target_context[:, 48:] = 0
+        loss, _ = auxiliary.loss(model, state, context, future, target_context)
+        loss.backward()
+        assert all(p.grad is None for p in auxiliary.target.parameters())
+        assert any(
+            p.grad is not None and p.grad.abs().sum() > 0
+            for p in graph_backbone(model).encoder.parameters()
+        )
+        assert all(p.grad is None for p in graph_backbone(model).head.parameters())
+        before = {k: p.clone() for k, p in auxiliary.target.named_parameters()}
+        with torch.no_grad():
+            for p in graph_backbone(model).parameters():
+                p.add_(0.1)
+        auxiliary.update_target(model, 0.9)
+        online = dict(graph_backbone(model).named_parameters())
+        for name, p in auxiliary.target.named_parameters():
+            torch.testing.assert_close(p, before[name] * 0.9 + online[name] * 0.1)
+        targets, mask = physical_targets(model, future, target_context)
+        assert targets.shape == (16, 2, 84) and mask.sum() == 132
+>       assert all(
+            r["effective_rank"] > 1
+            for r in representation_stats(encode(model, state, context))
+        )
+E       assert False
+E        +  where False = all(<generator object test_stop_gradient_ema_and_physical_target_shapes.<locals>.<genexpr> at 0x7ff8b290d7e0>)
+
+tests/test_jepa.py:88: AssertionError
+__ test_stop_gradient_ema_and_physical_target_shapes[canonical_temporal_gnn] ___
+
+kind = 'canonical_temporal_gnn'
+
+    @pytest.mark.parametrize("kind", ["temporal_gnn", "canonical_temporal_gnn"])
+    def test_stop_gradient_ema_and_physical_target_shapes(kind):
+        torch.manual_seed(0)
+        model = DynamicsPredictor(kind)
+        auxiliary = JointEmbedding(model)
+        state = torch.randn(16, 4, 42)
+        context = torch.randn(16, 121)
+        context[:, 3:12] = torch.eye(3).flatten()
+        future = state + torch.randn_like(state) * 0.1
+        target_context = context.clone()
+        target_context[:, 48:] = 0
+        loss, _ = auxiliary.loss(model, state, context, future, target_context)
+        loss.backward()
+        assert all(p.grad is None for p in auxiliary.target.parameters())
+        assert any(
+            p.grad is not None and p.grad.abs().sum() > 0
+            for p in graph_backbone(model).encoder.parameters()
+        )
+        assert all(p.grad is None for p in graph_backbone(model).head.parameters())
+        before = {k: p.clone() for k, p in auxiliary.target.named_parameters()}
+        with torch.no_grad():
+            for p in graph_backbone(model).parameters():
+                p.add_(0.1)
+        auxiliary.update_target(model, 0.9)
+        online = dict(graph_backbone(model).named_parameters())
+        for name, p in auxiliary.target.named_parameters():
+            torch.testing.assert_close(p, before[name] * 0.9 + online[name] * 0.1)
+        targets, mask = physical_targets(model, future, target_context)
+        assert targets.shape == (16, 2, 84) and mask.sum() == 132
+>       assert all(
+            r["effective_rank"] > 1
+            for r in representation_stats(encode(model, state, context))
+        )
+E       assert False
+E        +  where False = all(<generator object test_stop_gradient_ema_and_physical_target_shapes.<locals>.<genexpr> at 0x7ff891d79310>)
+
+tests/test_jepa.py:88: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_jepa.py::test_stop_gradient_ema_and_physical_target_shapes[temporal_gnn]
+FAILED tests/test_jepa.py::test_stop_gradient_ema_and_physical_target_shapes[canonical_temporal_gnn]
+2 failed, 40 passed in 4.74s

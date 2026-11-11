@@ -1,0 +1,96 @@
+{
+  "records": [
+    {
+      "model": "temporal_gnn",
+      "method": "jepa",
+      "checks": {
+        "model": true,
+        "auxiliary": true,
+        "optimizer": true,
+        "generator": true,
+        "torch_rng": true,
+        "cuda_rng": true,
+        "initial_head": true,
+        "best_prediction_hash": true,
+        "best_summary": true
+      }
+    },
+    {
+      "model": "temporal_gnn",
+      "method": "state",
+      "checks": {
+        "model": true,
+        "auxiliary": true,
+        "optimizer": true,
+        "generator": true,
+        "torch_rng": true,
+        "cuda_rng": true,
+        "initial_head": true,
+        "best_prediction_hash": true,
+        "best_summary": true
+      }
+    },
+    {
+      "model": "temporal_gnn",
+      "method": "supervised",
+      "checks": {
+        "model": true,
+        "auxiliary": true,
+        "optimizer": true,
+        "generator": true,
+        "torch_rng": true,
+        "cuda_rng": true,
+        "initial_head": true,
+        "best_prediction_hash": true,
+        "best_summary": true
+      }
+    },
+    {
+      "model": "canonical_temporal_gnn",
+      "method": "jepa",
+      "checks": {
+        "model": true,
+        "auxiliary": true,
+        "optimizer": true,
+        "generator": true,
+        "torch_rng": true,
+        "cuda_rng": true,
+        "initial_head": true,
+        "best_prediction_hash": true,
+        "best_summary": true
+      }
+    },
+    {
+      "model": "canonical_temporal_gnn",
+      "method": "state",
+      "checks": {
+        "model": true,
+        "auxiliary": true,
+        "optimizer": true,
+        "generator": true,
+        "torch_rng": true,
+        "cuda_rng": true,
+        "initial_head": true,
+        "best_prediction_hash": true,
+        "best_summary": true
+      }
+    },
+    {
+      "model": "canonical_temporal_gnn",
+      "method": "supervised",
+      "checks": {
+        "model": true,
+        "auxiliary": true,
+        "optimizer": true,
+        "generator": true,
+        "torch_rng": true,
+        "cuda_rng": true,
+        "initial_head": true,
+        "best_prediction_hash": true,
+        "best_summary": true
+      }
+    }
+  ],
+  "source_commit": "39f55eceb9f374127af936ede30f86571a5b3adb",
+  "working_tree_dirty": false
+}
