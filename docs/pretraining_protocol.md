@@ -47,7 +47,7 @@ Use the existing Linux stage 5 environment; no new packages are required.
 ```bash
 CACHE=outputs/stage3/square_d0.hdf5
 .venv/bin/python -m pytest -q
-.venv/bin/python -m robot_dynamics.train_pretraining "$CACHE" --config configs/pretraining_check.yaml --model temporal_gnn --method jepa --output outputs/stage7/check_jepa
+.venv/bin/python -m robot_dynamics.check_pretraining "$CACHE" --output outputs/stage7/resume_checks
 ```
 
 After the small checks pass, run the six pilots sequentially:
@@ -62,3 +62,12 @@ done
 ```
 
 Resume a stopped job in its original directory with `--resume <output>/last.pt`. Checkpoints include both pretraining modules, phase progress, original head weights, optimizer and RNG state, source/data hashes, and accumulated logs. `pretrained.pt` preserves the phase-boundary state; only downstream validation selects `best.pt`. A stopped partial run does not emit final metrics. Stage 8 is not started by these commands.
+
+After all six runs and independent reloads finish, compare them with the saved stage 5/6 supervised references:
+
+```bash
+.venv/bin/python -m robot_dynamics.analyze_pretraining "$CACHE" --output outputs/stage7/analysis
+.venv/bin/python -m robot_dynamics.plot_pretraining outputs/stage7/analysis/analysis.json
+```
+
+The analysis verifies historical source hashes and reproduces full validation prediction hashes before reusing old checkpoints. It reports paired episode-bootstrap differences for JEPA against each control, plus the difference in its effect between the two architectures. Those intervals describe validation-episode variation for seed 0; they do not establish stability across training seeds.
