@@ -1,0 +1,31 @@
+Pipeline PID 61763
+temporal_gnn_supervised_n2_s0 complete 1 / 8
+temporal_gnn_jepa_n2_s0 complete 2 / 8
+canonical_temporal_gnn_supervised_n2_s0 complete 3 / 8
+canonical_temporal_gnn_jepa_n2_s0 complete 4 / 8
+history_mlp_supervised_n2_s0 complete 5 / 8
+gru_supervised_n2_s0 complete 6 / 8
+temporal_gnn_state_n2_s0 complete 7 / 8
+canonical_temporal_gnn_state_n2_s0 complete 8 / 8
+temporal_gnn_supervised_n2_s0 validation_check_a evaluated
+temporal_gnn_supervised_n2_s0 validation_check_b evaluated
+temporal_gnn_jepa_n2_s0 validation_check_a evaluated
+temporal_gnn_jepa_n2_s0 validation_check_b evaluated
+canonical_temporal_gnn_supervised_n2_s0 validation_check_a evaluated
+canonical_temporal_gnn_supervised_n2_s0 validation_check_b evaluated
+canonical_temporal_gnn_jepa_n2_s0 validation_check_a evaluated
+canonical_temporal_gnn_jepa_n2_s0 validation_check_b evaluated
+history_mlp_supervised_n2_s0 validation_check_a evaluated
+history_mlp_supervised_n2_s0 validation_check_b evaluated
+gru_supervised_n2_s0 validation_check_a evaluated
+gru_supervised_n2_s0 validation_check_b evaluated
+temporal_gnn_state_n2_s0 validation_check_a evaluated
+temporal_gnn_state_n2_s0 validation_check_b evaluated
+canonical_temporal_gnn_state_n2_s0 validation_check_a evaluated
+canonical_temporal_gnn_state_n2_s0 validation_check_b evaluated
+hold validation_check_a evaluated
+hold validation_check_b evaluated
+constant_velocity validation_check_a evaluated
+constant_velocity validation_check_b evaluated
+complete 16 summary rows
+Pipeline complete. Inspect analysis/README.md and analysis/analysis.json, including diagnostic flags.

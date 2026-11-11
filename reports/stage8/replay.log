@@ -1,0 +1,11 @@
+Pipeline PID 67818
+temporal_gnn_supervised_n2_s0 complete 8 / 8
+temporal_gnn_jepa_n2_s0 complete 8 / 8
+canonical_temporal_gnn_supervised_n2_s0 complete 8 / 8
+canonical_temporal_gnn_jepa_n2_s0 complete 8 / 8
+history_mlp_supervised_n2_s0 complete 8 / 8
+gru_supervised_n2_s0 complete 8 / 8
+temporal_gnn_state_n2_s0 complete 8 / 8
+canonical_temporal_gnn_state_n2_s0 complete 8 / 8
+complete 16 summary rows
+Pipeline complete. Inspect analysis/README.md and analysis/analysis.json, including diagnostic flags.

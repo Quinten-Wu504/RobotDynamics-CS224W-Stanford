@@ -1,0 +1,65 @@
+{
+  "used_seconds": 209.17173026129603,
+  "completed": [
+    "temporal_gnn_supervised_n2_s0",
+    "temporal_gnn_jepa_n2_s0",
+    "canonical_temporal_gnn_supervised_n2_s0",
+    "canonical_temporal_gnn_jepa_n2_s0",
+    "history_mlp_supervised_n2_s0",
+    "gru_supervised_n2_s0",
+    "temporal_gnn_state_n2_s0",
+    "canonical_temporal_gnn_state_n2_s0"
+  ],
+  "events": [
+    {
+      "run": "temporal_gnn_supervised_n2_s0",
+      "event": "preserved_incomplete_start",
+      "directory": "outputs/stage8/workflow_check_final/interrupted_before_checkpoint/temporal_gnn_supervised_n2_s0_1794424679160830237"
+    },
+    {
+      "run": "temporal_gnn_supervised_n2_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T19:17:59Z"
+    },
+    {
+      "run": "temporal_gnn_jepa_n2_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T19:18:26Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_supervised_n2_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T19:18:55Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_jepa_n2_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T19:19:23Z"
+    },
+    {
+      "run": "history_mlp_supervised_n2_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T19:19:52Z"
+    },
+    {
+      "run": "gru_supervised_n2_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T19:20:12Z"
+    },
+    {
+      "run": "temporal_gnn_state_n2_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T19:20:31Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_state_n2_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T19:21:00Z"
+    }
+  ],
+  "status": "selected",
+  "budget_seconds": null,
+  "source_commit": "6f8f9a1b2df1c88415d3063cdb12f9821af94d21",
+  "working_tree_dirty": false,
+  "active_run": null
+}

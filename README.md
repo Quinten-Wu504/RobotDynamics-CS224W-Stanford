@@ -12,7 +12,7 @@ Models will take state histories and planned actions as input and predict positi
 
 The environment and Square data audit are complete on AutoDL: Ubuntu 22.04, Python 3.10.8, and an RTX 4090 D. The [experiment protocol](docs/experiment_protocol.md) defines the task; the [data report](reports/stage2/README.md) contains statistics, checksums, and recovery plots.
 
-- **Code:** data processing, fixed splits, causal windows, shared evaluation, MLP/GRU and graph baselines, canonical-frame equivariant models, and JEPA/direct-state pretraining. EMA targets, full fine-tuning, checkpoint recovery, representation diagnostics, and full-chain coordinate checks are implemented. The Linux suite has 43 passing tests.
+- **Code:** data processing, fixed splits, causal windows, shared evaluation, MLP/GRU and graph baselines, canonical-frame equivariant models, and JEPA/direct-state pretraining. The resumable formal pipeline includes checkpoint sealing, test evaluation, diagnostics, and automatic tables/plots. The Linux suite has 48 passing tests.
 - **Data:** 1,000 D0 and 1,000 D1 episodes scanned, with 153,477 and 152,400 recorded states respectively. No nonfinite values or inconsistent field layouts were found. Six complete trajectories (905 frames) passed state recovery checks.
 - **Experiments:** non-graph, graph, and canonical-frame pilots are complete, along with six pretraining/control runs on the same 80 training and 100 D0 validation episodes. Structural controls, representation diagnostics, coordinate consistency, recovery, and reload checks are recorded. D0 test and D1 remain reserved for formal evaluation.
 - **Environment:** the Linux snapshot now includes PyG 2.6.1. Windows supports the base checks and plotting only.
@@ -86,7 +86,7 @@ For Windows base-only checks, use Python 3.10 with `requirements/windows-base.lo
 
 ## Next steps
 
-Stage 7 is complete. Stage 8 is preparing the [frozen formal protocol](docs/formal_protocol.md): 36 core configurations, 18 MLP/GRU controls, and six small-data state-pretraining controls, using seeds 0/1/2. The train/select/test/analyze script is implemented, and a full-data resource probe has completed. Workflow verification and full-matrix launch are pending; no formal test results are available yet.
+Stage 7 is complete. Stage 8 is launching the [frozen formal protocol](docs/formal_protocol.md): 36 core configurations, 18 MLP/GRU controls, and six small-data state-pretraining controls, using seeds 0/1/2. The full-data resource probe, end-to-end workflow, eight recovery checks, duplicate-run protection, and completed-queue replay all passed. The detached script runs training, selection, both test sets, diagnostics, summaries, and plots; the [launch record](reports/stage8/README.md) gives monitoring and output paths. Formal results are pending, and stage 8 remains in progress. No stage 9 work has started.
 
 ## Data and references
 

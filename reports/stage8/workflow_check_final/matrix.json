@@ -1,0 +1,230 @@
+{
+  "protocol_sha256": "b42998dba964f6ca6cfb9408a6b68029ad9ffe01852149be185bbc2ca87e1536",
+  "manifest_sha256": "2d5de75ad87e95c60e392d80c162c85194ad424c9a99b847eed233c945ba4908",
+  "runs": [
+    {
+      "run_id": "temporal_gnn_supervised_n2_s0",
+      "model": "temporal_gnn",
+      "method": "supervised",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 1,
+        "finetune_epochs": 2,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.1",
+        "train_episodes": 2,
+        "formal_protocol_sha256": "b42998dba964f6ca6cfb9408a6b68029ad9ffe01852149be185bbc2ca87e1536"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_jepa_n2_s0",
+      "model": "temporal_gnn",
+      "method": "jepa",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 1,
+        "finetune_epochs": 2,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.1",
+        "train_episodes": 2,
+        "formal_protocol_sha256": "b42998dba964f6ca6cfb9408a6b68029ad9ffe01852149be185bbc2ca87e1536"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_supervised_n2_s0",
+      "model": "canonical_temporal_gnn",
+      "method": "supervised",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 1,
+        "finetune_epochs": 2,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.1",
+        "train_episodes": 2,
+        "formal_protocol_sha256": "b42998dba964f6ca6cfb9408a6b68029ad9ffe01852149be185bbc2ca87e1536"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_jepa_n2_s0",
+      "model": "canonical_temporal_gnn",
+      "method": "jepa",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 1,
+        "finetune_epochs": 2,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.1",
+        "train_episodes": 2,
+        "formal_protocol_sha256": "b42998dba964f6ca6cfb9408a6b68029ad9ffe01852149be185bbc2ca87e1536"
+      }
+    },
+    {
+      "run_id": "history_mlp_supervised_n2_s0",
+      "model": "history_mlp",
+      "method": "supervised",
+      "role": "non_graph_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 1,
+        "finetune_epochs": 2,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.1",
+        "train_episodes": 2,
+        "formal_protocol_sha256": "b42998dba964f6ca6cfb9408a6b68029ad9ffe01852149be185bbc2ca87e1536"
+      }
+    },
+    {
+      "run_id": "gru_supervised_n2_s0",
+      "model": "gru",
+      "method": "supervised",
+      "role": "non_graph_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 1,
+        "finetune_epochs": 2,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.1",
+        "train_episodes": 2,
+        "formal_protocol_sha256": "b42998dba964f6ca6cfb9408a6b68029ad9ffe01852149be185bbc2ca87e1536"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_state_n2_s0",
+      "model": "temporal_gnn",
+      "method": "state",
+      "role": "state_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 1,
+        "finetune_epochs": 2,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.1",
+        "train_episodes": 2,
+        "formal_protocol_sha256": "b42998dba964f6ca6cfb9408a6b68029ad9ffe01852149be185bbc2ca87e1536"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_state_n2_s0",
+      "model": "canonical_temporal_gnn",
+      "method": "state",
+      "role": "state_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 1,
+        "finetune_epochs": 2,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.1",
+        "train_episodes": 2,
+        "formal_protocol_sha256": "b42998dba964f6ca6cfb9408a6b68029ad9ffe01852149be185bbc2ca87e1536"
+      }
+    }
+  ]
+}

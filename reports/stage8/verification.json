@@ -1,0 +1,20 @@
+{
+  "source_commit": "6f8f9a1b2df1c88415d3063cdb12f9821af94d21",
+  "working_tree_dirty": false,
+  "formal_configurations": 60,
+  "formal_training_phases": 84,
+  "workflow_models": 8,
+  "workflow_prediction_sets": 20,
+  "all_resume_checks_passed": true,
+  "completed_checkpoint_finalization_passed": true,
+  "incomplete_start_preserved": true,
+  "duplicate_start_rejected": true,
+  "replay_preserves_metrics_and_selection_seal": true,
+  "formal_test_predictions_accessed": false,
+  "workflow_analysis_sha256": "737802f991af71540c2b79187b31447fb9c6ebbea7f9118096caae43944892c7",
+  "protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2",
+  "tests": "................................................                         [100%]\n48 passed in 4.73s\n",
+  "lint": "All checks passed!\n",
+  "format": "49 files already formatted\n",
+  "dependencies": "No broken requirements found.\n"
+}

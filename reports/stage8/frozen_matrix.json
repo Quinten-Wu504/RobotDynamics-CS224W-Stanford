@@ -1,0 +1,1686 @@
+{
+  "protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2",
+  "manifest_sha256": "2d5de75ad87e95c60e392d80c162c85194ad424c9a99b847eed233c945ba4908",
+  "runs": [
+    {
+      "run_id": "temporal_gnn_supervised_n80_s0",
+      "model": "temporal_gnn",
+      "method": "supervised",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_jepa_n80_s0",
+      "model": "temporal_gnn",
+      "method": "jepa",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_supervised_n80_s0",
+      "model": "canonical_temporal_gnn",
+      "method": "supervised",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_jepa_n80_s0",
+      "model": "canonical_temporal_gnn",
+      "method": "jepa",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "history_mlp_supervised_n80_s0",
+      "model": "history_mlp",
+      "method": "supervised",
+      "role": "non_graph_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "gru_supervised_n80_s0",
+      "model": "gru",
+      "method": "supervised",
+      "role": "non_graph_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_state_n80_s0",
+      "model": "temporal_gnn",
+      "method": "state",
+      "role": "state_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_state_n80_s0",
+      "model": "canonical_temporal_gnn",
+      "method": "state",
+      "role": "state_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_supervised_n80_s1",
+      "model": "temporal_gnn",
+      "method": "supervised",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 1,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_jepa_n80_s1",
+      "model": "temporal_gnn",
+      "method": "jepa",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 1,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_supervised_n80_s1",
+      "model": "canonical_temporal_gnn",
+      "method": "supervised",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 1,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_jepa_n80_s1",
+      "model": "canonical_temporal_gnn",
+      "method": "jepa",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 1,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "history_mlp_supervised_n80_s1",
+      "model": "history_mlp",
+      "method": "supervised",
+      "role": "non_graph_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 1,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "gru_supervised_n80_s1",
+      "model": "gru",
+      "method": "supervised",
+      "role": "non_graph_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 1,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_state_n80_s1",
+      "model": "temporal_gnn",
+      "method": "state",
+      "role": "state_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 1,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_state_n80_s1",
+      "model": "canonical_temporal_gnn",
+      "method": "state",
+      "role": "state_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 1,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_supervised_n80_s2",
+      "model": "temporal_gnn",
+      "method": "supervised",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 2,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_jepa_n80_s2",
+      "model": "temporal_gnn",
+      "method": "jepa",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 2,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_supervised_n80_s2",
+      "model": "canonical_temporal_gnn",
+      "method": "supervised",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 2,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_jepa_n80_s2",
+      "model": "canonical_temporal_gnn",
+      "method": "jepa",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 2,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "history_mlp_supervised_n80_s2",
+      "model": "history_mlp",
+      "method": "supervised",
+      "role": "non_graph_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 2,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "gru_supervised_n80_s2",
+      "model": "gru",
+      "method": "supervised",
+      "role": "non_graph_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 2,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_state_n80_s2",
+      "model": "temporal_gnn",
+      "method": "state",
+      "role": "state_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 2,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_state_n80_s2",
+      "model": "canonical_temporal_gnn",
+      "method": "state",
+      "role": "state_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 2,
+        "train_fraction": "0.1",
+        "train_episodes": 80,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_supervised_n200_s0",
+      "model": "temporal_gnn",
+      "method": "supervised",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.25",
+        "train_episodes": 200,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_jepa_n200_s0",
+      "model": "temporal_gnn",
+      "method": "jepa",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.25",
+        "train_episodes": 200,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_supervised_n200_s0",
+      "model": "canonical_temporal_gnn",
+      "method": "supervised",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.25",
+        "train_episodes": 200,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_jepa_n200_s0",
+      "model": "canonical_temporal_gnn",
+      "method": "jepa",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.25",
+        "train_episodes": 200,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "history_mlp_supervised_n200_s0",
+      "model": "history_mlp",
+      "method": "supervised",
+      "role": "non_graph_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.25",
+        "train_episodes": 200,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "gru_supervised_n200_s0",
+      "model": "gru",
+      "method": "supervised",
+      "role": "non_graph_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "0.25",
+        "train_episodes": 200,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_supervised_n200_s1",
+      "model": "temporal_gnn",
+      "method": "supervised",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 1,
+        "train_fraction": "0.25",
+        "train_episodes": 200,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_jepa_n200_s1",
+      "model": "temporal_gnn",
+      "method": "jepa",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 1,
+        "train_fraction": "0.25",
+        "train_episodes": 200,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_supervised_n200_s1",
+      "model": "canonical_temporal_gnn",
+      "method": "supervised",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 1,
+        "train_fraction": "0.25",
+        "train_episodes": 200,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_jepa_n200_s1",
+      "model": "canonical_temporal_gnn",
+      "method": "jepa",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 1,
+        "train_fraction": "0.25",
+        "train_episodes": 200,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "history_mlp_supervised_n200_s1",
+      "model": "history_mlp",
+      "method": "supervised",
+      "role": "non_graph_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 1,
+        "train_fraction": "0.25",
+        "train_episodes": 200,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "gru_supervised_n200_s1",
+      "model": "gru",
+      "method": "supervised",
+      "role": "non_graph_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 1,
+        "train_fraction": "0.25",
+        "train_episodes": 200,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_supervised_n200_s2",
+      "model": "temporal_gnn",
+      "method": "supervised",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 2,
+        "train_fraction": "0.25",
+        "train_episodes": 200,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_jepa_n200_s2",
+      "model": "temporal_gnn",
+      "method": "jepa",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 2,
+        "train_fraction": "0.25",
+        "train_episodes": 200,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_supervised_n200_s2",
+      "model": "canonical_temporal_gnn",
+      "method": "supervised",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 2,
+        "train_fraction": "0.25",
+        "train_episodes": 200,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_jepa_n200_s2",
+      "model": "canonical_temporal_gnn",
+      "method": "jepa",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 2,
+        "train_fraction": "0.25",
+        "train_episodes": 200,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "history_mlp_supervised_n200_s2",
+      "model": "history_mlp",
+      "method": "supervised",
+      "role": "non_graph_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 2,
+        "train_fraction": "0.25",
+        "train_episodes": 200,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "gru_supervised_n200_s2",
+      "model": "gru",
+      "method": "supervised",
+      "role": "non_graph_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 2,
+        "train_fraction": "0.25",
+        "train_episodes": 200,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_supervised_n800_s0",
+      "model": "temporal_gnn",
+      "method": "supervised",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "1.0",
+        "train_episodes": 800,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_jepa_n800_s0",
+      "model": "temporal_gnn",
+      "method": "jepa",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "1.0",
+        "train_episodes": 800,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_supervised_n800_s0",
+      "model": "canonical_temporal_gnn",
+      "method": "supervised",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "1.0",
+        "train_episodes": 800,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_jepa_n800_s0",
+      "model": "canonical_temporal_gnn",
+      "method": "jepa",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "1.0",
+        "train_episodes": 800,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "history_mlp_supervised_n800_s0",
+      "model": "history_mlp",
+      "method": "supervised",
+      "role": "non_graph_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "1.0",
+        "train_episodes": 800,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "gru_supervised_n800_s0",
+      "model": "gru",
+      "method": "supervised",
+      "role": "non_graph_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 0,
+        "train_fraction": "1.0",
+        "train_episodes": 800,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_supervised_n800_s1",
+      "model": "temporal_gnn",
+      "method": "supervised",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 1,
+        "train_fraction": "1.0",
+        "train_episodes": 800,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_jepa_n800_s1",
+      "model": "temporal_gnn",
+      "method": "jepa",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 1,
+        "train_fraction": "1.0",
+        "train_episodes": 800,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_supervised_n800_s1",
+      "model": "canonical_temporal_gnn",
+      "method": "supervised",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 1,
+        "train_fraction": "1.0",
+        "train_episodes": 800,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_jepa_n800_s1",
+      "model": "canonical_temporal_gnn",
+      "method": "jepa",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 1,
+        "train_fraction": "1.0",
+        "train_episodes": 800,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "history_mlp_supervised_n800_s1",
+      "model": "history_mlp",
+      "method": "supervised",
+      "role": "non_graph_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 1,
+        "train_fraction": "1.0",
+        "train_episodes": 800,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "gru_supervised_n800_s1",
+      "model": "gru",
+      "method": "supervised",
+      "role": "non_graph_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 1,
+        "train_fraction": "1.0",
+        "train_episodes": 800,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_supervised_n800_s2",
+      "model": "temporal_gnn",
+      "method": "supervised",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 2,
+        "train_fraction": "1.0",
+        "train_episodes": 800,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "temporal_gnn_jepa_n800_s2",
+      "model": "temporal_gnn",
+      "method": "jepa",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 2,
+        "train_fraction": "1.0",
+        "train_episodes": 800,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_supervised_n800_s2",
+      "model": "canonical_temporal_gnn",
+      "method": "supervised",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 2,
+        "train_fraction": "1.0",
+        "train_episodes": 800,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "canonical_temporal_gnn_jepa_n800_s2",
+      "model": "canonical_temporal_gnn",
+      "method": "jepa",
+      "role": "core",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 2,
+        "train_fraction": "1.0",
+        "train_episodes": 800,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "history_mlp_supervised_n800_s2",
+      "model": "history_mlp",
+      "method": "supervised",
+      "role": "non_graph_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 2,
+        "train_fraction": "1.0",
+        "train_episodes": 800,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    },
+    {
+      "run_id": "gru_supervised_n800_s2",
+      "model": "gru",
+      "method": "supervised",
+      "role": "non_graph_control",
+      "config": {
+        "mode": "formal",
+        "device": "cuda",
+        "history": 4,
+        "horizons": [
+          1,
+          5,
+          10
+        ],
+        "pretrain_epochs": 10,
+        "finetune_epochs": 30,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "cpu_threads": 4,
+        "ema_momentum": 0.99,
+        "seed": 2,
+        "train_fraction": "1.0",
+        "train_episodes": 800,
+        "formal_protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2"
+      }
+    }
+  ]
+}

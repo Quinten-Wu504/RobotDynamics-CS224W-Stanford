@@ -1,0 +1,19 @@
+batch_size: 256
+cpu_threads: 4
+device: cuda
+ema_momentum: 0.99
+finetune_epochs: 1
+gradient_clip: 1.0
+history: 4
+horizons:
+- 1
+- 5
+- 10
+learning_rate: 0.001
+mode: pilot
+pretrain_epochs: 1
+purpose: resource_probe_only_not_formal_result
+seed: 0
+train_episodes: 800
+train_fraction: '1.0'
+weight_decay: 0.0001

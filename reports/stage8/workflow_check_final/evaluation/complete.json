@@ -1,0 +1,16 @@
+{
+  "identity": {
+    "selection_seal_sha256": "f3c61078b7ed2663ec8d1a2e4007b9c2ae8ffd03440c1b3972471faba3ebb7ad",
+    "protocol_sha256": "b42998dba964f6ca6cfb9408a6b68029ad9ffe01852149be185bbc2ca87e1536",
+    "validation_only_check": true
+  },
+  "trained_models": 8,
+  "evaluated_predictors": 10,
+  "prediction_sets": 20,
+  "splits": [
+    "validation_check_a",
+    "validation_check_b"
+  ],
+  "source_commit": "6f8f9a1b2df1c88415d3063cdb12f9821af94d21",
+  "working_tree_dirty": false
+}

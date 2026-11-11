@@ -1,0 +1,134 @@
+{
+  "records": [
+    {
+      "model": "temporal_gnn",
+      "method": "jepa",
+      "checks": {
+        "model": true,
+        "auxiliary": true,
+        "optimizer": true,
+        "generator": true,
+        "torch_rng": true,
+        "cuda_rng": true,
+        "initial_head": true,
+        "best_prediction_hash": true,
+        "best_summary": true,
+        "completed_checkpoint_finalization": true
+      }
+    },
+    {
+      "model": "temporal_gnn",
+      "method": "state",
+      "checks": {
+        "model": true,
+        "auxiliary": true,
+        "optimizer": true,
+        "generator": true,
+        "torch_rng": true,
+        "cuda_rng": true,
+        "initial_head": true,
+        "best_prediction_hash": true,
+        "best_summary": true,
+        "completed_checkpoint_finalization": true
+      }
+    },
+    {
+      "model": "temporal_gnn",
+      "method": "supervised",
+      "checks": {
+        "model": true,
+        "auxiliary": true,
+        "optimizer": true,
+        "generator": true,
+        "torch_rng": true,
+        "cuda_rng": true,
+        "initial_head": true,
+        "best_prediction_hash": true,
+        "best_summary": true,
+        "completed_checkpoint_finalization": true
+      }
+    },
+    {
+      "model": "canonical_temporal_gnn",
+      "method": "jepa",
+      "checks": {
+        "model": true,
+        "auxiliary": true,
+        "optimizer": true,
+        "generator": true,
+        "torch_rng": true,
+        "cuda_rng": true,
+        "initial_head": true,
+        "best_prediction_hash": true,
+        "best_summary": true,
+        "completed_checkpoint_finalization": true
+      }
+    },
+    {
+      "model": "canonical_temporal_gnn",
+      "method": "state",
+      "checks": {
+        "model": true,
+        "auxiliary": true,
+        "optimizer": true,
+        "generator": true,
+        "torch_rng": true,
+        "cuda_rng": true,
+        "initial_head": true,
+        "best_prediction_hash": true,
+        "best_summary": true,
+        "completed_checkpoint_finalization": true
+      }
+    },
+    {
+      "model": "canonical_temporal_gnn",
+      "method": "supervised",
+      "checks": {
+        "model": true,
+        "auxiliary": true,
+        "optimizer": true,
+        "generator": true,
+        "torch_rng": true,
+        "cuda_rng": true,
+        "initial_head": true,
+        "best_prediction_hash": true,
+        "best_summary": true,
+        "completed_checkpoint_finalization": true
+      }
+    },
+    {
+      "model": "history_mlp",
+      "method": "supervised",
+      "checks": {
+        "model": true,
+        "auxiliary": true,
+        "optimizer": true,
+        "generator": true,
+        "torch_rng": true,
+        "cuda_rng": true,
+        "initial_head": true,
+        "best_prediction_hash": true,
+        "best_summary": true,
+        "completed_checkpoint_finalization": true
+      }
+    },
+    {
+      "model": "gru",
+      "method": "supervised",
+      "checks": {
+        "model": true,
+        "auxiliary": true,
+        "optimizer": true,
+        "generator": true,
+        "torch_rng": true,
+        "cuda_rng": true,
+        "initial_head": true,
+        "best_prediction_hash": true,
+        "best_summary": true,
+        "completed_checkpoint_finalization": true
+      }
+    }
+  ],
+  "source_commit": "6f8f9a1b2df1c88415d3063cdb12f9821af94d21",
+  "working_tree_dirty": false
+}
