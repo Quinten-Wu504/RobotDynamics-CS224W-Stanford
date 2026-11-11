@@ -1,0 +1,17 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "robot_dynamics.normalization",
+    "outputs/stage3/square_d0.hdf5",
+    "--manifest",
+    "outputs/stage3/manifest.json",
+    "--output",
+    "outputs/stage3/normalization.json"
+  ],
+  "wall_seconds": 1.7789283208549023,
+  "max_rss_kib": 148180,
+  "user_cpu_seconds": 2.030743,
+  "system_cpu_seconds": 1.749158,
+  "returncode": 0
+}
