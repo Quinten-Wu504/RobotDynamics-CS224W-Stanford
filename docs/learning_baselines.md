@@ -52,4 +52,13 @@ Checkpoints are saved atomically after each epoch and contain model, optimizer, 
 
 `configs/learning_resume_check.yaml` runs six epochs on two training episodes. Compare an uninterrupted run with a run stopped by `--stop-after-epoch 3` and resumed from `last.pt`; this checks continuation, not just model loading. Every training run also compares predictions from a fresh model loaded from the selected checkpoint.
 
+The following commands run that comparison for all three architectures and collect the pilot results:
+
+```bash
+.venv/bin/python -m robot_dynamics.check_resume "$CACHE" --output outputs/stage4/resume_checks
+.venv/bin/python -m robot_dynamics.summarize_learning --runs outputs/stage4 --output outputs/stage4/summary
+```
+
+The resume check compares final model weights, optimizer state, sampler state, selected-checkpoint predictions, and selected metrics exactly. The summary verifies standalone evaluation against the saved training-run results and checks validation IDs and window counts against the non-learning baselines.
+
 References: [PyTorch reproducibility notes](https://docs.pytorch.org/docs/2.5/notes/randomness.html) and [general checkpoints](https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html). Exact agreement is checked in the tested software/hardware environment, not assumed across platforms or PyTorch releases.
