@@ -1,0 +1,13 @@
+seed: 0
+mode: fit
+device: cuda
+train_fraction: '0.1'
+train_episodes: 2
+history: 4
+horizons: [1, 5, 10]
+epochs: 6
+batch_size: 128
+learning_rate: 0.001
+weight_decay: 0.0
+gradient_clip: 1.0
+cpu_threads: 4

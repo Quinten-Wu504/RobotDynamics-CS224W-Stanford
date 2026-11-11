@@ -7,8 +7,8 @@
 | 0 | Repository setup | DONE |
 | 1 | Protocol, resource audit, minimal environment | DONE |
 | 2 | Data audit, state recovery, visualization | DONE |
-| 3 | Splits, windows, evaluation, non-learning baselines | CHECKING |
-| 4 | Non-graph learning baselines | NOT_STARTED |
+| 3 | Splits, windows, evaluation, non-learning baselines | DONE |
+| 4 | Non-graph learning baselines | IN_PROGRESS |
 | 5 | Scene graphs and temporal GNNs | NOT_STARTED |
 | 6 | Geometric equivariance | NOT_STARTED |
 | 7 | JEPA and pretraining controls | NOT_STARTED |
