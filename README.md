@@ -12,7 +12,7 @@ Models will take state histories and planned actions as input and predict positi
 
 Stage 1 environment checks pass on AutoDL: Ubuntu 22.04, Python 3.10.8, and an RTX 4090 D. The [experiment protocol](docs/experiment_protocol.md) defines the initial task; the [check record](reports/stage1/autodl/README.md) contains the results.
 
-- **Code:** configuration validation, resource auditing, and environment smoke checks. Eleven tests pass. Data processing and models are not implemented yet.
+- **Code:** configuration validation, resource auditing, environment checks, and the Square data-processing tools. Seventeen tests pass. Data validation is in progress; models are not implemented yet.
 - **Experiments:** no prediction experiments or results. CPU/CUDA and simulator checks are setup tests only.
 - **Environment:** the full Linux dependency snapshot is locked. Windows still supports the base checks only.
 
@@ -47,7 +47,7 @@ For Windows base-only checks, use Python 3.10 with `requirements/windows-base.lo
 
 ## Next steps
 
-Stage 2 will inspect Square D0/D1 data, confirm actions and time alignment, recover world poses, and plot sample trajectories. No dataset has been downloaded. There are no preprocessing, training, prediction evaluation, or checkpoint-resume commands yet.
+Stage 2 is inspecting Square D0/D1 data, confirming actions and time alignment, recovering world poses, and plotting sample trajectories. D0 has been downloaded and scanned. [Data processing commands](docs/data_processing.md) describe the current tools. There are no training, prediction evaluation, or checkpoint-resume commands yet.
 
 ## Data and references
 
