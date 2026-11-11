@@ -108,6 +108,8 @@ def main():
             "temporal_gnn",
             "temporal_no_messages",
             "temporal_full_edges",
+            "canonical_temporal_gnn",
+            "canonical_gru",
         ],
         required=True,
     )
@@ -176,6 +178,7 @@ def main():
                 "windows.py",
                 "normalization.py",
                 "graph_models.py",
+                "equivariant_models.py",
             )
         },
     }

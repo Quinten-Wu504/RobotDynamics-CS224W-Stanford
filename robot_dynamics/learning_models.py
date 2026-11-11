@@ -6,6 +6,11 @@ class DynamicsPredictor(nn.Module):
     def __init__(self, kind, state_dim=42, context_dim=121, history=4):
         super().__init__()
         self.kind = kind
+        if kind in ("canonical_temporal_gnn", "canonical_gru"):
+            from robot_dynamics.equivariant_models import CanonicalPredictor
+
+            self.canonical = CanonicalPredictor(kind.removeprefix("canonical_"))
+            return
         if kind in (
             "gnn",
             "temporal_gnn",
@@ -34,6 +39,8 @@ class DynamicsPredictor(nn.Module):
         )
 
     def forward(self, state, context):
+        if hasattr(self, "canonical"):
+            return self.canonical(state, context)
         if hasattr(self, "graph"):
             return self.graph(state, context)
         if self.kind == "current_mlp":

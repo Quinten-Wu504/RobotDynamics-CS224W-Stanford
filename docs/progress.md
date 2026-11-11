@@ -9,8 +9,8 @@
 | 2 | Data audit, state recovery, visualization | DONE |
 | 3 | Splits, windows, evaluation, non-learning baselines | DONE |
 | 4 | Non-graph learning baselines | DONE |
-| 5 | Scene graphs and temporal GNNs | CHECKING |
-| 6 | Geometric equivariance | NOT_STARTED |
+| 5 | Scene graphs and temporal GNNs | DONE |
+| 6 | Geometric equivariance | IN_PROGRESS |
 | 7 | JEPA and pretraining controls | NOT_STARTED |
 | 8 | Frozen protocol and formal experiments | NOT_STARTED |
 | 9 | Evidence-driven robustness or extension | NOT_STARTED |
@@ -30,4 +30,4 @@ Stage 4 completed current-state MLP, history MLP, and GRU fitting checks and see
 
 Stage 5 completed single-frame and temporal graph pilots, plus message-removal and full-edge controls. All four fit checks and standalone reloads passed; both main graph architectures also passed exact continuation checks. The Linux suite has 36 passing tests. The [graph report](../reports/stage5/README.md) records the mixed comparison with GRU, motion-group results, the sparse proximity group, and actual costs. No configuration search or test-set prediction evaluation was added.
 
-Next: stage 6 geometric equivariance. No stage 6 jobs have started. `CHECKING` marks a stage's final review; `DONE` marks a closed stage.
+Stage 6 is implementing canonical-frame Temporal GNN and GRU controls, with full-chain checks for gravity-preserving coordinate changes. `CHECKING` marks a stage's final review; `DONE` marks a closed stage.
