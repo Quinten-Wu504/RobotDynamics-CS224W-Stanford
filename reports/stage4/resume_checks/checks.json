@@ -1,0 +1,30 @@
+{
+  "checks": [
+    {
+      "model": "current_mlp",
+      "last_model_exact": true,
+      "optimizer_exact": true,
+      "sampler_state_exact": true,
+      "best_predictions_exact": true,
+      "best_metrics_exact": true
+    },
+    {
+      "model": "history_mlp",
+      "last_model_exact": true,
+      "optimizer_exact": true,
+      "sampler_state_exact": true,
+      "best_predictions_exact": true,
+      "best_metrics_exact": true
+    },
+    {
+      "model": "gru",
+      "last_model_exact": true,
+      "optimizer_exact": true,
+      "sampler_state_exact": true,
+      "best_predictions_exact": true,
+      "best_metrics_exact": true
+    }
+  ],
+  "source_commit": "274d92ecce9111903baa2d3d546efd3c17e38fd5",
+  "working_tree_dirty": false
+}

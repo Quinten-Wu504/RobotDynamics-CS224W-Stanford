@@ -12,9 +12,9 @@ Models will take state histories and planned actions as input and predict positi
 
 The environment and Square data audit are complete on AutoDL: Ubuntu 22.04, Python 3.10.8, and an RTX 4090 D. The [experiment protocol](docs/experiment_protocol.md) defines the task; the [data report](reports/stage2/README.md) contains statistics, checksums, and recovery plots.
 
-- **Code:** data auditing and recovery, fixed episode splits, training-only normalization, causal windows, and a shared position-baseline evaluator. Twenty-five tests pass. Learned models are not implemented yet.
+- **Code:** data auditing and recovery, fixed splits, causal windows, shared evaluation, and action-conditioned current-state MLP, history MLP, and GRU training with checkpoint recovery. All 29 Linux tests pass.
 - **Data:** 1,000 D0 and 1,000 D1 episodes scanned, with 153,477 and 152,400 recorded states respectively. No nonfinite values or inconsistent field layouts were found. Six complete trajectories (905 frames) passed state recovery checks.
-- **Experiments:** position-hold and constant-velocity baselines have run on 100 D0 validation episodes. No learned model has been trained. D0 test and D1 remain reserved for formal evaluation.
+- **Experiments:** all three learned baselines completed two-episode fitting checks and 80-episode training pilots, evaluated on the same 100 D0 validation episodes as hold and constant velocity. Recovery and standalone reload checks passed. D0 test and D1 remain reserved for formal evaluation.
 - **Environment:** the full Linux dependency snapshot is locked. Windows still supports the base checks only.
 
 ## Evaluation plan
@@ -26,6 +26,8 @@ We report end-effector and object position errors separately in cm, averaging by
 On D0 validation, mean end-effector errors at 0.05 / 0.25 / 0.5 s are **0.715 / 3.344 / 6.242 cm** for position hold and **0.247 / 1.973 / 5.138 cm** for constant velocity. Nut errors are **0.490 / 2.313 / 4.309 cm** and **0.207 / 1.449 / 3.494 cm**, respectively. Both methods use the same four-frame-history windows and ignore planned actions.
 
 Constant velocity is a strong short-horizon baseline, but its advantage is smaller over 0.5 s and disappears in some low-motion groups. The [baseline report](reports/stage3/README.md) contains episode-bootstrap intervals, motion breakdowns, example predictions, and limitations. These are validation results, not final-test claims.
+
+The seed-0 learning pilots reach 0.5-second end-effector / nut errors of **0.550 / 0.455 cm** (current-state MLP), **0.518 / 0.446 cm** (history MLP), and **0.496 / 0.437 cm** (GRU). GRU has the lowest overall validation error in this run, but the differences between learned models are small. They use planned actions, which the non-learning baselines ignore. The [learning report](reports/stage4/README.md) includes all horizons, learning curves, confidence intervals, resource measurements, and reproducibility checks. These single-seed pilots do not establish graph or temporal-model superiority.
 
 ## Setup
 
@@ -52,13 +54,15 @@ For data acquisition and processing, follow the [tested commands](docs/data_proc
 
 The [baseline commands](docs/baseline_protocol.md) reproduce splitting, normalization, evaluation, and plots. Use the committed [manifest](reports/stage3/manifest.json) for comparisons. On AutoDL CPU with a local cache copy, fitting all three normalizers took 1.8 s and evaluation took 1.3 s, with peak RSS below 145 MiB; these timings exclude cache copying, tests, and plotting. No GPU computation is needed for these baselines.
 
+The [learning commands](docs/learning_baselines.md) cover fitting, pilot training, checkpoint evaluation, recovery, and report generation. The three 30-epoch pilots took about 159 seconds of measured run time in total, plus 26 seconds of input preparation. Checkpoints remain in AutoDL `outputs/stage4`; metrics and plots are committed under `reports/stage4`.
+
 The container has a 16-core CPU quota, 80 GiB RAM, and 24 GiB VRAM. Its host-visible CPU and memory totals are larger than these limits. At the end of setup, the data disk had about 13 GiB free and file storage about 197 GiB free. Formal training requirements have not been measured.
 
 For Windows base-only checks, use Python 3.10 with `requirements/windows-base.lock.txt` and `--device numpy`. Full simulator support was verified on Linux. [Environment notes](docs/environment.md) describe both machines and the resolved setup issues.
 
 ## Next steps
 
-Stage 4 will add current-state/history MLP and GRU baselines, validation-based checkpoint selection, and training recovery. Small fitting checks will precede broader runs. There are no learned-model training or checkpoint-resume commands yet.
+Stage 4 is complete. Stage 5 will add scene graphs, single-frame and temporal GNNs, and checks for node ordering, batching, and interaction messages. Comparisons will reuse the established inputs and evaluation protocol. No stage 5 jobs are running.
 
 ## Data and references
 
