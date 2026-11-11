@@ -36,6 +36,8 @@ Updates and context-data presentations are matched; FLOPs are not assumed equal.
 
 For fixed training windows, log online/target latent standard deviations and covariance effective ranks before pretraining, after every pretraining epoch, and at the end. Compute these separately for each dynamic node, so node identity alone cannot disguise a constant representation. Flag gross collapse if either node's mean standard deviation is below 0.01 or effective rank below 2 after pretraining. These are limited screening thresholds, not proof of useful representations. Also record target/online parameter distance, losses, physical prediction errors, and downstream sensitivity to changed histories/actions. If collapse occurs, retain the failed run and diagnose it before treating the JEPA experiment as valid.
 
+At the saved pretraining endpoint, also apply the same per-node screening thresholds to layer-normalized target and predictor outputs. Raw variance can hide a nearly constant normalized direction, which matters because the predictive loss uses normalized latents. These checks are specified before the full pilots. Input sensitivity uses fixed subsets: zero planned actions or permute past histories across samples while retaining the current state. Report output changes and physical error changes as diagnostics, not as physical OOD performance.
+
 The small configuration tests pretraining, transition, and fine-tuning on two trajectories. Check uninterrupted versus interrupted/resumed runs, including EMA, predictor, optimizer, sampler, and RNG state. At final evaluation, reconstruct a fresh physical model from the chosen checkpoint and require identical predictions. Independent evaluation and coordinate checks use the same saved checkpoint.
 
 ## Commands
