@@ -66,3 +66,9 @@ The installed environment is recorded in `requirements/linux-stage5.lock.txt`. A
 ```
 
 This command expects the stage 4 checkpoints in `outputs/stage4`. It verifies their hashes, recorded source revisions, split, configuration, normalization, and full prediction arrays before computing additional group metrics. It also checks trained graph models for batch/permutation consistency and neighbor dependence on eight validation samples spread across the fixed evaluation order.
+
+Regenerate the published figures from the small committed result file, without data, checkpoints, or a GPU:
+
+```bash
+python -m robot_dynamics.plot_graphs reports/stage5/analysis/analysis.json --output outputs/stage5_figures
+```
