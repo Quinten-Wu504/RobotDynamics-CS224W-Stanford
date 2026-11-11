@@ -99,7 +99,17 @@ def main():
     )
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument(
-        "--model", choices=["current_mlp", "history_mlp", "gru"], required=True
+        "--model",
+        choices=[
+            "current_mlp",
+            "history_mlp",
+            "gru",
+            "gnn",
+            "temporal_gnn",
+            "temporal_no_messages",
+            "temporal_full_edges",
+        ],
+        required=True,
     )
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--resume", type=Path)
@@ -117,7 +127,7 @@ def main():
         or cfg["history"] != 4
         or cfg["horizons"] != [1, 5, 10]
     ):
-        raise ValueError("Expected the fixed stage 4 fit/pilot window protocol")
+        raise ValueError("Expected the fixed fit/pilot window protocol")
     setup(cfg["seed"], cfg["cpu_threads"])
     device = torch.device(cfg["device"])
     manifest = json.loads(args.manifest.read_text())
@@ -165,6 +175,7 @@ def main():
                 "train_learning.py",
                 "windows.py",
                 "normalization.py",
+                "graph_models.py",
             )
         },
     }

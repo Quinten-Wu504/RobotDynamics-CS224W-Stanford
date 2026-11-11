@@ -27,10 +27,13 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("cache", type=Path)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--models", nargs="+", default=["current_mlp", "history_mlp", "gru"]
+    )
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
     records = []
-    for model in ("current_mlp", "history_mlp", "gru"):
+    for model in args.models:
         full = args.output / f"{model}_continuous"
         resumed = args.output / f"{model}_resumed"
         base = [
