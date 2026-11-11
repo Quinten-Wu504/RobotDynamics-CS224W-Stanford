@@ -6,8 +6,8 @@
 | --- | --- | --- |
 | 0 | Repository setup | DONE |
 | 1 | Protocol, resource audit, minimal environment | DONE |
-| 2 | Data audit, state recovery, visualization | CHECKING |
-| 3 | Splits, windows, evaluation, non-learning baselines | NOT_STARTED |
+| 2 | Data audit, state recovery, visualization | DONE |
+| 3 | Splits, windows, evaluation, non-learning baselines | IN_PROGRESS |
 | 4 | Non-graph learning baselines | NOT_STARTED |
 | 5 | Scene graphs and temporal GNNs | NOT_STARTED |
 | 6 | Geometric equivariance | NOT_STARTED |
