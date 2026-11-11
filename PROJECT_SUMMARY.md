@@ -1,6 +1,6 @@
 # Project progress, experimental results, and conclusions
 
-**Status snapshot: November 11, 2026 (America/Los_Angeles).** Stages 0–7 are complete. Stage 8 is running on AutoDL; its full test results have not yet been reviewed or published. This document summarizes the completed experiments and their limits. All accuracy figures below come from the archived D0 **validation pilots**, not the ongoing formal test matrix.
+Stages 0–7 are complete. Stage 8 is still running. This document summarizes the completed experiments and their limits. All accuracy figures below come from the archived D0 **validation pilots**, not the ongoing formal test matrix.
 
 The main findings so far are:
 
