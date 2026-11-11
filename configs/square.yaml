@@ -5,7 +5,7 @@ test_distribution: square_d1
 history_steps: 4
 one_step: true
 horizons_seconds: [0.25, 0.5]
-control_frequency_hz: null
+control_frequency_hz: 20
 action_conditioning: planned_sequence
 position_unit: m
 coordinate_frame: world
@@ -19,7 +19,7 @@ split:
 train_fractions: [0.1, 0.25, 1.0]
 formal_seeds: [0, 1, 2]
 audit:
-  observation_fields: false
-  controller_semantics: false
-  time_alignment: false
-  fixture_world_poses: false
+  observation_fields: true
+  controller_semantics: true
+  time_alignment: true
+  fixture_world_poses: true

@@ -21,6 +21,8 @@ def test_invalid_frequency(frequency):
 
 def test_unverified_data_cannot_be_ready():
     config = load_config("configs/square.yaml")
+    config["control_frequency_hz"] = None
+    config["audit"] = {key: False for key in config["audit"]}
     assert set(unresolved_audit(config)) == {
         "observation_fields",
         "controller_semantics",

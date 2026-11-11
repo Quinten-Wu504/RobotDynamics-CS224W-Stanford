@@ -6,7 +6,7 @@ Does graph structure improve action-conditioned prediction of robot and object m
 
 The initial task is MimicGen **core** Square D0/D1, not the small source-demonstration dataset. Models predict motion of the end effector and square nut. Peg and table geometry provide context; their static positions do not contribute to the main error. No closed-loop success claim will be made from offline prediction error.
 
-This is the initial protocol, not a data-audit report. The [configuration](../configs/square.yaml) deliberately leaves control frequency unset and data checks unfinished. No dataset has been downloaded in stage 1.
+The stage 2 audit established the field layout, controller semantics, fixture poses, and 20 Hz timing for the pinned release. The [configuration](../configs/square.yaml) records these checks; the [field table](state_fields.md) defines the cache. No prediction model has been trained.
 
 ## Samples and timing
 
@@ -25,14 +25,14 @@ Only generate windows with a complete history, action sequence, and future state
 
 ## Physical fields
 
-The following is the canonical representation to be established during the data audit. Candidate observation names must be checked in every trajectory and both distributions.
+The following representation was established by the data audit. The cache uses named physical fields rather than treating the two distributions' different `object` vectors as interchangeable.
 
-| Field | Meaning and units | Candidate source / check |
+| Field | Meaning and units | Source / check |
 | --- | --- | --- |
 | End-effector position | World xyz, m | `robot0_eef_pos`; confirm against simulator site |
-| End-effector orientation | Body-to-world rotation matrix | `robot0_eef_quat`; verify ordering before conversion |
+| End-effector orientation | Hand-body-to-world rotation matrix | `robot0_eef_quat`, xyzw; not the grip site's orientation |
 | Gripper state | Two finger joint positions, m | `robot0_gripper_qpos`; verify robot and gripper type |
-| Nut position and orientation | World xyz in m, body-to-world rotation | `SquareNut_pos`, `SquareNut_quat`, or restored body pose |
+| Nut position and orientation | World xyz in m, body-to-world rotation | `object[:, :3]` and xyzw `object[:, 3:7]`, checked against restored body pose |
 | Target peg pose and size | World pose, geometry in m | Episode XML and model body/geom transforms; `peg1_pos` when present |
 | Table surface | World plane point, unit normal, dimensions in m | Arena model and transformed geometry |
 | Action | Controller command plus gripper command | `actions` and `env_args`; interpretation below |
@@ -45,7 +45,7 @@ Velocity, if added, uses a backward difference from available history with the m
 
 ## Actions
 
-The pinned robosuite OSC_POSE default uses six pose commands followed by a gripper command for a Panda with fixed impedance. Its default input range is [-1, 1], scaling translation to ±0.05 m and rotation to ±0.5 rad, with delta control enabled. These are **source defaults to check**, not measured dataset properties.
+Both released datasets specify six OSC_POSE commands followed by a gripper command for a Panda with fixed impedance. Their metadata confirms input range [-1, 1], translation scaling ±0.05 m, rotation scaling ±0.5 rad, and delta control. The cache retains both raw commands and scaled increments.
 
 Inspect `env_args` for robot, controller type, impedance mode, `control_delta`, limits, and frequency. Trace the installed controller's scaling and rotation composition. Confirm world-frame translation and orientation-increment axes before applying geometric transformations. For the pinned Panda gripper, the source maps negative action to opening and positive action to closing; verify this is the dataset's gripper. Pose commands are controller targets, not next-frame robot joint positions.
 

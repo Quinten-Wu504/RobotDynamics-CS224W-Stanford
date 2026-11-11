@@ -113,6 +113,7 @@ def verify(dataset, names):
             replay = []
             for t in range(min(20, len(states) - 1)):
                 env.step(actions[t])
+                env.sim.forward()
                 actual = env.sim.data.site_xpos[env.robots[0].eef_site_id].copy()
                 replay.append(
                     {
