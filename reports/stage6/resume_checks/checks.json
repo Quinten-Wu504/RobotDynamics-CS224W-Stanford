@@ -1,0 +1,22 @@
+{
+  "checks": [
+    {
+      "model": "canonical_temporal_gnn",
+      "last_model_exact": true,
+      "optimizer_exact": true,
+      "sampler_state_exact": true,
+      "best_predictions_exact": true,
+      "best_metrics_exact": true
+    },
+    {
+      "model": "canonical_gru",
+      "last_model_exact": true,
+      "optimizer_exact": true,
+      "sampler_state_exact": true,
+      "best_predictions_exact": true,
+      "best_metrics_exact": true
+    }
+  ],
+  "source_commit": "246f4d0476b8b41d4697c3d3ad325eee4f84dcda",
+  "working_tree_dirty": false
+}
