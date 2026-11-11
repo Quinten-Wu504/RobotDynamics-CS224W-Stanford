@@ -58,3 +58,11 @@ done
 ```
 
 Resume any interrupted pilot in its original output directory with `--resume <output>/last.pt`. Stage 4 checkpoints retain their original source hashes and can be evaluated using their recorded commit. Stage 5 comparison additionally requires the current implementation to reproduce their complete saved prediction hashes before using them in group analysis.
+
+The installed environment is recorded in `requirements/linux-stage5.lock.txt`. After the pilots and standalone evaluations finish, generate the comparison and grouped diagnostics with:
+
+```bash
+.venv/bin/python -m robot_dynamics.analyze_graphs "$CACHE" --output outputs/stage5/analysis
+```
+
+This command expects the stage 4 checkpoints in `outputs/stage4`. It verifies their hashes, recorded source revisions, split, configuration, normalization, and full prediction arrays before computing additional group metrics. It also checks trained graph models for batch/permutation consistency and neighbor dependence on eight validation samples spread across the fixed evaluation order.
