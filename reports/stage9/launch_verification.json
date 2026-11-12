@@ -1,0 +1,15 @@
+{
+  "launch_source_commit": "34abd1e8efe74b7d2e6f456d48a668f47ff4f099",
+  "started_utc": "2026-11-12T12:09:08Z",
+  "driver_pid": 165850,
+  "initial_training_pid": 165874,
+  "planned_runs": 12,
+  "before_disconnect_utc": "2026-11-12T12:09:36.759245+00:00",
+  "before_disconnect_epoch": 2,
+  "process": "   PID   PPID    SID TT       STAT COMMAND\n165850      1 165850 ?        Ss   bash scripts/run_stage9.sh outputs/stage9/cache/stack_d0.hdf5 outputs/stage9/cache/manifest.json outputs/stage9/formal\n",
+  "after_reconnect_utc": "2026-11-12T12:10:15.094655+00:00",
+  "after_reconnect_epoch": 6,
+  "ssh_disconnect_survived": true,
+  "checkpoint_written": true,
+  "after_reconnect_process": "   PID   PPID    SID TT       STAT COMMAND\n165850      1 165850 ?        Ss   bash scripts/run_stage9.sh outputs/stage9/cache/stack_d0.hdf5 outputs/stage9/cache/manifest.json outputs/stage9/formal\n"
+}

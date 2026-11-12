@@ -1,0 +1,222 @@
+{
+  "protocol_sha256": "c38dc69f28518c49378c4e58484e54f8ca2dc2b0a6b75ffeb050be146d16c2e7",
+  "manifest_sha256": "22731125a4a223de89a1367004f3ac6cfd5ce3bed59680237b937c7293d2beba",
+  "runs": [
+    {
+      "run_id": "history_mlp_s0",
+      "model": "history_mlp",
+      "config": {
+        "purpose": "formal",
+        "train_episodes": 800,
+        "validation_episodes": 100,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "threads": 4,
+        "device": "cuda",
+        "seed": 0
+      }
+    },
+    {
+      "run_id": "gru_s0",
+      "model": "gru",
+      "config": {
+        "purpose": "formal",
+        "train_episodes": 800,
+        "validation_episodes": 100,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "threads": 4,
+        "device": "cuda",
+        "seed": 0
+      }
+    },
+    {
+      "run_id": "temporal_gnn_s0",
+      "model": "temporal_gnn",
+      "config": {
+        "purpose": "formal",
+        "train_episodes": 800,
+        "validation_episodes": 100,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "threads": 4,
+        "device": "cuda",
+        "seed": 0
+      }
+    },
+    {
+      "run_id": "temporal_no_messages_s0",
+      "model": "temporal_no_messages",
+      "config": {
+        "purpose": "formal",
+        "train_episodes": 800,
+        "validation_episodes": 100,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "threads": 4,
+        "device": "cuda",
+        "seed": 0
+      }
+    },
+    {
+      "run_id": "history_mlp_s1",
+      "model": "history_mlp",
+      "config": {
+        "purpose": "formal",
+        "train_episodes": 800,
+        "validation_episodes": 100,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "threads": 4,
+        "device": "cuda",
+        "seed": 1
+      }
+    },
+    {
+      "run_id": "gru_s1",
+      "model": "gru",
+      "config": {
+        "purpose": "formal",
+        "train_episodes": 800,
+        "validation_episodes": 100,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "threads": 4,
+        "device": "cuda",
+        "seed": 1
+      }
+    },
+    {
+      "run_id": "temporal_gnn_s1",
+      "model": "temporal_gnn",
+      "config": {
+        "purpose": "formal",
+        "train_episodes": 800,
+        "validation_episodes": 100,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "threads": 4,
+        "device": "cuda",
+        "seed": 1
+      }
+    },
+    {
+      "run_id": "temporal_no_messages_s1",
+      "model": "temporal_no_messages",
+      "config": {
+        "purpose": "formal",
+        "train_episodes": 800,
+        "validation_episodes": 100,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "threads": 4,
+        "device": "cuda",
+        "seed": 1
+      }
+    },
+    {
+      "run_id": "history_mlp_s2",
+      "model": "history_mlp",
+      "config": {
+        "purpose": "formal",
+        "train_episodes": 800,
+        "validation_episodes": 100,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "threads": 4,
+        "device": "cuda",
+        "seed": 2
+      }
+    },
+    {
+      "run_id": "gru_s2",
+      "model": "gru",
+      "config": {
+        "purpose": "formal",
+        "train_episodes": 800,
+        "validation_episodes": 100,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "threads": 4,
+        "device": "cuda",
+        "seed": 2
+      }
+    },
+    {
+      "run_id": "temporal_gnn_s2",
+      "model": "temporal_gnn",
+      "config": {
+        "purpose": "formal",
+        "train_episodes": 800,
+        "validation_episodes": 100,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "threads": 4,
+        "device": "cuda",
+        "seed": 2
+      }
+    },
+    {
+      "run_id": "temporal_no_messages_s2",
+      "model": "temporal_no_messages",
+      "config": {
+        "purpose": "formal",
+        "train_episodes": 800,
+        "validation_episodes": 100,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "threads": 4,
+        "device": "cuda",
+        "seed": 2
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Stack replication protocol
 
-Stage 9 will add one task after the completed Square study. The second task is MimicGen Stack D0/D1. This document records the design before loading its prediction errors. The finite comparison is authorized without a wall-time cap. Both releases have passed hash checks, full used-field audits, and six complete simulator restorations. All four models pass small-sample fitting, exact continuation, and independent reload checks. Resource and queue preflight checks precede formal launch. The background queue will stop after training and independent validation reloads, leaving test evaluation for the follow-up.
+Stage 9 will add one task after the completed Square study. The second task is MimicGen Stack D0/D1. This document records the design before opening its held-out prediction errors. The finite comparison is authorized without a wall-time cap. Both releases have passed hash checks, full used-field audits, and six complete simulator restorations. All four models pass small-sample fitting, exact continuation, and independent reload checks. Resource and queue preflight checks passed before formal launch. The background queue will stop after training and independent validation reloads, leaving test evaluation for the follow-up.
 
 ## Why Stack
 
@@ -8,7 +8,7 @@ Square's supervised Temporal GNN beats the tested MLP and GRU controls across al
 
 Stack has two movable cubes instead of a movable nut and fixed peg. It provides a useful test of object-to-object interaction while retaining the MimicGen/robosuite ecosystem. The official implementation increases both cubes' initial x/y bounds from ±0.08 m in D0 to ±0.20 m in D1. The official registry supplies `core/stack_d0.hdf5` and `core/stack_d1.hdf5`. These are source-code facts, not an audit of the released files or proof of contact-specific prediction benefits.
 
-Threading is another released candidate, but Stack more directly changes the fixed-fixture interaction in Square to two movable objects. Only Stack is proposed; there will be no task search based on test performance.
+Threading is another released candidate, but Stack more directly changes the fixed-fixture interaction in Square to two movable objects. Only Stack is included; there will be no task search based on test performance.
 
 ## Comparison
 

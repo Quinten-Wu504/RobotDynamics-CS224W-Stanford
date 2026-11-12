@@ -1,6 +1,8 @@
 # Stack replication
 
-This stage tests whether Square's supervised graph result carries over to MimicGen Stack. The finite comparison has four models and three seeds at the full training fraction. It is a new training task, not zero-shot transfer. No Stack test prediction errors have been opened.
+This stage tests whether Square's supervised graph result carries over to MimicGen Stack. The [frozen matrix](frozen_matrix.json) has four models and three seeds at the full training fraction. It is a new training task, not zero-shot transfer. No Stack test prediction errors have been opened.
+
+The training-only queue launched at **2026-11-12 12:09:08 UTC** from clean commit `34abd1e`, with driver PID **165850**. The [disconnect check](launch_verification.json) records an actual SSH logout and reconnect: the driver retained PPID 1, its own session, and no terminal, while the first run advanced from epoch 2 to epoch 6 and wrote its checkpoint. Training remains in progress; this is a launch record, not a completed-results report. Later documentation-only commits do not change the frozen training source hashes.
 
 ## Data and representation
 

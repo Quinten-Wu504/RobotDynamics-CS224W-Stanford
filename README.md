@@ -111,7 +111,7 @@ For Windows base-only checks, use Python 3.10 with `requirements/windows-base.lo
 
 ## Next steps
 
-Stage 8 is complete. Stage 9 is preparing a second-task replication on MimicGen Stack; the [protocol](docs/stack_protocol.md) specifies MLP, GRU, Temporal GNN, and a message-ablation control with three seeds each. Data audit, task adaptation, all four model continuation/fit checks, and the full-data resource probe have passed. The [stage 9 record](reports/stage9/README.md) gives commands and measured costs (roughly 4–5 hours for the training matrix). The authorized background queue will run training and validation only, then stop before test evaluation; formal Stack training has not started. There are no second-task results yet. Stage 10 remains unstarted.
+Stage 8 is complete. Stage 9 is running a second-task replication on MimicGen Stack; the [protocol](docs/stack_protocol.md) specifies MLP, GRU, Temporal GNN, and a message-ablation control with three seeds each. Data audit, task adaptation, all four model continuation/fit checks, and the full-data resource probe have passed. The [stage 9 record](reports/stage9/README.md) gives commands and measured costs (roughly 4–5 hours for the training matrix). The authorized background queue will run training and validation only, then stop before test evaluation; formal Stack training is running under a detached, checkpointed queue. An actual SSH disconnect/reconnect confirmed continued epoch progress. There are no held-out Stack results yet. Stage 10 remains unstarted.
 
 ## Data and references
 
