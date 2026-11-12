@@ -200,7 +200,9 @@ def fit_statistics(cache, ids):
         "center": center.tolist(),
         "scale": scale,
         "robot_mean": scalars.mean(axis=0).tolist(),
-        "robot_std": np.maximum(scalars.std(axis=0), 1e-12).tolist(),
+        "robot_std": np.where(
+            scalars.std(axis=0) > 1e-12, scalars.std(axis=0), 1
+        ).tolist(),
         "motion_threshold_m_per_s": np.maximum(
             np.quantile(np.concatenate(speeds), 0.25, axis=0), 1e-6
         ).tolist(),
