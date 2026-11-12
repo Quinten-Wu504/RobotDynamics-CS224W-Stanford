@@ -1,0 +1,78 @@
+{
+  "matrix_sha256": "b72ba6654698a2a54503ed376721be2bb17f8578b3b501507a1eb07955dca210",
+  "code_sha256": {
+    "robot_dynamics/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "robot_dynamics/analyze_equivariance.py": "4c632eb15eaef9a3497d6901faa6959f8c0a0125d4834705793f14a5c48005ae",
+    "robot_dynamics/analyze_formal.py": "dcf819ea7ea86bd27b591290abf034d48eaea5e528a5d47e405c952f28fd6006",
+    "robot_dynamics/analyze_graphs.py": "72c923f9c0eea0951def787006ba2786fb85c4bea84701cfa90068b84644bdd6",
+    "robot_dynamics/analyze_pretraining.py": "7c05473eeb34a10a9ebf0c41934552f2751ac6cbd97d6103845f0e9832153112",
+    "robot_dynamics/analyze_support.py": "6b083612ee790e8ebee2fad9a562af0efdde125d0b2d3a2e3316ccce2def55a1",
+    "robot_dynamics/baselines.py": "e27d4417b40e27eaf3f6bf9dd529ee4666af7b4fdcb21d81af7747f3493fd643",
+    "robot_dynamics/cache_square.py": "2aa58385528564679add4108c5dc59f07baceba27e2f39b1448cfe52a167b782",
+    "robot_dynamics/check_pretraining.py": "d66de1b031373ece9be294faf19540f8f5df336c2c52630a0fff82c723af9e78",
+    "robot_dynamics/check_resume.py": "c7a99afc930b1d20c58f357df8b92b810fbd408a9c670ec12caeac3147d82fbc",
+    "robot_dynamics/check_stack.py": "1305c73c4f23e8aedf0d3948251d013583ddff9742102b113ea6403f9ff60b4c",
+    "robot_dynamics/config.py": "7f7825c35d1846b98b7c80cfceb827cdc47b7242f1f4ecad888ef19d797eebc0",
+    "robot_dynamics/data_audit.py": "1702062165fa08837ac19fb9b849010cb14633f66dc74d8902767e0c7c82c81e",
+    "robot_dynamics/download_stack.py": "94279406c647fc8fdc61e9436c9cf34bdb0eca81fa896d0ca40c4faa21810539",
+    "robot_dynamics/equivariant_models.py": "4841cda5dcfb7efd70a10fb1688241a908078f08a95902cc49c923885793ad0d",
+    "robot_dynamics/evaluate_formal.py": "fe680d950c486223200269b3082ae1f6aced60c897550989a73495d960eaa95f",
+    "robot_dynamics/evaluate_learning.py": "8a377fddd501cb41db8936def07962fada951a3040ea5f4efab3b8a2c76c7463",
+    "robot_dynamics/formal.py": "549403720ab95dd9a579528b99f6064380191afef345af0963a7564fbcd0cc56",
+    "robot_dynamics/frame_transforms.py": "918af1ea57f38f165bb673165bb98f674fe36d6c278709171379df68120c302f",
+    "robot_dynamics/graph_models.py": "0598b19969836ad7aa7e16c8de9e7b4f7d0a43f65a8450ff6ef6073c2bb58e17",
+    "robot_dynamics/jepa.py": "9cfdfeda9f3632ec0bc709eefe2d968f75f00500b41ac5cd002c8896a35286d3",
+    "robot_dynamics/learning_data.py": "1e41165eab242de5384ec3e57e65db5ce8c391f8f016cd2573da9936e1a52018",
+    "robot_dynamics/learning_models.py": "239919a259995eeb38bb1842cde717f58865b599adb572c6ce001694f4fd81eb",
+    "robot_dynamics/normalization.py": "e3ac94357a30951edc82d21d6546f51f91bf5b761565096789a55a93ca2a8110",
+    "robot_dynamics/plot_baselines.py": "5043eed7205aaac011ebfb4987b4dd93af0ce26f3b214978df65602ad2f83394",
+    "robot_dynamics/plot_equivariance.py": "7f43e14844ab41fd2c22b3776e8ca1e983b4d8fd9e35bcf9a90a8e1ccb84eb77",
+    "robot_dynamics/plot_formal.py": "a70e65236df3457fd7e39d60a61ba3ca1d93944017fd27ab91fc6277042bfeef",
+    "robot_dynamics/plot_graphs.py": "826b39e8fe26212de758154c5e99d62374dfbe337165aea00f6ac66729419c77",
+    "robot_dynamics/plot_pretraining.py": "0141f3a4ec8656870d6ef42b6e31904864f1ed621323f442bfa7253c60f68e89",
+    "robot_dynamics/plot_square.py": "66a5a11137ff05acec2e0fb4527576e90ee60fd785027cf503f338861c11892b",
+    "robot_dynamics/run_formal.py": "76f32cda130e1bdd38cfb358e0de71c2dc634e704338484a40a83f137b5b9208",
+    "robot_dynamics/run_stack.py": "e7808a8bf07d0136e1d886f48add9a8cee80eb97ad8d3f5f4633407116002ab3",
+    "robot_dynamics/splits.py": "be98437c2cfafeea943b3ebb464fe91f1544b19f5bb964b345e9ab6e5e0c5983",
+    "robot_dynamics/square_state.py": "2953e91705dbea03df97935309f8583043e08ce4a53fe496b01094915d0c1b40",
+    "robot_dynamics/stack_data.py": "d8d57efe4b45c6830596d86558d5f0f8bceec05f1e05dc0ab764af45c7de1e08",
+    "robot_dynamics/stack_models.py": "b60067cf9bd586dd79f20dea646c7f54db0621b410098a51ca551a4784ec1aff",
+    "robot_dynamics/summarize_audit.py": "ccec0c6afd28e13d8d89298d64462cc0c29f144e178f17e380879860022f50b5",
+    "robot_dynamics/summarize_learning.py": "4981fb33530e5cd217bcd7c06f0da9cc4cdd82f8fc9946501da408e56bc91a02",
+    "robot_dynamics/train_learning.py": "ff3e955edc2c72abbd731d8a0e7806a936b8c4a24fc6f5009c484bd6dcf1a471",
+    "robot_dynamics/train_pretraining.py": "83aa1406f069e319dc495dd3df68d4f8c4a00c1d7b450cca3da5a2e796cc05e9",
+    "robot_dynamics/train_stack.py": "381260c94b4fcf34980791612877858a17be316ae1edfbabdcbcf1517a7b9866",
+    "robot_dynamics/verify_formal.py": "049b469060db269b395f6b6fd456062bdffc2d36455a795b414aa9b56862e059",
+    "robot_dynamics/verify_square.py": "2a07f6e739600736b0503f0f6c3afaba56d009961f955fbb9c5984c2529b75dc",
+    "robot_dynamics/verify_stack.py": "d5db18b34f13269d19b48e8437e56fb1e43c4cfcd36218a0d9a80ee58fde7169",
+    "robot_dynamics/windows.py": "c1306f6b12477ddfe042e8b806cb7bba99250ade79c139ec09acd685804ecd09"
+  },
+  "runs": [
+    {
+      "run_id": "history_mlp_s0",
+      "best_checkpoint_sha256": "f31bf4ef20cd26838d0b8f8a06b7fd90cac26fc7d467f9230817bb95697bda38",
+      "validation_prediction_sha256": "a2b652fe2ef2681407220e918949eeb77f4d49c14292cd17c7080b7e3260634a",
+      "normalization_sha256": "03e60e21308d0b8cc46dfae4fa9211d1621653e910e054638eaa29966b0a9461"
+    },
+    {
+      "run_id": "gru_s0",
+      "best_checkpoint_sha256": "b69d36a8d233173407476bcdbc996dcf213f303e6262735744ad5b81f0a44561",
+      "validation_prediction_sha256": "8786965455a6ad122e96307006678cdcb86c1135168046b0810c2fdc186efd51",
+      "normalization_sha256": "03e60e21308d0b8cc46dfae4fa9211d1621653e910e054638eaa29966b0a9461"
+    },
+    {
+      "run_id": "temporal_gnn_s0",
+      "best_checkpoint_sha256": "d43025eaccdf49ad6e693a30d4ff7663db34f331afc8fef08e521b45062a4fcc",
+      "validation_prediction_sha256": "bd1bedd26e4e9c9e91519b0801a6c973db39b26595b169344ea900360f066da7",
+      "normalization_sha256": "03e60e21308d0b8cc46dfae4fa9211d1621653e910e054638eaa29966b0a9461"
+    },
+    {
+      "run_id": "temporal_no_messages_s0",
+      "best_checkpoint_sha256": "6e035dd8eed62d67964a09b4f60984612f893f3bdf347a244ae91b209462a1e8",
+      "validation_prediction_sha256": "4754349a39bfeb21ff26f88e78303a00a12eea270ee85c810bd6a8eb719f718d",
+      "normalization_sha256": "03e60e21308d0b8cc46dfae4fa9211d1621653e910e054638eaa29966b0a9461"
+    }
+  ],
+  "source_commit": "b5f9e91c481c958524300e48c9f4939594268446",
+  "working_tree_dirty": false
+}

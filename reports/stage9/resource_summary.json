@@ -1,0 +1,59 @@
+{
+  "probe_epochs": 2,
+  "models": [
+    {
+      "model": "gru",
+      "mean_update_seconds_per_epoch": 19.83616317808628,
+      "train_windows": 238144,
+      "validation_windows": 29330,
+      "parameters": 125257,
+      "resources": {
+        "loading_seconds": 3.4534313566982746,
+        "run_seconds_this_invocation": 40.41053280606866,
+        "max_observed_rss_bytes": 2209386496,
+        "peak_cuda_allocated_bytes": 826217984
+      }
+    },
+    {
+      "model": "history_mlp",
+      "mean_update_seconds_per_epoch": 10.128159610554576,
+      "train_windows": 238144,
+      "validation_windows": 29330,
+      "parameters": 133769,
+      "resources": {
+        "loading_seconds": 3.459618579596281,
+        "run_seconds_this_invocation": 20.898280810564756,
+        "max_observed_rss_bytes": 2182234112,
+        "peak_cuda_allocated_bytes": 816883712
+      }
+    },
+    {
+      "model": "temporal_gnn",
+      "mean_update_seconds_per_epoch": 42.596380887553096,
+      "train_windows": 238144,
+      "validation_windows": 29330,
+      "parameters": 125379,
+      "resources": {
+        "loading_seconds": 3.4013015255331993,
+        "run_seconds_this_invocation": 88.3919134773314,
+        "max_observed_rss_bytes": 2287128576,
+        "peak_cuda_allocated_bytes": 1115276800
+      }
+    },
+    {
+      "model": "temporal_no_messages",
+      "mean_update_seconds_per_epoch": 41.998300118371844,
+      "train_windows": 238144,
+      "validation_windows": 29330,
+      "parameters": 125379,
+      "resources": {
+        "loading_seconds": 3.3985216058790684,
+        "run_seconds_this_invocation": 87.83589659631252,
+        "max_observed_rss_bytes": 2269102080,
+        "peak_cuda_allocated_bytes": 1115276800
+      }
+    }
+  ],
+  "estimated_matrix_update_hours": 3.81863345981886,
+  "note": "Extrapolated from two epochs per model. Excludes setup, validation, reloads, and load variation; no test evaluation."
+}

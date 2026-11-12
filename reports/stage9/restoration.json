@@ -1,0 +1,138 @@
+{
+  "stack_d0": {
+    "source_sha256": "3b687047f9d6446da762c9afe4fcb87d77a1a7c2ddf7527c56965311777868f3",
+    "passed": true,
+    "episodes": [
+      {
+        "episode": "demo_0",
+        "frames": 102,
+        "max_absolute_errors": {
+          "object_vector": 0.0,
+          "eef_position": 0.0,
+          "eef_rotation": 5.551115123125783e-16,
+          "cube1_position": 0.0,
+          "cube1_rotation": 4.440892098500626e-16,
+          "cube1_half_size": 0.0,
+          "cube2_position": 0.0,
+          "cube2_rotation": 3.3306690738754696e-16,
+          "cube2_half_size": 0.0,
+          "table_surface": 0.0,
+          "table_rotation": 0.0,
+          "table_half_size": 0.0,
+          "robot_joints": 0.0,
+          "gripper": 0.0
+        }
+      },
+      {
+        "episode": "demo_499",
+        "frames": 118,
+        "max_absolute_errors": {
+          "object_vector": 0.0,
+          "eef_position": 0.0,
+          "eef_rotation": 5.551115123125783e-16,
+          "cube1_position": 0.0,
+          "cube1_rotation": 5.551115123125783e-16,
+          "cube1_half_size": 0.0,
+          "cube2_position": 0.0,
+          "cube2_rotation": 3.3306690738754696e-16,
+          "cube2_half_size": 0.0,
+          "table_surface": 0.0,
+          "table_rotation": 0.0,
+          "table_half_size": 0.0,
+          "robot_joints": 0.0,
+          "gripper": 0.0
+        }
+      },
+      {
+        "episode": "demo_999",
+        "frames": 114,
+        "max_absolute_errors": {
+          "object_vector": 0.0,
+          "eef_position": 0.0,
+          "eef_rotation": 4.440892098500626e-16,
+          "cube1_position": 0.0,
+          "cube1_rotation": 5.551115123125783e-16,
+          "cube1_half_size": 0.0,
+          "cube2_position": 0.0,
+          "cube2_rotation": 5.551115123125783e-16,
+          "cube2_half_size": 0.0,
+          "table_surface": 0.0,
+          "table_rotation": 0.0,
+          "table_half_size": 0.0,
+          "robot_joints": 0.0,
+          "gripper": 0.0
+        }
+      }
+    ],
+    "source_commit": "cc49e9723f5c68bad7e1f1b71b26140cd551c7a9",
+    "working_tree_dirty": false
+  },
+  "stack_d1": {
+    "source_sha256": "edc9815a2738a583dcb3e7a9e239a71eca6057396a839e52b022935c273cfd61",
+    "passed": true,
+    "episodes": [
+      {
+        "episode": "demo_0",
+        "frames": 102,
+        "max_absolute_errors": {
+          "object_vector": 0.0,
+          "eef_position": 0.0,
+          "eef_rotation": 5.551115123125783e-16,
+          "cube1_position": 0.0,
+          "cube1_rotation": 5.551115123125783e-16,
+          "cube1_half_size": 0.0,
+          "cube2_position": 0.0,
+          "cube2_rotation": 5.551115123125783e-16,
+          "cube2_half_size": 0.0,
+          "table_surface": 0.0,
+          "table_rotation": 0.0,
+          "table_half_size": 0.0,
+          "robot_joints": 0.0,
+          "gripper": 0.0
+        }
+      },
+      {
+        "episode": "demo_499",
+        "frames": 111,
+        "max_absolute_errors": {
+          "object_vector": 0.0,
+          "eef_position": 0.0,
+          "eef_rotation": 5.551115123125783e-16,
+          "cube1_position": 0.0,
+          "cube1_rotation": 6.661338147750939e-16,
+          "cube1_half_size": 0.0,
+          "cube2_position": 0.0,
+          "cube2_rotation": 5.551115123125783e-16,
+          "cube2_half_size": 0.0,
+          "table_surface": 0.0,
+          "table_rotation": 0.0,
+          "table_half_size": 0.0,
+          "robot_joints": 0.0,
+          "gripper": 0.0
+        }
+      },
+      {
+        "episode": "demo_999",
+        "frames": 98,
+        "max_absolute_errors": {
+          "object_vector": 0.0,
+          "eef_position": 0.0,
+          "eef_rotation": 5.551115123125783e-16,
+          "cube1_position": 0.0,
+          "cube1_rotation": 5.551115123125783e-16,
+          "cube1_half_size": 0.0,
+          "cube2_position": 0.0,
+          "cube2_rotation": 5.551115123125783e-16,
+          "cube2_half_size": 0.0,
+          "table_surface": 0.0,
+          "table_rotation": 0.0,
+          "table_half_size": 0.0,
+          "robot_joints": 0.0,
+          "gripper": 0.0
+        }
+      }
+    ],
+    "source_commit": "cc49e9723f5c68bad7e1f1b71b26140cd551c7a9",
+    "working_tree_dirty": false
+  }
+}

@@ -1,0 +1,2 @@
+stack_d0: size and SHA-256 match the pinned official release
+stack_d1: size and SHA-256 match the pinned official release

@@ -34,6 +34,8 @@ Data extraction and simulator restoration used clean commit `cc49e97`. All four 
 
 ## Running and recovering
 
+The [manifest](cache/manifest.json), [simulator restoration](restoration.json), [four-model checks](preflight/checks.json), [resource measurements](resource_summary.json), [workflow state](workflow_check/progress.json), and [queue replay](workflow_replay.log) preserve the preflight evidence. The workflow completed all four small runs, independently reloaded their validation predictions, and sealed selections without accessing test predictions. Replay used clean commit `b5f9e91` with unchanged model/training code. [Tests](tests.txt), [lint](ruff.txt), [formatting](format.txt), and [dependencies](dependencies.txt) passed. No temporary fallback code or synthetic-data training path remains; necessary data, finite-value, checkpoint, source, and duplicate-run protections are retained.
+
 Use the existing Linux environment in `/root/autodl-tmp/RobotDynamics-CS224W-Stanford`. The pinned dependencies and EGL setup are described in the [environment handoff](../../docs/stage_1_handoff.md). Raw files are in `/root/autodl-fs/RobotDynamics-CS224W-Stanford-data/stack/raw`; numeric caches are in `outputs/stage9/cache`.
 
 The download module verifies and reuses existing files. Interrupted `.partial` files are preserved and must be moved aside before restarting a transfer. A fresh transfer through this module has not been exercised; the recorded downloads used curl with the same pinned URLs and checksums. Audit/check output directories must be new.

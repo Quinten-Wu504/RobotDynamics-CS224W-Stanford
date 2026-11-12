@@ -1,0 +1,106 @@
+{
+  "model": "temporal_gnn",
+  "config": {
+    "batch_size": 256,
+    "device": "cuda",
+    "epochs": 3,
+    "gradient_clip": 1.0,
+    "learning_rate": 0.001,
+    "purpose": "check",
+    "seed": 0,
+    "selection_start": 2,
+    "threads": 4,
+    "train_episodes": 2,
+    "validation_episodes": 4,
+    "weight_decay": 0.0001
+  },
+  "identity": {
+    "model": "temporal_gnn",
+    "config": {
+      "batch_size": 256,
+      "device": "cuda",
+      "epochs": 3,
+      "gradient_clip": 1.0,
+      "learning_rate": 0.001,
+      "purpose": "check",
+      "seed": 0,
+      "selection_start": 2,
+      "threads": 4,
+      "train_episodes": 2,
+      "validation_episodes": 4,
+      "weight_decay": 0.0001
+    },
+    "manifest_sha256": "22731125a4a223de89a1367004f3ac6cfd5ce3bed59680237b937c7293d2beba",
+    "cache_sha256": "0aa361ba61d2cf4bcb1a6149eae7f829a6e26bbc8d61c978dd5c8a78575cedf0",
+    "normalization_sha256": "03e60e21308d0b8cc46dfae4fa9211d1621653e910e054638eaa29966b0a9461",
+    "code": {
+      "stack_data.py": "d8d57efe4b45c6830596d86558d5f0f8bceec05f1e05dc0ab764af45c7de1e08",
+      "stack_models.py": "b60067cf9bd586dd79f20dea646c7f54db0621b410098a51ca551a4784ec1aff",
+      "train_stack.py": "381260c94b4fcf34980791612877858a17be316ae1edfbabdcbcf1517a7b9866",
+      "train_learning.py": "ff3e955edc2c72abbd731d8a0e7806a936b8c4a24fc6f5009c484bd6dcf1a471",
+      "graph_models.py": "0598b19969836ad7aa7e16c8de9e7b4f7d0a43f65a8450ff6ef6073c2bb58e17",
+      "formal.py": "549403720ab95dd9a579528b99f6064380191afef345af0963a7564fbcd0cc56",
+      "splits.py": "be98437c2cfafeea943b3ebb464fe91f1544b19f5bb964b345e9ab6e5e0c5983",
+      "cache_square.py": "2aa58385528564679add4108c5dc59f07baceba27e2f39b1448cfe52a167b782",
+      "square_state.py": "2953e91705dbea03df97935309f8583043e08ce4a53fe496b01094915d0c1b40"
+    }
+  },
+  "train_ids": [
+    "demo_528",
+    "demo_852"
+  ],
+  "evaluation_ids": [
+    "demo_785",
+    "demo_226",
+    "demo_581",
+    "demo_149"
+  ],
+  "evaluation_role": "d0_validation",
+  "train_windows": 586,
+  "validation_windows": 1151,
+  "parameter_count": 125379,
+  "best_epoch": 2,
+  "best_score_cm": 2.0525813864337072,
+  "initial_train_mse_this_invocation": 0.18563175201416016,
+  "best_train_mse": 0.13059796392917633,
+  "prediction_sha256": "bd1bedd26e4e9c9e91519b0801a6c973db39b26595b169344ea900360f066da7",
+  "best_checkpoint_sha256": "d43025eaccdf49ad6e693a30d4ff7663db34f331afc8fef08e521b45062a4fcc",
+  "logs": [
+    {
+      "epoch": 1,
+      "train_mse": 0.17816147910043242,
+      "validation_cm": 2.013671282264921,
+      "update_seconds": 1.1031852066516876,
+      "validation_seconds": 4.119496285915375
+    },
+    {
+      "epoch": 2,
+      "train_mse": 0.14988460404474174,
+      "validation_cm": 2.0525813864337072,
+      "update_seconds": 0.09254458546638489,
+      "validation_seconds": 0.01159130409359932
+    },
+    {
+      "epoch": 3,
+      "train_mse": 0.12601058652986846,
+      "validation_cm": 2.0740677615006766,
+      "update_seconds": 0.11282256618142128,
+      "validation_seconds": 0.011911805719137192
+    }
+  ],
+  "optimizer_steps_total": 9,
+  "resources": {
+    "loading_seconds": 0.4960007965564728,
+    "run_seconds_this_invocation": 5.653291914612055,
+    "max_observed_rss_bytes": 1339285504,
+    "peak_cuda_allocated_bytes": 162799616
+  },
+  "environment": {
+    "torch": "2.5.1+cu121",
+    "device": "cuda",
+    "deterministic": true,
+    "dtype": "float32"
+  },
+  "source_commit": "cc49e9723f5c68bad7e1f1b71b26140cd551c7a9",
+  "working_tree_dirty": false
+}

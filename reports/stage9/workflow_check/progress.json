@@ -1,0 +1,31 @@
+{
+  "used_seconds": 91.50007868558168,
+  "completed": [
+    "history_mlp_s0",
+    "gru_s0",
+    "temporal_gnn_s0",
+    "temporal_no_messages_s0"
+  ],
+  "events": [
+    {
+      "run": "history_mlp_s0",
+      "event": "start"
+    },
+    {
+      "run": "gru_s0",
+      "event": "start"
+    },
+    {
+      "run": "temporal_gnn_s0",
+      "event": "start"
+    },
+    {
+      "run": "temporal_no_messages_s0",
+      "event": "start"
+    }
+  ],
+  "status": "training_complete",
+  "source_commit": "b5f9e91c481c958524300e48c9f4939594268446",
+  "working_tree_dirty": false,
+  "test_evaluation_started": false
+}

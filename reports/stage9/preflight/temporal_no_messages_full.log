@@ -1,0 +1,4 @@
+{"epoch": 1, "train_mse": 0.1782180506214754, "validation_cm": 2.015395431054963, "update_seconds": 2.124887079000473, "validation_seconds": 2.941813535988331}
+{"epoch": 2, "train_mse": 0.15041638605627183, "validation_cm": 2.0523327398631306, "update_seconds": 0.09102706238627434, "validation_seconds": 0.008946042507886887}
+{"epoch": 3, "train_mse": 0.1270768007473327, "validation_cm": 2.071485362119145, "update_seconds": 0.11268743127584457, "validation_seconds": 0.011908747255802155}
+{"epoch": 4, "train_mse": 0.09962736393099351, "validation_cm": 1.9848941945367389, "update_seconds": 0.12401169538497925, "validation_seconds": 0.014487147331237793}

@@ -1,0 +1,34 @@
+{
+  "models": [
+    {
+      "model": "history_mlp",
+      "exact_resume": true,
+      "independent_reload": true,
+      "completed_checkpoint_replay": true,
+      "fit_mse_ratio": 0.014679041603496588
+    },
+    {
+      "model": "gru",
+      "exact_resume": true,
+      "independent_reload": true,
+      "completed_checkpoint_replay": true,
+      "fit_mse_ratio": 0.010715160485128364
+    },
+    {
+      "model": "temporal_gnn",
+      "exact_resume": true,
+      "independent_reload": true,
+      "completed_checkpoint_replay": true,
+      "fit_mse_ratio": 0.0066312283283789025
+    },
+    {
+      "model": "temporal_no_messages",
+      "exact_resume": true,
+      "independent_reload": true,
+      "completed_checkpoint_replay": true,
+      "fit_mse_ratio": 0.006778250070188292
+    }
+  ],
+  "source_commit": "cc49e9723f5c68bad7e1f1b71b26140cd551c7a9",
+  "working_tree_dirty": false
+}

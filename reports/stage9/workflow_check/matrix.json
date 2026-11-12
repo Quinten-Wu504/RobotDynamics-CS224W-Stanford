@@ -1,0 +1,78 @@
+{
+  "protocol_sha256": "b42a37b031878232ccda3852efb626fb1d1d3040ba3a1b054981841d83e0c9f9",
+  "manifest_sha256": "22731125a4a223de89a1367004f3ac6cfd5ce3bed59680237b937c7293d2beba",
+  "runs": [
+    {
+      "run_id": "history_mlp_s0",
+      "model": "history_mlp",
+      "config": {
+        "purpose": "check",
+        "train_episodes": 2,
+        "validation_episodes": 4,
+        "epochs": 3,
+        "selection_start": 2,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "threads": 4,
+        "device": "cuda",
+        "seed": 0
+      }
+    },
+    {
+      "run_id": "gru_s0",
+      "model": "gru",
+      "config": {
+        "purpose": "check",
+        "train_episodes": 2,
+        "validation_episodes": 4,
+        "epochs": 3,
+        "selection_start": 2,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "threads": 4,
+        "device": "cuda",
+        "seed": 0
+      }
+    },
+    {
+      "run_id": "temporal_gnn_s0",
+      "model": "temporal_gnn",
+      "config": {
+        "purpose": "check",
+        "train_episodes": 2,
+        "validation_episodes": 4,
+        "epochs": 3,
+        "selection_start": 2,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "threads": 4,
+        "device": "cuda",
+        "seed": 0
+      }
+    },
+    {
+      "run_id": "temporal_no_messages_s0",
+      "model": "temporal_no_messages",
+      "config": {
+        "purpose": "check",
+        "train_episodes": 2,
+        "validation_episodes": 4,
+        "epochs": 3,
+        "selection_start": 2,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "threads": 4,
+        "device": "cuda",
+        "seed": 0
+      }
+    }
+  ]
+}
