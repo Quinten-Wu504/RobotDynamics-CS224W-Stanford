@@ -1,0 +1,18 @@
+{
+  "repository": "amandlek/mimicgen_datasets",
+  "revision": "33016f8a62c02334f929f2913af8fdd2a8a129e1",
+  "metadata_source": "https://huggingface.co/api/datasets/amandlek/mimicgen_datasets/tree/33016f8a62c02334f929f2913af8fdd2a8a129e1/core",
+  "transfer_host": "hf-mirror.com",
+  "files": [
+    {
+      "path": "core/stack_d0.hdf5",
+      "bytes": 1138107058,
+      "sha256": "3b687047f9d6446da762c9afe4fcb87d77a1a7c2ddf7527c56965311777868f3"
+    },
+    {
+      "path": "core/stack_d1.hdf5",
+      "bytes": 1072340218,
+      "sha256": "edc9815a2738a583dcb3e7a9e239a71eca6057396a839e52b022935c273cfd61"
+    }
+  ]
+}

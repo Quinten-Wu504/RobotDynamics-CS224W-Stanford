@@ -25,6 +25,8 @@ def main():
     lock = (args.output / "runner.lock").open("w")
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     source = source_version()
+    code_files = sorted(Path("robot_dynamics").glob("*.py"))
+    training_code = {str(p): file_sha256(p) for p in code_files}
     if source["working_tree_dirty"]:
         raise ValueError("Commit training code before starting the queue")
     protocol = yaml.safe_load(args.protocol.read_text())
@@ -67,7 +69,7 @@ def main():
     for run in plan["runs"]:
         if (
             file_sha256(args.protocol) != plan["protocol_sha256"]
-            or source_version() != source
+            or {str(p): file_sha256(p) for p in code_files} != training_code
         ):
             raise ValueError("Code or protocol changed during queue")
         name = run["run_id"]
@@ -146,7 +148,12 @@ def main():
         write_json(state_path, state)
     write_json(
         args.output / "selection_seal.json",
-        {"matrix_sha256": file_sha256(plan_path), "runs": selected, **source},
+        {
+            "matrix_sha256": file_sha256(plan_path),
+            "code_sha256": training_code,
+            "runs": selected,
+            **source,
+        },
     )
     state.pop("active_run", None)
     state.update(status="training_complete", test_evaluation_started=False)
