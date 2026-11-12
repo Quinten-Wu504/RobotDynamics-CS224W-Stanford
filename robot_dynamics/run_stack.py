@@ -69,9 +69,10 @@ def main():
     for run in plan["runs"]:
         if (
             file_sha256(args.protocol) != plan["protocol_sha256"]
+            or file_sha256(args.manifest) != plan["manifest_sha256"]
             or {str(p): file_sha256(p) for p in code_files} != training_code
         ):
-            raise ValueError("Code or protocol changed during queue")
+            raise ValueError("Code, protocol, or manifest changed during queue")
         name = run["run_id"]
         directory = args.output / name
         cfg = configs / f"{name}.yaml"
@@ -146,6 +147,8 @@ def main():
         if name not in state["completed"]:
             state["completed"].append(name)
         write_json(state_path, state)
+    if file_sha256(args.manifest) != plan["manifest_sha256"]:
+        raise ValueError("Manifest changed before selection sealing")
     write_json(
         args.output / "selection_seal.json",
         {
