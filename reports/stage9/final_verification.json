@@ -1,0 +1,18 @@
+{
+  "all_passed": true,
+  "trained_runs": 12,
+  "evaluation_sets": 28,
+  "independent_validation_reloads": 12,
+  "complete_held_out_error_rechecks": [
+    "temporal_gnn_s0_d0_test_recheck.json",
+    "temporal_gnn_s0_d1_final_test_recheck.json",
+    "temporal_no_messages_s2_d0_test_recheck.json",
+    "temporal_no_messages_s2_d1_final_test_recheck.json"
+  ],
+  "training_finished_utc": "2026-11-12T15:59:23Z",
+  "test_access_started_utc": "2026-11-12T22:35:57Z",
+  "seal_sha256": "bbfd6249dc51a6fe6f752cedaa4e2debab9d63939bd0e3bff49b0574dd227021",
+  "failed_or_retried_runs": 0,
+  "source_commit": "cb319f893251c86c107fb8f18670f671427f0517",
+  "working_tree_dirty": false
+}

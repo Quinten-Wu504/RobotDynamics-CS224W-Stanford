@@ -1,27 +1,28 @@
 # RobotDynamics-CS224W-Stanford
 
-CS224W course project at Stanford. We study graph-based prediction of robot and object motion using MimicGen Square.
+CS224W course project at Stanford. We study graph-based prediction of robot and object motion using MimicGen Square and Stack.
 
 ## Project
 
-The main question is whether graph structure helps predict manipulation dynamics compared with MLP and GRU baselines. We will also compare geometric equivariance and JEPA pretraining, keeping input information and training budgets comparable.
+The main question is whether graph structure helps predict manipulation dynamics compared with MLP and GRU baselines. Square also tests geometric equivariance and JEPA pretraining; Stack replicates the supervised graph comparison with a message-ablation control.
 
-Models take state histories and planned actions as input and predict position changes for the end effector and manipulated object. The verified control frequency is 20 Hz: horizons are 1, 5, and 10 steps (0.05, 0.25, and 0.5 s). D0 supplies training and development data; held-out D0 and D1 trajectories test generalization.
+Models take state histories and planned actions as input and predict position changes for the end effector and manipulated objects. The verified control frequency is 20 Hz: horizons are 1, 5, and 10 steps (0.05, 0.25, and 0.5 s). D0 supplies training and development data; held-out D0 and D1 trajectories test generalization.
 
 ## Current status
 
 The environment and Square data audit are complete on AutoDL: Ubuntu 22.04, Python 3.10.8, and an RTX 4090 D. The [experiment protocol](docs/experiment_protocol.md) defines the task; the [data report](reports/stage2/README.md) contains statistics, checksums, and recovery plots.
 
-- **Code:** data processing, fixed splits, causal windows, shared evaluation, MLP/GRU and graph baselines, canonical-frame equivariant models, and JEPA/direct-state pretraining. The resumable formal pipeline includes checkpoint sealing, test evaluation, diagnostics, and automatic tables/plots. The Linux suite has 48 passing tests.
-- **Data:** 1,000 D0 and 1,000 D1 episodes scanned, with 153,477 and 152,400 recorded states respectively. No nonfinite values or inconsistent field layouts were found. Six complete trajectories (905 frames) passed state recovery checks.
-- **Experiments:** all 60 formal configurations and 124 evaluation sets are complete, covering three seeds and 80/200/800 training episodes, with the state-pretraining control limited to 80 episodes. Held-out D0 and D1 were evaluated only after all checkpoints were selected and sealed. All diagnostics passed; the [formal report](reports/stage8/README.md) retains every seed and comparison.
+- **Code:** data processing, fixed splits, causal windows, shared evaluation, MLP/GRU and graph baselines, canonical-frame equivariant models, and JEPA/direct-state pretraining. The resumable formal pipeline includes checkpoint sealing, test evaluation, diagnostics, and automatic tables/plots. The Linux suite has 56 passing tests.
+- **Data (Square):** 1,000 D0 and 1,000 D1 episodes scanned, with 153,477 and 152,400 recorded states respectively. No nonfinite values or inconsistent field layouts were found. Six complete trajectories (905 frames) passed state recovery checks.
+- **Square experiments:** all 60 formal configurations and 124 evaluation sets are complete, covering three seeds and 80/200/800 training episodes, with the state-pretraining control limited to 80 episodes. Held-out D0 and D1 were evaluated only after all checkpoints were selected and sealed. All diagnostics passed; the [formal report](reports/stage8/README.md) retains every seed and comparison.
+- **Stack replication:** 12 trained configurations and 28 evaluation sets are complete, covering four models and three seeds. Both releases contain 1,000 episodes; the Stack audit and six complete restorations passed. The [Stack report](reports/stage9/README.md) contains the full comparison and ablation. GRAIL remains in scope, with its demonstration details pending.
 - **Environment:** the Linux snapshot now includes PyG 2.6.1. Windows supports the base checks and plotting only.
 
-## Evaluation plan
+## Evaluation protocol
 
-We report end-effector and object position errors separately in cm, averaging by episode and excluding static fixtures from the main metric. D0 is split into 800/100/100 train/validation/test episodes, with nested 80/200/800 training subsets and split seed 224. Learned-model formal comparisons will use at least three training seeds, with model selection based on validation data. Results include data hashes, sample counts, prediction horizon, configuration, and code commit.
+We report end-effector and object position errors separately in cm, averaging by episode and excluding static fixtures from the main metric. D0 is split into 800/100/100 train/validation/test episodes, with nested 80/200/800 training subsets and split seed 224. Learned-model formal comparisons use three training seeds, with model selection based on validation data. Results include data hashes, sample counts, prediction horizon, configuration, and code commit.
 
-## Formal results
+## Formal Square results
 
 Directly supervised Temporal GNN outperforms the tested history MLP and GRU at every data fraction on both D0 test and D1, with the same direction across all three seeds. At 800 training episodes, the six-error means ± seed SD are:
 
@@ -37,6 +38,19 @@ Directly supervised Temporal GNN outperforms the tested history MLP and GRU at e
 Ordinary supervised TGN reduces error relative to GRU by **7.1% on D0 and 17.2% on D1** at this fraction. This supports these graph-model configurations on Square, but not universal or compute-normalized superiority: TGN takes roughly twice GRU's measured update time. D1 errors remain much higher than D0 errors, and constant velocity still wins at D1's shortest horizon.
 
 JEPA worsens D0 results across all fractions. Its apparent D1 gains, and canonicalization's small full-data D1 gain, vary across seeds and have intervals that include zero. All 18 JEPA collapse screens and 21 canonical coordinate checks pass, so implementation consistency does not by itself establish prediction benefit. The [full report](reports/stage8/README.md) contains paired intervals, motion/proximity groups, costs, all seed values, compressed episode errors, and reproduction commands. No test-driven tuning was performed; future test-inspired extensions must be labeled exploratory.
+
+## Stack replication results
+
+The second task uses 800 training episodes, three seeds, and the same 40-epoch budget. Its primary metric averages the end effector and both cubes across three horizons; it should not be pooled with Square's six-cell score.
+
+| Model | D0 test, cm | D1, cm |
+| --- | ---: | ---: |
+| History MLP | 0.1622 ± 0.0026 | 0.2655 ± 0.0125 |
+| GRU | 0.1419 ± 0.0030 | 0.2875 ± 0.0084 |
+| Temporal GNN | **0.1175 ± 0.0030** | **0.1929 ± 0.0063** |
+| Temporal GNN, messages closed | 0.1362 ± 0.0034 | 0.2254 ± 0.0084 |
+
+GNN reduces error relative to GRU by 17.2%/32.9% and relative to the message-ablation control by 13.7%/14.4% on D0/D1. Every seed favors GNN in these aggregate comparisons. The message variants have equal nominal parameter counts and nearly equal update time; GNN and GRU have almost equal parameters but GNN takes about twice as long to train. Position hold still beats learned models on cube B at every horizon. The [complete report](reports/stage9/README.md) retains all seeds, paired intervals, subgroup exceptions, and reproducible episode errors. This supports supervised graph prediction in two tasks, not universal superiority, extra JEPA benefit, or closed-loop control performance.
 
 ## Development results before formal testing
 
@@ -111,7 +125,7 @@ For Windows base-only checks, use Python 3.10 with `requirements/windows-base.lo
 
 ## Next steps
 
-Stage 8 is complete. Stage 9 is running a second-task replication on MimicGen Stack; the [protocol](docs/stack_protocol.md) specifies MLP, GRU, Temporal GNN, and a message-ablation control with three seeds each. Data audit, task adaptation, all four model continuation/fit checks, and the full-data resource probe have passed. The [stage 9 record](reports/stage9/README.md) gives commands and measured costs (roughly 4–5 hours for the training matrix). The authorized background queue will run training and validation only, then stop before test evaluation; formal Stack training is running under a detached, checkpointed queue. An actual SSH disconnect/reconnect confirmed continued epoch progress. There are no held-out Stack results yet. Stage 10 remains unstarted.
+The Square formal study and Stack replication are complete. Stack training took 3 h 50 min; its 28 test evaluation sets and independent checks are archived in the [stage 9 report](reports/stage9/README.md). Both tasks' test sets have now been evaluated, so new test-inspired experiments must be marked exploratory. GRAIL is retained for a later scope decision and has not been run; Stage 9 remains open for that item. Stage 10 reproduction/Colab work has not started.
 
 ## Data and references
 

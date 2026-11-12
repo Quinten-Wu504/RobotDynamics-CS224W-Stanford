@@ -1,0 +1,71 @@
+{
+  "used_seconds": 13815.124211926013,
+  "completed": [
+    "history_mlp_s0",
+    "gru_s0",
+    "temporal_gnn_s0",
+    "temporal_no_messages_s0",
+    "history_mlp_s1",
+    "gru_s1",
+    "temporal_gnn_s1",
+    "temporal_no_messages_s1",
+    "history_mlp_s2",
+    "gru_s2",
+    "temporal_gnn_s2",
+    "temporal_no_messages_s2"
+  ],
+  "events": [
+    {
+      "run": "history_mlp_s0",
+      "event": "start"
+    },
+    {
+      "run": "gru_s0",
+      "event": "start"
+    },
+    {
+      "run": "temporal_gnn_s0",
+      "event": "start"
+    },
+    {
+      "run": "temporal_no_messages_s0",
+      "event": "start"
+    },
+    {
+      "run": "history_mlp_s1",
+      "event": "start"
+    },
+    {
+      "run": "gru_s1",
+      "event": "start"
+    },
+    {
+      "run": "temporal_gnn_s1",
+      "event": "start"
+    },
+    {
+      "run": "temporal_no_messages_s1",
+      "event": "start"
+    },
+    {
+      "run": "history_mlp_s2",
+      "event": "start"
+    },
+    {
+      "run": "gru_s2",
+      "event": "start"
+    },
+    {
+      "run": "temporal_gnn_s2",
+      "event": "start"
+    },
+    {
+      "run": "temporal_no_messages_s2",
+      "event": "start"
+    }
+  ],
+  "status": "training_complete",
+  "source_commit": "34abd1e8efe74b7d2e6f456d48a668f47ff4f099",
+  "working_tree_dirty": false,
+  "test_evaluation_started": false
+}

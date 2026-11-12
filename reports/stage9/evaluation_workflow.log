@@ -1,0 +1,12 @@
+history_mlp_s0 validation_a 2.283435990700846
+history_mlp_s0 validation_b 2.030318180481798
+gru_s0 validation_a 1.919689302558988
+gru_s0 validation_b 1.851115346208869
+temporal_gnn_s0 validation_a 2.024515840017152
+temporal_gnn_s0 validation_b 2.0806468213483864
+temporal_no_messages_s0 validation_a 2.0240535922472644
+temporal_no_messages_s0 validation_b 2.0806118635302946
+hold validation_a 1.8464078604170857
+hold validation_b 1.9262591822522293
+constant_velocity validation_a 1.4594897312265354
+constant_velocity validation_b 1.5719010245904372

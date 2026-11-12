@@ -1,0 +1,40 @@
+{
+  "results": [
+    "history_mlp_s0_d0_test.json",
+    "history_mlp_s0_d1_final_test.json",
+    "gru_s0_d0_test.json",
+    "gru_s0_d1_final_test.json",
+    "temporal_gnn_s0_d0_test.json",
+    "temporal_gnn_s0_d1_final_test.json",
+    "temporal_no_messages_s0_d0_test.json",
+    "temporal_no_messages_s0_d1_final_test.json",
+    "history_mlp_s1_d0_test.json",
+    "history_mlp_s1_d1_final_test.json",
+    "gru_s1_d0_test.json",
+    "gru_s1_d1_final_test.json",
+    "temporal_gnn_s1_d0_test.json",
+    "temporal_gnn_s1_d1_final_test.json",
+    "temporal_no_messages_s1_d0_test.json",
+    "temporal_no_messages_s1_d1_final_test.json",
+    "history_mlp_s2_d0_test.json",
+    "history_mlp_s2_d1_final_test.json",
+    "gru_s2_d0_test.json",
+    "gru_s2_d1_final_test.json",
+    "temporal_gnn_s2_d0_test.json",
+    "temporal_gnn_s2_d1_final_test.json",
+    "temporal_no_messages_s2_d0_test.json",
+    "temporal_no_messages_s2_d1_final_test.json",
+    "hold_d0_test.json",
+    "hold_d1_final_test.json",
+    "constant_velocity_d0_test.json",
+    "constant_velocity_d1_final_test.json"
+  ],
+  "count": 28,
+  "identity": {
+    "selection_seal_sha256": "bbfd6249dc51a6fe6f752cedaa4e2debab9d63939bd0e3bff49b0574dd227021",
+    "evaluator_sha256": "e364c6ffaaa8680b6c0d6d215d8e589b1047061d6c46f3f8c6fd2567f0bc1082",
+    "validation_only": false
+  },
+  "source_commit": "cb319f893251c86c107fb8f18670f671427f0517",
+  "working_tree_dirty": false
+}

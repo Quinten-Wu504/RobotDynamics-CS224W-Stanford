@@ -1,6 +1,6 @@
 # Stack replication protocol
 
-Stage 9 will add one task after the completed Square study. The second task is MimicGen Stack D0/D1. This document records the design before opening its held-out prediction errors. The finite comparison is authorized without a wall-time cap. Both releases have passed hash checks, full used-field audits, and six complete simulator restorations. All four models pass small-sample fitting, exact continuation, and independent reload checks. Resource and queue preflight checks passed before formal launch. The background queue will stop after training and independent validation reloads, leaving test evaluation for the follow-up.
+This document records the frozen design for the completed Stack comparison after the Square study. The second task is MimicGen Stack D0/D1. This document records the design before opening its held-out prediction errors. The finite comparison is authorized without a wall-time cap. Both releases have passed hash checks, full used-field audits, and six complete simulator restorations. All four models pass small-sample fitting, exact continuation, and independent reload checks. Resource and queue preflight checks passed before formal launch. The background queue stopped after training and independent validation reloads. The follow-up completed all 28 sealed-model/baseline evaluations; both test distributions are now used tests. See the [results report](../reports/stage9/README.md) for findings and exceptions.
 
 ## Why Stack
 
@@ -43,11 +43,11 @@ The current Square cache, window schema, graph packing, output heads, and evalua
 
 Before a full matrix: validate field recovery, causal windows, normalization, equivalent model inputs, graph batching/message behavior, small-sample fitting, exact resume, and independent checkpoint reload. Time a bounded Stack resource probe using training/validation data only. Save a machine-readable frozen matrix and recovery commands before launching the formal queue.
 
-Square full-data mean update times were 8.36 min for MLP, 17.81 min for GRU, and 36.90 min for Temporal GNN. Using graph cost also for the message ablation gives approximately `3 × (8.36 + 17.81 + 2 × 36.90) = 300 min` of updates. This is only a Square-based reference: Stack's window count, three-target adaptation, I/O, preparation, validation, and test evaluation have not been measured. It is not a five-hour end-to-end promise.
+Square full-data mean update times were 8.36 min for MLP, 17.81 min for GRU, and 36.90 min for Temporal GNN. Using graph cost also for the message ablation gives approximately `3 × (8.36 + 17.81 + 2 × 36.90) = 300 min` of updates. This was a preliminary Square-based reference before Stack profiling, not a measured end-to-end Stack estimate.
 
 The user authorized the finite second-task matrix without a time limit and requested a detached training queue followed by a handoff. Measure costs before launch and retain all seeds. Use session detachment, queue locks, atomic epoch checkpoints, and resume validation; test the job across an SSH disconnect. Platform shutdown or storage failure can still interrupt it. Do not buy or resize an instance. No Stage 10 work starts during this stage.
 
-GRAIL is not part of this single-task extension. Its state/action availability has not been checked, and permanent removal from the original proposal has not been approved. Resolve that scope decision explicitly before closing Stage 9; do not claim a GRAIL demonstration or transfer result.
+GRAIL remains in the project scope following the explicit decision to retain its demonstration and define its details later. It is separate from this Stack comparison and has not been run or assessed for state/action availability. The Stack closeout does not complete or waive GRAIL; no demonstration or transfer result is claimed. Stage 10 remains unstarted.
 
 ## References checked during planning
 
@@ -59,3 +59,5 @@ GRAIL is not part of this single-task extension. Its state/action availability h
 The upstream links above identify the planning sources. Record the installed implementation revision and actual release metadata during the data audit; do not assume the moving upstream branch matches the pinned environment.
 
 The Stack two-epoch resource probe measured 10.13/19.84/42.60/42.00 seconds per epoch for MLP/GRU/GNN/message-ablation, respectively, on 238,144 training windows. This projects 3.82 hours of updates; the training-only queue is expected to take roughly 4–5 hours including validation/reloads, subject to load. See the [launch and audit record](../reports/stage9/README.md) for checks and actual commands.
+
+The completed training/validation queue took 3 h 50 min 15 s. The four-model comparison and message ablation are complete. GRAIL remains a separate, unstarted item whose scope will be defined later; Stage 10 has not started.
