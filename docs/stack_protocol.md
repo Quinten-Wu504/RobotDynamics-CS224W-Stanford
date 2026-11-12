@@ -1,6 +1,6 @@
 # Stack replication: draft protocol
 
-Stage 9 will add one task after the completed Square study. The chosen candidate is MimicGen Stack D0/D1. This document records the design before loading its prediction errors. The run budget is still pending; no Stack data have been downloaded, no task adapter has been implemented, and no training has started. This is not yet a frozen executable protocol.
+Stage 9 will add one task after the completed Square study. The chosen candidate is MimicGen Stack D0/D1. This document records the design before loading its prediction errors. The finite comparison is authorized without a wall-time cap. Data acquisition and task-adapter checks are in progress; formal training has not started. The protocol will be frozen after preflight. The background queue will stop after training and independent validation reloads, leaving test evaluation for the follow-up.
 
 ## Why Stack
 
@@ -45,7 +45,7 @@ Before a full matrix: validate field recovery, causal windows, normalization, eq
 
 Square full-data mean update times were 8.36 min for MLP, 17.81 min for GRU, and 36.90 min for Temporal GNN. Using graph cost also for the message ablation gives approximately `3 × (8.36 + 17.81 + 2 × 36.90) = 300 min` of updates. This is only a Square-based reference: Stack's window count, three-target adaptation, I/O, preparation, validation, and test evaluation have not been measured. It is not a five-hour end-to-end promise.
 
-The user chose a second task and will supply an AutoDL time limit. No long-running work starts until that limit and its coverage are known. If measured total cost exceeds it, preserve the full proposed matrix and discuss a concrete scope adjustment rather than silently removing seeds or configurations. Do not buy or resize an instance. No Stage 10 work starts during this stage.
+The user authorized the finite second-task matrix without a time limit and requested a detached training queue followed by a handoff. Measure costs before launch and retain all seeds. Use session detachment, queue locks, atomic epoch checkpoints, and resume validation; test the job across an SSH disconnect. Platform shutdown or storage failure can still interrupt it. Do not buy or resize an instance. No Stage 10 work starts during this stage.
 
 GRAIL is not part of this proposed single-task extension. Its state/action availability has not been checked, and permanent removal from the original proposal has not been approved. Resolve that scope decision explicitly before closing Stage 9; do not claim a GRAIL demonstration or transfer result.
 

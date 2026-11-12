@@ -56,6 +56,7 @@ class SceneGraphPredictor(nn.Module):
         if kind not in GRAPH_MODELS:
             raise ValueError(kind)
         self.temporal = kind != "gnn"
+        self.action_offset = 48
         self.messages = kind != "temporal_no_messages"
         self.register_buffer("edges", scene_edges(kind == "temporal_full_edges"))
         self.encoder = mlp(52 + 73, 64, 64)
@@ -76,7 +77,7 @@ class SceneGraphPredictor(nn.Module):
         if not self.temporal:
             nodes = nodes[:, -1:]
         b, t, n, _ = nodes.shape
-        actions = context[:, 48:]
+        actions = context[:, self.action_offset :]
         encoded = self.encoder(
             torch.cat([nodes, actions[:, None, None].expand(b, t, n, -1)], dim=-1)
         )

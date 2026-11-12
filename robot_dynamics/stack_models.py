@@ -7,6 +7,7 @@ from robot_dynamics.graph_models import SceneGraphPredictor, mlp, scene_edges
 class StackGraph(SceneGraphPredictor):
     def __init__(self, kind):
         super().__init__(kind)
+        self.action_offset = 0
         self.encoder = mlp(37 + 73, 64, 64)
         self.edges = scene_edges(full=True)
 
