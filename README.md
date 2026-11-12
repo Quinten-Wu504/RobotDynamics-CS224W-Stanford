@@ -6,7 +6,7 @@ CS224W course project at Stanford. We study graph-based prediction of robot and 
 
 The main question is whether graph structure helps predict manipulation dynamics compared with MLP and GRU baselines. We will also compare geometric equivariance and JEPA pretraining, keeping input information and training budgets comparable.
 
-Models will take state histories and planned actions as input and predict position changes for the end effector and manipulated object. The verified control frequency is 20 Hz: the initial horizons are 1, 5, and 10 steps (0.05, 0.25, and 0.5 s). D0 will be used for training and development; held-out D0 and D1 trajectories will test generalization.
+Models take state histories and planned actions as input and predict position changes for the end effector and manipulated object. The verified control frequency is 20 Hz: horizons are 1, 5, and 10 steps (0.05, 0.25, and 0.5 s). D0 supplies training and development data; held-out D0 and D1 trajectories test generalization.
 
 ## Current status
 
@@ -14,14 +14,33 @@ The environment and Square data audit are complete on AutoDL: Ubuntu 22.04, Pyth
 
 - **Code:** data processing, fixed splits, causal windows, shared evaluation, MLP/GRU and graph baselines, canonical-frame equivariant models, and JEPA/direct-state pretraining. The resumable formal pipeline includes checkpoint sealing, test evaluation, diagnostics, and automatic tables/plots. The Linux suite has 48 passing tests.
 - **Data:** 1,000 D0 and 1,000 D1 episodes scanned, with 153,477 and 152,400 recorded states respectively. No nonfinite values or inconsistent field layouts were found. Six complete trajectories (905 frames) passed state recovery checks.
-- **Experiments:** non-graph, graph, and canonical-frame pilots are complete, along with six pretraining/control runs on the same 80 training and 100 D0 validation episodes. Structural controls, representation diagnostics, coordinate consistency, recovery, and reload checks are recorded. D0 test and D1 remain reserved for formal evaluation.
+- **Experiments:** all 60 formal configurations and 124 evaluation sets are complete, covering three seeds and 80/200/800 training episodes, with the state-pretraining control limited to 80 episodes. Held-out D0 and D1 were evaluated only after all checkpoints were selected and sealed. All diagnostics passed; the [formal report](reports/stage8/README.md) retains every seed and comparison.
 - **Environment:** the Linux snapshot now includes PyG 2.6.1. Windows supports the base checks and plotting only.
 
 ## Evaluation plan
 
 We report end-effector and object position errors separately in cm, averaging by episode and excluding static fixtures from the main metric. D0 is split into 800/100/100 train/validation/test episodes, with nested 80/200/800 training subsets and split seed 224. Learned-model formal comparisons will use at least three training seeds, with model selection based on validation data. Results include data hashes, sample counts, prediction horizon, configuration, and code commit.
 
-## Baseline results
+## Formal results
+
+Directly supervised Temporal GNN outperforms the tested history MLP and GRU at every data fraction on both D0 test and D1, with the same direction across all three seeds. At 800 training episodes, the six-error means ± seed SD are:
+
+| Model | D0 test, cm | D1, cm |
+| --- | ---: | ---: |
+| History MLP | 0.1972 ± 0.0057 | 2.4142 ± 0.0968 |
+| GRU | 0.1792 ± 0.0015 | 1.4505 ± 0.1171 |
+| Temporal GNN | **0.1665 ± 0.0014** | 1.2010 ± 0.0227 |
+| Canonical Temporal GNN | 0.1696 ± 0.0007 | 1.1754 ± 0.0541 |
+| Temporal GNN + JEPA | 0.1865 ± 0.0031 | 1.1740 ± 0.0838 |
+| Canonical Temporal GNN + JEPA | 0.1861 ± 0.0044 | 1.2721 ± 0.2158 |
+
+Ordinary supervised TGN reduces error relative to GRU by **7.1% on D0 and 17.2% on D1** at this fraction. This supports these graph-model configurations on Square, but not universal or compute-normalized superiority: TGN takes roughly twice GRU's measured update time. D1 errors remain much higher than D0 errors, and constant velocity still wins at D1's shortest horizon.
+
+JEPA worsens D0 results across all fractions. Its apparent D1 gains, and canonicalization's small full-data D1 gain, vary across seeds and have intervals that include zero. All 18 JEPA collapse screens and 21 canonical coordinate checks pass, so implementation consistency does not by itself establish prediction benefit. The [full report](reports/stage8/README.md) contains paired intervals, motion/proximity groups, costs, all seed values, compressed episode errors, and reproduction commands. No test-driven tuning was performed; future test-inspired extensions must be labeled exploratory.
+
+## Development results before formal testing
+
+The following stages used D0 validation only. Their pilot observations motivated the frozen formal comparison above.
 
 On D0 validation, mean end-effector errors at 0.05 / 0.25 / 0.5 s are **0.715 / 3.344 / 6.242 cm** for position hold and **0.247 / 1.973 / 5.138 cm** for constant velocity. Nut errors are **0.490 / 2.313 / 4.309 cm** and **0.207 / 1.449 / 3.494 cm**, respectively. Both methods use the same four-frame-history windows and ignore planned actions.
 
@@ -31,7 +50,7 @@ The seed-0 learning pilots reach 0.5-second end-effector / nut errors of **0.550
 
 The [graph pilots](reports/stage5/README.md) give a mixed result. Temporal GNN reaches **0.537 / 0.439 cm** at 0.5 seconds and a six-error mean of **0.329 cm**, close to GRU's **0.333 cm**. Closing messages raises that mean to 0.346 cm; adding the static fixture edges gives 0.331 cm. Temporal GNN improves low-motion nut prediction but trails GRU on moving windows, and much of the low-motion gain remains without messages. The predefined 5 cm proximity group has only four episodes, so it does not support a contact-stage claim. No model is a clear overall winner across accuracy and cost.
 
-The [equivariance pilots](reports/stage6/README.md) use the known peg frame, without adding parameters. Canonical Temporal GNN reaches a six-error mean of **0.325 cm**, a small improvement over ordinary Temporal GNN; canonical GRU worsens to **0.347 cm**. Both pass full-chain yaw/translation consistency checks below 3.5e-8 m maximum discrepancy. This verifies a coordinate property, not physical OOD performance. The real D0 placement-coverage diagnostic has only five outside-hull episodes and shows no consistent benefit; D1 remains untested. The construction uses canonicalization, not an EGNN message layer.
+The [equivariance pilots](reports/stage6/README.md) use the known peg frame, without adding parameters. Canonical Temporal GNN reaches a six-error mean of **0.325 cm**, a small improvement over ordinary Temporal GNN; canonical GRU worsens to **0.347 cm**. Both pass full-chain yaw/translation consistency checks below 3.5e-8 m maximum discrepancy. This verifies a coordinate property, not physical OOD performance. The real D0 placement-coverage diagnostic has only five outside-hull episodes and shows no consistent benefit; D1 had not yet been evaluated at that stage. The construction uses canonicalization, not an EGNN message layer.
 
 The [pretraining pilots](reports/stage7/README.md) do not show an extra JEPA benefit at this budget. With 10 pretraining plus 30 fine-tuning epochs, ordinary/canonical JEPA reaches **0.325 / 0.320 cm**. Direct-state pretraining gives **0.333 / 0.340 cm**, while 40 epochs of direct supervision gives **0.305 / 0.310 cm**. JEPA beats the state-pretraining control but trails longer supervision in both architectures, despite using slightly more update time. Both JEPA variants pass the declared collapse screen. These are fixed-budget, seed-0 validation results; the earlier GRU used only 30 epochs, so this comparison does not establish graph superiority.
 
@@ -80,13 +99,19 @@ The [pretraining protocol](docs/pretraining_protocol.md) provides the six stage 
 python -m robot_dynamics.plot_pretraining reports/stage7/analysis/analysis.json --output outputs/stage7_figures
 ```
 
-The container has a 16-core CPU quota, 80 GiB RAM, and 24 GiB VRAM. Its host-visible CPU and memory totals are larger than these limits. At the end of setup, the data disk had about 13 GiB free and file storage about 197 GiB free. Formal training requirements have not been measured.
+The [formal protocol](docs/formal_protocol.md) gives the end-to-end stage 8 command. The complete pipeline took 14 h 53 min on the existing RTX 4090 D; peak recorded CUDA allocation was 1.15 GiB and sampled RSS 2.59 GiB. Its checkpoint and raw-data files stay on AutoDL; all selected configurations, metrics, logs, and compressed episode errors are committed under `reports/stage8/formal`. To redraw the formal figures on CPU:
+
+```bash
+python -m robot_dynamics.plot_formal reports/stage8/formal/analysis/analysis.json --output outputs/stage8_figures
+```
+
+The container has a 16-core CPU quota, 80 GiB RAM, and 24 GiB VRAM. Its host-visible CPU and memory totals are larger than these limits.
 
 For Windows base-only checks, use Python 3.10 with `requirements/windows-base.lock.txt` and `--device numpy`. Full simulator support was verified on Linux. [Environment notes](docs/environment.md) describe both machines and the resolved setup issues.
 
 ## Next steps
 
-Stage 7 is complete. Stage 8 is launching the [frozen formal protocol](docs/formal_protocol.md): 36 core configurations, 18 MLP/GRU controls, and six small-data state-pretraining controls, using seeds 0/1/2. The full-data resource probe, end-to-end workflow, eight recovery checks, duplicate-run protection, and completed-queue replay all passed. The detached script runs training, selection, both test sets, diagnostics, summaries, and plots; the [launch record](reports/stage8/README.md) gives monitoring and output paths. Formal results are pending, and stage 8 remains in progress. No stage 9 work has started.
+Stage 8 is complete. Stage 9 will decide whether one evidence-driven extension is warranted, considering the remaining D1 errors, seed variability, and resource costs, or document why no extension is needed. No stage 9 work or background experiment has started.
 
 ## Data and references
 

@@ -1,0 +1,372 @@
+{
+  "used_seconds": 49721.399746287614,
+  "completed": [
+    "temporal_gnn_supervised_n80_s0",
+    "temporal_gnn_jepa_n80_s0",
+    "canonical_temporal_gnn_supervised_n80_s0",
+    "canonical_temporal_gnn_jepa_n80_s0",
+    "history_mlp_supervised_n80_s0",
+    "gru_supervised_n80_s0",
+    "temporal_gnn_state_n80_s0",
+    "canonical_temporal_gnn_state_n80_s0",
+    "temporal_gnn_supervised_n80_s1",
+    "temporal_gnn_jepa_n80_s1",
+    "canonical_temporal_gnn_supervised_n80_s1",
+    "canonical_temporal_gnn_jepa_n80_s1",
+    "history_mlp_supervised_n80_s1",
+    "gru_supervised_n80_s1",
+    "temporal_gnn_state_n80_s1",
+    "canonical_temporal_gnn_state_n80_s1",
+    "temporal_gnn_supervised_n80_s2",
+    "temporal_gnn_jepa_n80_s2",
+    "canonical_temporal_gnn_supervised_n80_s2",
+    "canonical_temporal_gnn_jepa_n80_s2",
+    "history_mlp_supervised_n80_s2",
+    "gru_supervised_n80_s2",
+    "temporal_gnn_state_n80_s2",
+    "canonical_temporal_gnn_state_n80_s2",
+    "temporal_gnn_supervised_n200_s0",
+    "temporal_gnn_jepa_n200_s0",
+    "canonical_temporal_gnn_supervised_n200_s0",
+    "canonical_temporal_gnn_jepa_n200_s0",
+    "history_mlp_supervised_n200_s0",
+    "gru_supervised_n200_s0",
+    "temporal_gnn_supervised_n200_s1",
+    "temporal_gnn_jepa_n200_s1",
+    "canonical_temporal_gnn_supervised_n200_s1",
+    "canonical_temporal_gnn_jepa_n200_s1",
+    "history_mlp_supervised_n200_s1",
+    "gru_supervised_n200_s1",
+    "temporal_gnn_supervised_n200_s2",
+    "temporal_gnn_jepa_n200_s2",
+    "canonical_temporal_gnn_supervised_n200_s2",
+    "canonical_temporal_gnn_jepa_n200_s2",
+    "history_mlp_supervised_n200_s2",
+    "gru_supervised_n200_s2",
+    "temporal_gnn_supervised_n800_s0",
+    "temporal_gnn_jepa_n800_s0",
+    "canonical_temporal_gnn_supervised_n800_s0",
+    "canonical_temporal_gnn_jepa_n800_s0",
+    "history_mlp_supervised_n800_s0",
+    "gru_supervised_n800_s0",
+    "temporal_gnn_supervised_n800_s1",
+    "temporal_gnn_jepa_n800_s1",
+    "canonical_temporal_gnn_supervised_n800_s1",
+    "canonical_temporal_gnn_jepa_n800_s1",
+    "history_mlp_supervised_n800_s1",
+    "gru_supervised_n800_s1",
+    "temporal_gnn_supervised_n800_s2",
+    "temporal_gnn_jepa_n800_s2",
+    "canonical_temporal_gnn_supervised_n800_s2",
+    "canonical_temporal_gnn_jepa_n800_s2",
+    "history_mlp_supervised_n800_s2",
+    "gru_supervised_n800_s2"
+  ],
+  "events": [
+    {
+      "run": "temporal_gnn_supervised_n80_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T19:26:15Z"
+    },
+    {
+      "run": "temporal_gnn_jepa_n80_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T19:30:32Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_supervised_n80_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T19:35:05Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_jepa_n80_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T19:40:08Z"
+    },
+    {
+      "run": "history_mlp_supervised_n80_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T19:45:15Z"
+    },
+    {
+      "run": "gru_supervised_n80_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T19:46:30Z"
+    },
+    {
+      "run": "temporal_gnn_state_n80_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T19:48:40Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_state_n80_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T19:53:01Z"
+    },
+    {
+      "run": "temporal_gnn_supervised_n80_s1",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T19:58:00Z"
+    },
+    {
+      "run": "temporal_gnn_jepa_n80_s1",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T20:02:14Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_supervised_n80_s1",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T20:06:45Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_jepa_n80_s1",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T20:11:40Z"
+    },
+    {
+      "run": "history_mlp_supervised_n80_s1",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T20:16:58Z"
+    },
+    {
+      "run": "gru_supervised_n80_s1",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T20:18:13Z"
+    },
+    {
+      "run": "temporal_gnn_state_n80_s1",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T20:20:28Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_state_n80_s1",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T20:24:59Z"
+    },
+    {
+      "run": "temporal_gnn_supervised_n80_s2",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T20:30:18Z"
+    },
+    {
+      "run": "temporal_gnn_jepa_n80_s2",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T20:34:36Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_supervised_n80_s2",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T20:39:05Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_jepa_n80_s2",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T20:44:08Z"
+    },
+    {
+      "run": "history_mlp_supervised_n80_s2",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T20:49:33Z"
+    },
+    {
+      "run": "gru_supervised_n80_s2",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T20:50:57Z"
+    },
+    {
+      "run": "temporal_gnn_state_n80_s2",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T20:53:13Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_state_n80_s2",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T20:57:33Z"
+    },
+    {
+      "run": "temporal_gnn_supervised_n200_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T21:02:42Z"
+    },
+    {
+      "run": "temporal_gnn_jepa_n200_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T21:12:44Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_supervised_n200_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T21:22:54Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_jepa_n200_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T21:34:05Z"
+    },
+    {
+      "run": "history_mlp_supervised_n200_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T21:45:48Z"
+    },
+    {
+      "run": "gru_supervised_n200_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T21:48:00Z"
+    },
+    {
+      "run": "temporal_gnn_supervised_n200_s1",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T21:52:36Z"
+    },
+    {
+      "run": "temporal_gnn_jepa_n200_s1",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T22:02:05Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_supervised_n200_s1",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T22:12:16Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_jepa_n200_s1",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T22:23:49Z"
+    },
+    {
+      "run": "history_mlp_supervised_n200_s1",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T22:35:31Z"
+    },
+    {
+      "run": "gru_supervised_n200_s1",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T22:37:51Z"
+    },
+    {
+      "run": "temporal_gnn_supervised_n200_s2",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T22:42:37Z"
+    },
+    {
+      "run": "temporal_gnn_jepa_n200_s2",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T22:52:30Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_supervised_n200_s2",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T23:02:57Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_jepa_n200_s2",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T23:14:11Z"
+    },
+    {
+      "run": "history_mlp_supervised_n200_s2",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T23:25:52Z"
+    },
+    {
+      "run": "gru_supervised_n200_s2",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T23:28:13Z"
+    },
+    {
+      "run": "temporal_gnn_supervised_n800_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-11T23:32:48Z"
+    },
+    {
+      "run": "temporal_gnn_jepa_n800_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-12T00:09:26Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_supervised_n800_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-12T00:48:27Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_jepa_n800_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-12T01:31:30Z"
+    },
+    {
+      "run": "history_mlp_supervised_n800_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-12T02:16:16Z"
+    },
+    {
+      "run": "gru_supervised_n800_s0",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-12T02:24:03Z"
+    },
+    {
+      "run": "temporal_gnn_supervised_n800_s1",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-12T02:40:54Z"
+    },
+    {
+      "run": "temporal_gnn_jepa_n800_s1",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-12T03:16:59Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_supervised_n800_s1",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-12T03:55:26Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_jepa_n800_s1",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-12T04:38:30Z"
+    },
+    {
+      "run": "history_mlp_supervised_n800_s1",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-12T05:25:12Z"
+    },
+    {
+      "run": "gru_supervised_n800_s1",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-12T05:35:44Z"
+    },
+    {
+      "run": "temporal_gnn_supervised_n800_s2",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-12T05:56:47Z"
+    },
+    {
+      "run": "temporal_gnn_jepa_n800_s2",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-12T06:38:54Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_supervised_n800_s2",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-12T07:17:49Z"
+    },
+    {
+      "run": "canonical_temporal_gnn_jepa_n800_s2",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-12T08:00:40Z"
+    },
+    {
+      "run": "history_mlp_supervised_n800_s2",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-12T08:46:06Z"
+    },
+    {
+      "run": "gru_supervised_n800_s2",
+      "event": "start_or_resume",
+      "time_utc": "2026-11-12T08:56:06Z"
+    }
+  ],
+  "status": "selected",
+  "budget_seconds": null,
+  "source_commit": "94fb2b97260d9e3b70e0a999b488572179ecff57",
+  "working_tree_dirty": false,
+  "active_run": null
+}

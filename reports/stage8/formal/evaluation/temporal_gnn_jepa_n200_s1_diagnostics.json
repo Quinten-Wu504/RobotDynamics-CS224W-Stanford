@@ -1,0 +1,66 @@
+{
+  "run_id": "temporal_gnn_jepa_n200_s1",
+  "identity": {
+    "selection_seal_sha256": "15c133b6b628bfc951b82982cd9a917c63237892364bf1beb5228fd4c8b027f2",
+    "protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2",
+    "validation_only_check": false
+  },
+  "checkpoint_sha256": "eba5e084e015751681edafad8e55cf38250349b4e35b93e9f71c69b7f75b43a5",
+  "latent_checks": {
+    "epoch": 10,
+    "windows": 1024,
+    "representations": {
+      "online_raw": [
+        {
+          "mean_std": 0.21403011679649353,
+          "effective_rank": 31.319936752319336,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.2126888632774353,
+          "effective_rank": 29.447370529174805,
+          "fraction_std_above_0_01": 1.0
+        }
+      ],
+      "target_raw": [
+        {
+          "mean_std": 0.2076052725315094,
+          "effective_rank": 28.620243072509766,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.20332252979278564,
+          "effective_rank": 26.79013442993164,
+          "fraction_std_above_0_01": 1.0
+        }
+      ],
+      "target_normalized": [
+        {
+          "mean_std": 0.642636775970459,
+          "effective_rank": 28.0092830657959,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.6411305069923401,
+          "effective_rank": 26.048070907592773,
+          "fraction_std_above_0_01": 1.0
+        }
+      ],
+      "prediction_normalized": [
+        {
+          "mean_std": 0.634551465511322,
+          "effective_rank": 26.652353286743164,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.6274414658546448,
+          "effective_rank": 25.033855438232422,
+          "fraction_std_above_0_01": 1.0
+        }
+      ]
+    },
+    "gross_collapse_flags": [],
+    "normalized_prediction_zero_action_rms": 0.2995471954345703,
+    "normalized_predictive_mse": 0.013796071521937847
+  }
+}

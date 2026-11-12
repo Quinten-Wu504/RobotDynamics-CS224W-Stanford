@@ -1,0 +1,66 @@
+{
+  "run_id": "temporal_gnn_jepa_n80_s1",
+  "identity": {
+    "selection_seal_sha256": "15c133b6b628bfc951b82982cd9a917c63237892364bf1beb5228fd4c8b027f2",
+    "protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2",
+    "validation_only_check": false
+  },
+  "checkpoint_sha256": "6cdbf50c02c889a4f33caa640423ed057ae60454b9fea632283e044d347037c5",
+  "latent_checks": {
+    "epoch": 10,
+    "windows": 1024,
+    "representations": {
+      "online_raw": [
+        {
+          "mean_std": 0.21433426439762115,
+          "effective_rank": 22.248872756958008,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.21428202092647552,
+          "effective_rank": 19.924644470214844,
+          "fraction_std_above_0_01": 1.0
+        }
+      ],
+      "target_raw": [
+        {
+          "mean_std": 0.18979817628860474,
+          "effective_rank": 17.514434814453125,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.17855891585350037,
+          "effective_rank": 13.058340072631836,
+          "fraction_std_above_0_01": 1.0
+        }
+      ],
+      "target_normalized": [
+        {
+          "mean_std": 0.5793202519416809,
+          "effective_rank": 17.260404586791992,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.5501936674118042,
+          "effective_rank": 12.834565162658691,
+          "fraction_std_above_0_01": 1.0
+        }
+      ],
+      "prediction_normalized": [
+        {
+          "mean_std": 0.5652148723602295,
+          "effective_rank": 16.350364685058594,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.5440593361854553,
+          "effective_rank": 12.093659400939941,
+          "fraction_std_above_0_01": 1.0
+        }
+      ]
+    },
+    "gross_collapse_flags": [],
+    "normalized_prediction_zero_action_rms": 0.20883595943450928,
+    "normalized_predictive_mse": 0.010973180644214153
+  }
+}

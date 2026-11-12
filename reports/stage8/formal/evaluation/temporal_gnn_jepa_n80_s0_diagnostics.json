@@ -1,0 +1,66 @@
+{
+  "run_id": "temporal_gnn_jepa_n80_s0",
+  "identity": {
+    "selection_seal_sha256": "15c133b6b628bfc951b82982cd9a917c63237892364bf1beb5228fd4c8b027f2",
+    "protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2",
+    "validation_only_check": false
+  },
+  "checkpoint_sha256": "d423ab748d9881e06d3c6f0be763bc3d4a2e1dfd0e02e7eeae7e54610d840c61",
+  "latent_checks": {
+    "epoch": 10,
+    "windows": 1024,
+    "representations": {
+      "online_raw": [
+        {
+          "mean_std": 0.21235811710357666,
+          "effective_rank": 21.534255981445312,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.21162724494934082,
+          "effective_rank": 19.006319046020508,
+          "fraction_std_above_0_01": 1.0
+        }
+      ],
+      "target_raw": [
+        {
+          "mean_std": 0.19127021729946136,
+          "effective_rank": 15.40224552154541,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.1813855916261673,
+          "effective_rank": 12.471708297729492,
+          "fraction_std_above_0_01": 1.0
+        }
+      ],
+      "target_normalized": [
+        {
+          "mean_std": 0.5914682745933533,
+          "effective_rank": 15.146737098693848,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.5955244302749634,
+          "effective_rank": 12.482810974121094,
+          "fraction_std_above_0_01": 1.0
+        }
+      ],
+      "prediction_normalized": [
+        {
+          "mean_std": 0.5861148834228516,
+          "effective_rank": 14.155508041381836,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.5940845608711243,
+          "effective_rank": 11.946547508239746,
+          "fraction_std_above_0_01": 1.0
+        }
+      ]
+    },
+    "gross_collapse_flags": [],
+    "normalized_prediction_zero_action_rms": 0.2259145826101303,
+    "normalized_predictive_mse": 0.011700589209794998
+  }
+}

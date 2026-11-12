@@ -1,0 +1,66 @@
+{
+  "run_id": "temporal_gnn_jepa_n200_s2",
+  "identity": {
+    "selection_seal_sha256": "15c133b6b628bfc951b82982cd9a917c63237892364bf1beb5228fd4c8b027f2",
+    "protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2",
+    "validation_only_check": false
+  },
+  "checkpoint_sha256": "c1e08cd0ff33a68b86bc8d16a44e6bf41e626b4352a03266e98dded72948785c",
+  "latent_checks": {
+    "epoch": 10,
+    "windows": 1024,
+    "representations": {
+      "online_raw": [
+        {
+          "mean_std": 0.21502907574176788,
+          "effective_rank": 32.744747161865234,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.21514728665351868,
+          "effective_rank": 30.836902618408203,
+          "fraction_std_above_0_01": 1.0
+        }
+      ],
+      "target_raw": [
+        {
+          "mean_std": 0.20748275518417358,
+          "effective_rank": 30.03168296813965,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.20327574014663696,
+          "effective_rank": 27.935895919799805,
+          "fraction_std_above_0_01": 1.0
+        }
+      ],
+      "target_normalized": [
+        {
+          "mean_std": 0.5738198757171631,
+          "effective_rank": 29.435781478881836,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.6509076356887817,
+          "effective_rank": 27.16134262084961,
+          "fraction_std_above_0_01": 1.0
+        }
+      ],
+      "prediction_normalized": [
+        {
+          "mean_std": 0.5652495622634888,
+          "effective_rank": 27.94388198852539,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.6447569131851196,
+          "effective_rank": 26.104280471801758,
+          "fraction_std_above_0_01": 1.0
+        }
+      ]
+    },
+    "gross_collapse_flags": [],
+    "normalized_prediction_zero_action_rms": 0.29597043991088867,
+    "normalized_predictive_mse": 0.013820027932524681
+  }
+}

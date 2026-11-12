@@ -1,0 +1,17 @@
+{
+  "original_analysis_sha256": "2a2089a909bd2c6fc92680d60dea6b801b10d17d38a3d7d573549c6047a500d9",
+  "compared_fields": [
+    "summary",
+    "groups",
+    "paired_contrasts",
+    "baselines",
+    "runs",
+    "costs",
+    "diagnostics",
+    "flags"
+  ],
+  "all_exact": true,
+  "reanalyzer_source_commit": "83a82fb9d768b79bcac24fd1419502bc3cee361a",
+  "reanalyzer_working_tree_dirty": true,
+  "note": "The working-tree edits during offline reproduction were report/documentation changes; the analysis code was unchanged. Metadata differs, numerical content does not."
+}

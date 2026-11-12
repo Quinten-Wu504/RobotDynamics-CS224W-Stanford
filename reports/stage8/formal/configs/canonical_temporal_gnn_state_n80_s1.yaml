@@ -1,0 +1,19 @@
+batch_size: 256
+cpu_threads: 4
+device: cuda
+ema_momentum: 0.99
+finetune_epochs: 30
+formal_protocol_sha256: 30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2
+gradient_clip: 1.0
+history: 4
+horizons:
+- 1
+- 5
+- 10
+learning_rate: 0.001
+mode: formal
+pretrain_epochs: 10
+seed: 1
+train_episodes: 80
+train_fraction: '0.1'
+weight_decay: 0.0001

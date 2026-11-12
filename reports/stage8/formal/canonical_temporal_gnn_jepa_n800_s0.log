@@ -1,0 +1,40 @@
+{"epoch": 1, "phase": "pretrain", "update_seconds": 70.642163913697, "loss": 0.029254376504841514, "predictive_loss": 0.01669931373442514, "variance_loss": 0.0031462173950698082, "covariance_loss": 0.009408845519453193}
+{"epoch": 2, "phase": "pretrain", "update_seconds": 69.89345160126686, "loss": 0.018484344777761022, "predictive_loss": 0.013744182962590782, "variance_loss": 0.00038196708028039945, "covariance_loss": 0.004358194716981124}
+{"epoch": 3, "phase": "pretrain", "update_seconds": 70.11745169386268, "loss": 0.019263748666691116, "predictive_loss": 0.015678676531277146, "variance_loss": 0.000262018593691583, "covariance_loss": 0.003323053513702728}
+{"epoch": 4, "phase": "pretrain", "update_seconds": 70.10220795124769, "loss": 0.01771634612652528, "predictive_loss": 0.014763267689512563, "variance_loss": 0.00019456260806866593, "covariance_loss": 0.0027585158413454725}
+{"epoch": 5, "phase": "pretrain", "update_seconds": 69.52273878827691, "loss": 0.01641742518771763, "predictive_loss": 0.013705309205432418, "variance_loss": 0.00016838728632313085, "covariance_loss": 0.002543728682203188}
+{"epoch": 6, "phase": "pretrain", "update_seconds": 70.56367360055447, "loss": 0.016173620754534147, "predictive_loss": 0.013563834616206702, "variance_loss": 0.000157227324897497, "covariance_loss": 0.0024525588010125073}
+{"epoch": 7, "phase": "pretrain", "update_seconds": 71.27793706953526, "loss": 0.016329381189225438, "predictive_loss": 0.013784697548382574, "variance_loss": 0.00016400964031718047, "covariance_loss": 0.002380673998099058}
+{"epoch": 8, "phase": "pretrain", "update_seconds": 70.6842343620956, "loss": 0.016485393279466652, "predictive_loss": 0.013985252995225309, "variance_loss": 0.0001751749252761173, "covariance_loss": 0.0023249653616588084}
+{"epoch": 9, "phase": "pretrain", "update_seconds": 70.55417101085186, "loss": 0.016942888512145253, "predictive_loss": 0.0144153212238439, "variance_loss": 0.000191375409506795, "covariance_loss": 0.0023361918842671452}
+{"epoch": 10, "phase": "pretrain", "update_seconds": 70.6502712033689, "loss": 0.016783043242097333, "predictive_loss": 0.014222917371778714, "variance_loss": 0.00020735596138610868, "covariance_loss": 0.0023527699232386593}
+{"epoch": 11, "phase": "downstream", "update_seconds": 63.73699137941003, "loss": 0.0018992625660929077, "selection_cm": 0.35141831944386165}
+{"epoch": 12, "phase": "downstream", "update_seconds": 62.97732017189264, "loss": 0.0007751529872109832, "selection_cm": 0.3144014430666963}
+{"epoch": 13, "phase": "downstream", "update_seconds": 63.270386688411236, "loss": 0.0006362082865566281, "selection_cm": 0.3142551147937775}
+{"epoch": 14, "phase": "downstream", "update_seconds": 63.198077503591776, "loss": 0.0005618680620734582, "selection_cm": 0.27850133114804826}
+{"epoch": 15, "phase": "downstream", "update_seconds": 63.18594520166516, "loss": 0.0005138731533062276, "selection_cm": 0.26353407446295024}
+{"epoch": 16, "phase": "downstream", "update_seconds": 62.29187551513314, "loss": 0.00047256800313096796, "selection_cm": 0.2613161362335086}
+{"epoch": 17, "phase": "downstream", "update_seconds": 62.982235345989466, "loss": 0.00044145785241974137, "selection_cm": 0.25306126731137435}
+{"epoch": 18, "phase": "downstream", "update_seconds": 63.359239146113396, "loss": 0.00042043216737756953, "selection_cm": 0.2565969879925251}
+{"epoch": 19, "phase": "downstream", "update_seconds": 63.14439794421196, "loss": 0.00040675323025618124, "selection_cm": 0.23570153215279183}
+{"epoch": 20, "phase": "downstream", "update_seconds": 62.87502916902304, "loss": 0.00038363457996411687, "selection_cm": 0.24665036716808875}
+{"epoch": 21, "phase": "downstream", "update_seconds": 63.13398942351341, "loss": 0.00036899715777196566, "selection_cm": 0.23038818940520286}
+{"epoch": 22, "phase": "downstream", "update_seconds": 62.749559473246336, "loss": 0.0003539891878104869, "selection_cm": 0.23422914758324623}
+{"epoch": 23, "phase": "downstream", "update_seconds": 62.82538802549243, "loss": 0.0003486712110024207, "selection_cm": 0.22376857726524274}
+{"epoch": 24, "phase": "downstream", "update_seconds": 62.088271263986826, "loss": 0.00033801299671021854, "selection_cm": 0.2182311653966705}
+{"epoch": 25, "phase": "downstream", "update_seconds": 62.56422458961606, "loss": 0.0003280079840962088, "selection_cm": 0.22168890919536352}
+{"epoch": 26, "phase": "downstream", "update_seconds": 62.961410690099, "loss": 0.00031878620375394714, "selection_cm": 0.22344825580716132}
+{"epoch": 27, "phase": "downstream", "update_seconds": 63.41351676732302, "loss": 0.00031409102474632935, "selection_cm": 0.21725235777596633}
+{"epoch": 28, "phase": "downstream", "update_seconds": 63.06975823268294, "loss": 0.0003054218915414926, "selection_cm": 0.2109510318065683}
+{"epoch": 29, "phase": "downstream", "update_seconds": 63.01252556219697, "loss": 0.0003028401019980244, "selection_cm": 0.20719429090619088}
+{"epoch": 30, "phase": "downstream", "update_seconds": 62.42106869071722, "loss": 0.00029192997496706353, "selection_cm": 0.20258334276576836}
+{"epoch": 31, "phase": "downstream", "update_seconds": 63.149861469864845, "loss": 0.00028948107368331126, "selection_cm": 0.21076009037594}
+{"epoch": 32, "phase": "downstream", "update_seconds": 63.17878878489137, "loss": 0.0002858394924567293, "selection_cm": 0.2049954577659567}
+{"epoch": 33, "phase": "downstream", "update_seconds": 62.06371812149882, "loss": 0.00027717830502073176, "selection_cm": 0.20767254101733368}
+{"epoch": 34, "phase": "downstream", "update_seconds": 63.247117679566145, "loss": 0.0002794609560516542, "selection_cm": 0.21174144317706425}
+{"epoch": 35, "phase": "downstream", "update_seconds": 61.59360044077039, "loss": 0.0002737874106373706, "selection_cm": 0.20057512160390614}
+{"epoch": 36, "phase": "downstream", "update_seconds": 62.86348795890808, "loss": 0.0002689671537076414, "selection_cm": 0.19853767850125828}
+{"epoch": 37, "phase": "downstream", "update_seconds": 63.50534638389945, "loss": 0.00026473075012889533, "selection_cm": 0.20411760893960793}
+{"epoch": 38, "phase": "downstream", "update_seconds": 63.42405766993761, "loss": 0.0002572113751664445, "selection_cm": 0.19631295468658208}
+{"epoch": 39, "phase": "downstream", "update_seconds": 62.53777601197362, "loss": 0.00026033386532174765, "selection_cm": 0.20001254823058845}
+{"epoch": 40, "phase": "downstream", "update_seconds": 58.64938364550471, "loss": 0.00025565658008168754, "selection_cm": 0.189576286872228}

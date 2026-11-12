@@ -1,0 +1,9 @@
+{
+  "run_id": "temporal_gnn_state_n80_s0",
+  "identity": {
+    "selection_seal_sha256": "15c133b6b628bfc951b82982cd9a917c63237892364bf1beb5228fd4c8b027f2",
+    "protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2",
+    "validation_only_check": false
+  },
+  "checkpoint_sha256": "fadfd255d87629ca3e2910e7928762d54e791e4c80f935b7ea3021c1173eaf0a"
+}

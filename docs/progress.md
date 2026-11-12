@@ -12,7 +12,7 @@
 | 5 | Scene graphs and temporal GNNs | DONE |
 | 6 | Geometric equivariance | DONE |
 | 7 | JEPA and pretraining controls | DONE |
-| 8 | Frozen protocol and formal experiments | IN_PROGRESS |
+| 8 | Frozen protocol and formal experiments | CHECKING |
 | 9 | Evidence-driven robustness or extension | NOT_STARTED |
 | 10 | Reproduction and final deliverables | NOT_STARTED |
 
@@ -32,8 +32,8 @@ Stage 5 completed single-frame and temporal graph pilots, plus message-removal a
 
 Stage 6 completed canonical-frame Temporal GNN and GRU pilots. Both passed full-chain yaw/translation checks, exact continuation, and independent reloads. The Linux suite has 39 passing tests. The [equivariance report](../reports/stage6/README.md) separates coordinate consistency from the mixed prediction result and limited real-placement diagnostic. D1 and held-out D0 remain reserved for formal testing.
 
-Stage 7 completed six ordinary/canonical Temporal GNN pilots: JEPA, direct-state pretraining, and 40-epoch supervision for each architecture. Both JEPA variants pass the declared collapse screen, and the canonical variants retain full-chain coordinate consistency. All six exact-resume and independent reload checks pass; the Linux suite has 43 passing tests. The [pretraining report](../reports/stage7/README.md) records that JEPA beats direct-state pretraining but trails longer supervision in both architectures. No extra settings were searched to reverse that result. D0 test and D1 remain reserved, and stage 8 has not started.
+Stage 7 completed six ordinary/canonical Temporal GNN pilots: JEPA, direct-state pretraining, and 40-epoch supervision for each architecture. Both JEPA variants pass the declared collapse screen, and the canonical variants retain full-chain coordinate consistency. All six exact-resume and independent reload checks pass; the Linux suite has 43 passing tests. The [pretraining report](../reports/stage7/README.md) records that JEPA beats direct-state pretraining but trails longer supervision in both architectures. No extra settings were searched to reverse that result. D0 test and D1 were kept reserved for the formal evaluation.
 
-Stage 8 has a fixed 60-configuration matrix and a resumable train/select/test/analyze pipeline. The full-data resource probe, 48 Linux tests, all eight recovery/finalization checks, and the end-to-end workflow passed. Duplicate launches are rejected and completed runs are preserved on replay. The complete finite matrix is being launched as a detached AutoDL job, with no automatic wall-time kill. Formal results remain pending; the [launch record](../reports/stage8/README.md) gives monitoring and recovery paths. Stage 8 remains open until its actual results are reviewed and published.
+Stage 8 completed all 60 configurations, 84 training phases, and 124 held-out evaluation sets in 14 h 53 min. All three seeds are retained; no run failed or was retried. Ordinary supervised Temporal GNN improves over the MLP/GRU controls on both splits at all fractions, while JEPA and canonicalization do not show consistent extra benefits. All 18 collapse screens and 21 coordinate checks pass. The final audit verifies checkpoint/source/split integrity, recomputes all episode summaries, and exactly reproduces two complete held-out prediction sets. The [formal report](../reports/stage8/README.md) includes all results, costs, caveats, and reproduction commands. The Linux suite still has 48 passing tests. D0 test and D1 have now been evaluated; future test-inspired work is exploratory. No stage 9 jobs have started.
 
 `CHECKING` marks a stage's final review; `DONE` marks a closed stage.

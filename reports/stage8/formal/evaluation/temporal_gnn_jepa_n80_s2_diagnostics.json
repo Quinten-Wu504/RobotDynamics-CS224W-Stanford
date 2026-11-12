@@ -1,0 +1,66 @@
+{
+  "run_id": "temporal_gnn_jepa_n80_s2",
+  "identity": {
+    "selection_seal_sha256": "15c133b6b628bfc951b82982cd9a917c63237892364bf1beb5228fd4c8b027f2",
+    "protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2",
+    "validation_only_check": false
+  },
+  "checkpoint_sha256": "aee0f0aba73d0c6c8a9a5f0a9be98632e7db6de21e0dd80595ebbc4de707bb4b",
+  "latent_checks": {
+    "epoch": 10,
+    "windows": 1024,
+    "representations": {
+      "online_raw": [
+        {
+          "mean_std": 0.21445657312870026,
+          "effective_rank": 23.27985191345215,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.21213261783123016,
+          "effective_rank": 20.443634033203125,
+          "fraction_std_above_0_01": 1.0
+        }
+      ],
+      "target_raw": [
+        {
+          "mean_std": 0.19025534391403198,
+          "effective_rank": 17.86176300048828,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.18247157335281372,
+          "effective_rank": 14.19606876373291,
+          "fraction_std_above_0_01": 1.0
+        }
+      ],
+      "target_normalized": [
+        {
+          "mean_std": 0.5652654767036438,
+          "effective_rank": 17.595821380615234,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.6165177822113037,
+          "effective_rank": 13.772196769714355,
+          "fraction_std_above_0_01": 1.0
+        }
+      ],
+      "prediction_normalized": [
+        {
+          "mean_std": 0.5634745359420776,
+          "effective_rank": 16.55246925354004,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.6113765239715576,
+          "effective_rank": 13.09347152709961,
+          "fraction_std_above_0_01": 1.0
+        }
+      ]
+    },
+    "gross_collapse_flags": [],
+    "normalized_prediction_zero_action_rms": 0.22029925882816315,
+    "normalized_predictive_mse": 0.012313772924244404
+  }
+}

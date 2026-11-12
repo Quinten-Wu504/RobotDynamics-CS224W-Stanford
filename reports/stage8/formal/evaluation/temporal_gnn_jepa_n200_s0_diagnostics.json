@@ -1,0 +1,66 @@
+{
+  "run_id": "temporal_gnn_jepa_n200_s0",
+  "identity": {
+    "selection_seal_sha256": "15c133b6b628bfc951b82982cd9a917c63237892364bf1beb5228fd4c8b027f2",
+    "protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2",
+    "validation_only_check": false
+  },
+  "checkpoint_sha256": "d310ca5f5c6626b83140eeaaa783e97e6aacd6b599924202944a0245862f2b59",
+  "latent_checks": {
+    "epoch": 10,
+    "windows": 1024,
+    "representations": {
+      "online_raw": [
+        {
+          "mean_std": 0.2134876847267151,
+          "effective_rank": 32.9786491394043,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.21299847960472107,
+          "effective_rank": 30.45234489440918,
+          "fraction_std_above_0_01": 1.0
+        }
+      ],
+      "target_raw": [
+        {
+          "mean_std": 0.20861010253429413,
+          "effective_rank": 29.89765167236328,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.20272988080978394,
+          "effective_rank": 27.524246215820312,
+          "fraction_std_above_0_01": 1.0
+        }
+      ],
+      "target_normalized": [
+        {
+          "mean_std": 0.6345606446266174,
+          "effective_rank": 29.231037139892578,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.6579837203025818,
+          "effective_rank": 27.104183197021484,
+          "fraction_std_above_0_01": 1.0
+        }
+      ],
+      "prediction_normalized": [
+        {
+          "mean_std": 0.6256592273712158,
+          "effective_rank": 28.002145767211914,
+          "fraction_std_above_0_01": 1.0
+        },
+        {
+          "mean_std": 0.6532086730003357,
+          "effective_rank": 26.122098922729492,
+          "fraction_std_above_0_01": 1.0
+        }
+      ]
+    },
+    "gross_collapse_flags": [],
+    "normalized_prediction_zero_action_rms": 0.3085821270942688,
+    "normalized_predictive_mse": 0.014615939930081367
+  }
+}

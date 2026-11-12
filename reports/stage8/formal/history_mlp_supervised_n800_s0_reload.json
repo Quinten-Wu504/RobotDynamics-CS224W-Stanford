@@ -1,0 +1,74 @@
+{
+  "checkpoint_sha256": "9145215bb6dd6ba1d31f805d8a8d039ebe860662b18edd9261698792433903b0",
+  "prediction_sha256": "b1ca1eff5d9958241cf0980b58b50fbe389eb2228a7a13b48c26046336ad138c",
+  "summary": [
+    {
+      "entity": "end_effector",
+      "horizon_steps": 1,
+      "episodes": 100,
+      "windows": 14838,
+      "mean_cm": 0.11826934121549129,
+      "ci95_cm": [
+        0.11574892602302134,
+        0.12061202864162625
+      ]
+    },
+    {
+      "entity": "end_effector",
+      "horizon_steps": 5,
+      "episodes": 100,
+      "windows": 14438,
+      "mean_cm": 0.2221505892276764,
+      "ci95_cm": [
+        0.2166815385706723,
+        0.22793722692131996
+      ]
+    },
+    {
+      "entity": "end_effector",
+      "horizon_steps": 10,
+      "episodes": 100,
+      "windows": 13938,
+      "mean_cm": 0.29523040771484377,
+      "ci95_cm": [
+        0.2872462087348104,
+        0.3032840991541743
+      ]
+    },
+    {
+      "entity": "square_nut",
+      "horizon_steps": 1,
+      "episodes": 100,
+      "windows": 14838,
+      "mean_cm": 0.09693067461252212,
+      "ci95_cm": [
+        0.0936996054109186,
+        0.10071090477891266
+      ]
+    },
+    {
+      "entity": "square_nut",
+      "horizon_steps": 5,
+      "episodes": 100,
+      "windows": 14438,
+      "mean_cm": 0.2044154052436352,
+      "ci95_cm": [
+        0.1943408125117421,
+        0.21633290315419432
+      ]
+    },
+    {
+      "entity": "square_nut",
+      "horizon_steps": 10,
+      "episodes": 100,
+      "windows": 13938,
+      "mean_cm": 0.2671837212145329,
+      "ci95_cm": [
+        0.25385586346685884,
+        0.2829817276299
+      ]
+    }
+  ],
+  "source_commit": "94fb2b97260d9e3b70e0a999b488572179ecff57",
+  "working_tree_dirty": false
+}

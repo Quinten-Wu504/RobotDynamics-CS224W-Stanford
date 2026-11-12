@@ -1,0 +1,9 @@
+{
+  "run_id": "gru_supervised_n800_s0",
+  "identity": {
+    "selection_seal_sha256": "15c133b6b628bfc951b82982cd9a917c63237892364bf1beb5228fd4c8b027f2",
+    "protocol_sha256": "30b1add66c8025735372994dad035c2f51bf8fc46f61550ba46cebba78f9efb2",
+    "validation_only_check": false
+  },
+  "checkpoint_sha256": "e672126d667e51124c9ec7892c812e7c2fb5447daeb908b797619d9608aa7532"
+}
