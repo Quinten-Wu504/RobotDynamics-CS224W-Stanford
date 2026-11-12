@@ -111,7 +111,7 @@ For Windows base-only checks, use Python 3.10 with `requirements/windows-base.lo
 
 ## Next steps
 
-Stage 8 is complete. Stage 9 will decide whether one evidence-driven extension is warranted, considering the remaining D1 errors, seed variability, and resource costs, or document why no extension is needed. No stage 9 work or background experiment has started.
+Stage 8 is complete. Stage 9 is preparing a second-task replication on MimicGen Stack; the [draft protocol](docs/stack_protocol.md) proposes MLP, GRU, Temporal GNN, and a message-ablation control with three seeds each. The AutoDL time limit is pending. Data audit, task adaptation, and a measured resource probe must precede the frozen matrix; no Stack data have been downloaded and no Stack training has started. There are no second-task results yet. Stage 10 remains unstarted.
 
 ## Data and references
 

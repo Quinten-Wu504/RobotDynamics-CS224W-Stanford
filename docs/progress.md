@@ -12,8 +12,8 @@
 | 5 | Scene graphs and temporal GNNs | DONE |
 | 6 | Geometric equivariance | DONE |
 | 7 | JEPA and pretraining controls | DONE |
-| 8 | Frozen protocol and formal experiments | CHECKING |
-| 9 | Evidence-driven robustness or extension | NOT_STARTED |
+| 8 | Frozen protocol and formal experiments | DONE |
+| 9 | Evidence-driven robustness or extension | IN_PROGRESS |
 | 10 | Reproduction and final deliverables | NOT_STARTED |
 
 ## Current notes
@@ -34,6 +34,8 @@ Stage 6 completed canonical-frame Temporal GNN and GRU pilots. Both passed full-
 
 Stage 7 completed six ordinary/canonical Temporal GNN pilots: JEPA, direct-state pretraining, and 40-epoch supervision for each architecture. Both JEPA variants pass the declared collapse screen, and the canonical variants retain full-chain coordinate consistency. All six exact-resume and independent reload checks pass; the Linux suite has 43 passing tests. The [pretraining report](../reports/stage7/README.md) records that JEPA beats direct-state pretraining but trails longer supervision in both architectures. No extra settings were searched to reverse that result. D0 test and D1 were kept reserved for the formal evaluation.
 
-Stage 8 completed all 60 configurations, 84 training phases, and 124 held-out evaluation sets in 14 h 53 min. All three seeds are retained; no run failed or was retried. Ordinary supervised Temporal GNN improves over the MLP/GRU controls on both splits at all fractions, while JEPA and canonicalization do not show consistent extra benefits. All 18 collapse screens and 21 coordinate checks pass. The final audit verifies checkpoint/source/split integrity, recomputes all episode summaries, and exactly reproduces two complete held-out prediction sets. The [formal report](../reports/stage8/README.md) includes all results, costs, caveats, and reproduction commands. The Linux suite still has 48 passing tests. D0 test and D1 have now been evaluated; future test-inspired work is exploratory. No stage 9 jobs have started.
+Stage 8 completed all 60 configurations, 84 training phases, and 124 held-out evaluation sets in 14 h 53 min. All three seeds are retained; no run failed or was retried. Ordinary supervised Temporal GNN improves over the MLP/GRU controls on both splits at all fractions, while JEPA and canonicalization do not show consistent extra benefits. All 18 collapse screens and 21 coordinate checks pass. The final audit verifies checkpoint/source/split integrity, recomputes all episode summaries, and exactly reproduces two complete held-out prediction sets. The [formal report](../reports/stage8/README.md) includes all results, costs, caveats, and reproduction commands. The Linux suite still has 48 passing tests. D0 test and D1 have now been evaluated; future test-inspired work is exploratory. No stage 9 training jobs have started.
+
+Stage 9 is preparing a second-task replication after the decision to extend beyond Square. The [draft Stack protocol](stack_protocol.md) proposes 12 runs: MLP, GRU, Temporal GNN, and a message-ablation control, each with three seeds at the full training fraction. The AutoDL time limit is pending. Stack data audit, task adaptation, measurements, and training remain unstarted; there are no Stack results. The GRAIL scope decision is also still open.
 
 `CHECKING` marks a stage's final review; `DONE` marks a closed stage.
