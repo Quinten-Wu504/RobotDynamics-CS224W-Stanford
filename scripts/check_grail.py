@@ -16,12 +16,13 @@ def main():
     parser.add_argument("cache", type=Path)
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--device", choices=("cpu", "cuda"), default="cpu")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
     cfg = yaml.safe_load(Path("configs/grail_protocol.yaml").read_text())["training"]
     cfg.update(
         purpose="check",
-        device="cpu",
+        device=args.device,
         threads=2,
         seed=0,
         epochs=2,

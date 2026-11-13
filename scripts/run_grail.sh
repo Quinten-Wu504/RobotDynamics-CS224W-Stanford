@@ -8,6 +8,8 @@ mkdir -p "$output"
 exec 9>"$output/driver.lock"
 flock -n 9 || { echo 'GRAIL driver is already running'; exit 1; }
 trap 'code=$?; printf "%s\n" "$code" > "$output/training.exit"; date -u +%FT%TZ > "$output/finished.txt"' EXIT
+trap 'exit 143' TERM
+trap 'exit 130' INT
 rm -f "$output/training.exit" "$output/finished.txt"
 date -u +%FT%TZ >> "$output/started.txt"
 echo $$ > "$output/driver.pid"
