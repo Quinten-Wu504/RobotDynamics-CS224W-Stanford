@@ -1,0 +1,203 @@
+{
+  "episode_ids": [
+    "pickup_table__apple_10__002",
+    "pickup_table__apple_10__005",
+    "pickup_table__apple_22__003",
+    "pickup_table__apple_22__004"
+  ],
+  "asset_ids": [
+    "apple_10",
+    "apple_22"
+  ],
+  "asset_means_cm": [
+    1.8211102897887876,
+    1.7553602287963175
+  ],
+  "mean_cm": 1.7882352592925526,
+  "error_sha256": "b30d547eb4a1063e75a5dceb5190dc06f2a0e512794ad2bb3a426543966153e0",
+  "summary": [
+    {
+      "entity": "object",
+      "horizon_steps": 1,
+      "segment": "all",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 964,
+      "mean_cm": 0.30119892970062795
+    },
+    {
+      "entity": "object",
+      "horizon_steps": 1,
+      "segment": "low_motion",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 289,
+      "mean_cm": 0.0012152999198828736
+    },
+    {
+      "entity": "object",
+      "horizon_steps": 1,
+      "segment": "moving",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 675,
+      "mean_cm": 0.4462877539002956
+    },
+    {
+      "entity": "object",
+      "horizon_steps": 6,
+      "segment": "all",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 944,
+      "mean_cm": 1.7635493088165644
+    },
+    {
+      "entity": "object",
+      "horizon_steps": 6,
+      "segment": "low_motion",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 289,
+      "mean_cm": 0.04378510378558579
+    },
+    {
+      "entity": "object",
+      "horizon_steps": 6,
+      "segment": "moving",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 655,
+      "mean_cm": 2.6244465024254966
+    },
+    {
+      "entity": "object",
+      "horizon_steps": 12,
+      "segment": "all",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 920,
+      "mean_cm": 3.4923411982774493
+    },
+    {
+      "entity": "object",
+      "horizon_steps": 12,
+      "segment": "low_motion",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 289,
+      "mean_cm": 0.15858406221323906
+    },
+    {
+      "entity": "object",
+      "horizon_steps": 12,
+      "segment": "moving",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 631,
+      "mean_cm": 5.2344934046676235
+    },
+    {
+      "entity": "robot_root",
+      "horizon_steps": 1,
+      "segment": "all",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 964,
+      "mean_cm": 0.29919410664806345
+    },
+    {
+      "entity": "robot_root",
+      "horizon_steps": 1,
+      "segment": "low_motion",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 250,
+      "mean_cm": 0.07750887717391591
+    },
+    {
+      "entity": "robot_root",
+      "horizon_steps": 1,
+      "segment": "moving",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 714,
+      "mean_cm": 0.3715174332362996
+    },
+    {
+      "entity": "robot_root",
+      "horizon_steps": 6,
+      "segment": "all",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 944,
+      "mean_cm": 1.7109769934406134
+    },
+    {
+      "entity": "robot_root",
+      "horizon_steps": 6,
+      "segment": "low_motion",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 236,
+      "mean_cm": 0.6792420755763864
+    },
+    {
+      "entity": "robot_root",
+      "horizon_steps": 6,
+      "segment": "moving",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 708,
+      "mean_cm": 2.062502900583398
+    },
+    {
+      "entity": "robot_root",
+      "horizon_steps": 12,
+      "segment": "all",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 920,
+      "mean_cm": 3.162151018871997
+    },
+    {
+      "entity": "robot_root",
+      "horizon_steps": 12,
+      "segment": "low_motion",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 222,
+      "mean_cm": 1.6265976036747833
+    },
+    {
+      "entity": "robot_root",
+      "horizon_steps": 12,
+      "segment": "moving",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 698,
+      "mean_cm": 3.7425940144890806
+    }
+  ],
+  "trajectory_rows_sha256": "5825481b515e3f478fcabc88d4920b475a5b04cf421d8fa9c3c6a28a37c1231c",
+  "model": "hold",
+  "seed": null,
+  "role": "validation_workflow",
+  "identity": {
+    "selection_seal_sha256": "22ca3cd9a6df8604faa71b8c435957100639bdb77d465091ad6fd381d755d973",
+    "evaluator_sha256": "9161ee01b21b753b5807f5b0ff540272c1952a4ac0e73bb5f978c341ad524630",
+    "results_code_sha256": "680fcad4a3431629d5f82f78400f149c94e48ccea004c21027630c2b32f46dab",
+    "role": "validation_workflow",
+    "episode_ids": [
+      "pickup_table__apple_10__002",
+      "pickup_table__apple_10__005",
+      "pickup_table__apple_22__003",
+      "pickup_table__apple_22__004"
+    ]
+  },
+  "source": {
+    "source_commit": "b9ff03cbc85c5ebba2b3688d7864a259fc48221b",
+    "working_tree_dirty": false
+  },
+  "episode_rows_sha256": "9417b45bc346e8fbbe842c306e2f57ec6a070d947cfac8ced6a23cdb94a72efa"
+}

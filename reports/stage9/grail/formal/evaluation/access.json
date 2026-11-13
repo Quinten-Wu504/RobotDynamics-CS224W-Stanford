@@ -1,0 +1,185 @@
+{
+  "identity": {
+    "selection_seal_sha256": "22ca3cd9a6df8604faa71b8c435957100639bdb77d465091ad6fd381d755d973",
+    "evaluator_sha256": "9161ee01b21b753b5807f5b0ff540272c1952a4ac0e73bb5f978c341ad524630",
+    "results_code_sha256": "680fcad4a3431629d5f82f78400f149c94e48ccea004c21027630c2b32f46dab",
+    "role": "test",
+    "episode_ids": [
+      "pickup_table__apple_11__001",
+      "pickup_table__apple_11__006",
+      "pickup_table__beer_19__000",
+      "pickup_table__beer_19__001",
+      "pickup_table__beer_9__004",
+      "pickup_table__beer_9__006",
+      "pickup_table__bowl_2__001",
+      "pickup_table__bowl_2__005",
+      "pickup_table__carrot_1__000",
+      "pickup_table__carrot_1__002",
+      "pickup_table__cereal_1__000",
+      "pickup_table__cereal_1__002",
+      "pickup_table__condiment_2__001",
+      "pickup_table__condiment_2__003",
+      "pickup_table__cupcake_18__002",
+      "pickup_table__cupcake_18__003",
+      "pickup_table__ketchup_3__003",
+      "pickup_table__ketchup_3__004",
+      "pickup_table__kettle_0__001",
+      "pickup_table__kettle_0__005",
+      "pickup_table__lemon_12__000",
+      "pickup_table__lemon_12__002",
+      "pickup_table__mug_16__001",
+      "pickup_table__mug_16__003",
+      "pickup_table__orange_1__001",
+      "pickup_table__orange_1__002",
+      "pickup_table__peach_2__002",
+      "pickup_table__peach_2__003",
+      "pickup_table__potato_9__001",
+      "pickup_table__potato_9__003",
+      "pickup_table__shaker_2__000",
+      "pickup_table__shaker_2__002",
+      "pickup_table__tomato_8__001",
+      "pickup_table__tomato_8__002",
+      "pickup_table__wine_8__000",
+      "pickup_table__wine_8__003"
+    ]
+  },
+  "source": {
+    "source_commit": "b9ff03cbc85c5ebba2b3688d7864a259fc48221b",
+    "working_tree_dirty": false
+  },
+  "opened_unix_time": 1794549801.4722767,
+  "training_audit": [
+    {
+      "run_id": "history_mlp_s0",
+      "best_epoch": 14,
+      "validation_reload": {
+        "passed": true,
+        "prediction_sha256": "05f66539bfedf4c565c27db57238deaa50f551c5f1a5d33f6dee6e5d1eda9752",
+        "best_checkpoint_sha256": "d97052890fb7e74bfdaff62410f23ecf56ac2942607a056afa3110a19c606d74",
+        "source_commit": "b9ff03cbc85c5ebba2b3688d7864a259fc48221b",
+        "working_tree_dirty": false
+      }
+    },
+    {
+      "run_id": "gru_s0",
+      "best_epoch": 12,
+      "validation_reload": {
+        "passed": true,
+        "prediction_sha256": "67002d5d08291a01251d92b601eb3fac1efee470dd1277053c53cfa2186eda35",
+        "best_checkpoint_sha256": "3abb590ed0c9af5e13ba32603be3533d5b61a90483c9f4a00bb62759d48dc435",
+        "source_commit": "b9ff03cbc85c5ebba2b3688d7864a259fc48221b",
+        "working_tree_dirty": false
+      }
+    },
+    {
+      "run_id": "temporal_gnn_s0",
+      "best_epoch": 11,
+      "validation_reload": {
+        "passed": true,
+        "prediction_sha256": "98c7143bb5130ca6dc3699ba771873d9e80d161a19c04b8110dae7437a76acb6",
+        "best_checkpoint_sha256": "2c3d6ab62c79287006e4a11f8461a8ef99283b4c9781f4023ddada74458db423",
+        "source_commit": "b9ff03cbc85c5ebba2b3688d7864a259fc48221b",
+        "working_tree_dirty": false
+      }
+    },
+    {
+      "run_id": "temporal_no_messages_s0",
+      "best_epoch": 11,
+      "validation_reload": {
+        "passed": true,
+        "prediction_sha256": "f232e3445b371f9fda15f065814d968c4e9f54f1dad51608693f80efec8b63c4",
+        "best_checkpoint_sha256": "404d4acef8ebc627de2694498a1a4d0a687d29905f60f609fe8c4fddbb9ef952",
+        "source_commit": "b9ff03cbc85c5ebba2b3688d7864a259fc48221b",
+        "working_tree_dirty": false
+      }
+    },
+    {
+      "run_id": "history_mlp_s1",
+      "best_epoch": 31,
+      "validation_reload": {
+        "passed": true,
+        "prediction_sha256": "ceb092f4e6cd4c5888563be8a39d728d6062f785db513aa4f384a63de309c129",
+        "best_checkpoint_sha256": "04eb437fe90139aac5d44b2ff05bce0ca62f6c6be3219d959e3c7324f3cf8783",
+        "source_commit": "b9ff03cbc85c5ebba2b3688d7864a259fc48221b",
+        "working_tree_dirty": false
+      }
+    },
+    {
+      "run_id": "gru_s1",
+      "best_epoch": 13,
+      "validation_reload": {
+        "passed": true,
+        "prediction_sha256": "2fdc34f65a9dfc9bd4773231864baf43df559376c475222f513f10c38c5acd20",
+        "best_checkpoint_sha256": "8800e9bc0474cc0fa9debc2d7be8ce168540056b0096ebcbdfab1227f94c4449",
+        "source_commit": "b9ff03cbc85c5ebba2b3688d7864a259fc48221b",
+        "working_tree_dirty": false
+      }
+    },
+    {
+      "run_id": "temporal_gnn_s1",
+      "best_epoch": 11,
+      "validation_reload": {
+        "passed": true,
+        "prediction_sha256": "35867749e1f843f0fec921878b6e3902db315c2a3cbae3aa749d225c38bceb39",
+        "best_checkpoint_sha256": "af05c6e64af2d981d56b9a0d08bc9a18ec35e8236eaa24cd3fbb7e6c6ec36272",
+        "source_commit": "b9ff03cbc85c5ebba2b3688d7864a259fc48221b",
+        "working_tree_dirty": false
+      }
+    },
+    {
+      "run_id": "temporal_no_messages_s1",
+      "best_epoch": 11,
+      "validation_reload": {
+        "passed": true,
+        "prediction_sha256": "30c70b36048316439f490f0c48fa73db48b7741797a993e5089e4b7fd17b39ed",
+        "best_checkpoint_sha256": "1760420b1b4a32b8df600bf2c8252d5178eea86069d478d2511ecebfb491376a",
+        "source_commit": "b9ff03cbc85c5ebba2b3688d7864a259fc48221b",
+        "working_tree_dirty": false
+      }
+    },
+    {
+      "run_id": "history_mlp_s2",
+      "best_epoch": 11,
+      "validation_reload": {
+        "passed": true,
+        "prediction_sha256": "013d9452d7374c001af7b9334744673915414325c6397043fd266a1a41f856cc",
+        "best_checkpoint_sha256": "160d00bccfa344d3aaee5658a0cb69ebeb374801e0ea651387d17cb9c0c042a6",
+        "source_commit": "b9ff03cbc85c5ebba2b3688d7864a259fc48221b",
+        "working_tree_dirty": false
+      }
+    },
+    {
+      "run_id": "gru_s2",
+      "best_epoch": 11,
+      "validation_reload": {
+        "passed": true,
+        "prediction_sha256": "ec8d84bc11f269e9947b0a6f608fa1ffa5f5d6648c424770e086e678752aeea6",
+        "best_checkpoint_sha256": "e4ac435355b8ba5fb9168cfd3000e3ffb5ae7015dda2f442777e1e639f1ab29d",
+        "source_commit": "b9ff03cbc85c5ebba2b3688d7864a259fc48221b",
+        "working_tree_dirty": false
+      }
+    },
+    {
+      "run_id": "temporal_gnn_s2",
+      "best_epoch": 11,
+      "validation_reload": {
+        "passed": true,
+        "prediction_sha256": "45478844cb8c1fdc1231741858c5255108374a08d609ee1f4aca48f6a559ecfa",
+        "best_checkpoint_sha256": "b4b14ade9ca657d5c30af5718e26422720af2a68cb6e7b6686af9226fdf13282",
+        "source_commit": "b9ff03cbc85c5ebba2b3688d7864a259fc48221b",
+        "working_tree_dirty": false
+      }
+    },
+    {
+      "run_id": "temporal_no_messages_s2",
+      "best_epoch": 11,
+      "validation_reload": {
+        "passed": true,
+        "prediction_sha256": "2258067caba6fa4eb50879b6fd98c2abbf00e0052c1008c87abb52fc1af3e09d",
+        "best_checkpoint_sha256": "2cd4f7ff12705d1de8dc3dfac95469558d7c292f56e4337bb919da790e713253",
+        "source_commit": "b9ff03cbc85c5ebba2b3688d7864a259fc48221b",
+        "working_tree_dirty": false
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # RobotDynamics-CS224W-Stanford
 
-CS224W course project at Stanford. We study graph-based prediction of robot and object motion using MimicGen Square and Stack.
+CS224W course project at Stanford. We study graph-based prediction of robot and object motion using MimicGen Square and Stack, with a separate history-only GRAIL pickup demonstration.
 
 ## Project
 
@@ -12,10 +12,10 @@ Models take state histories and planned actions as input and predict position ch
 
 The environment and Square data audit are complete on AutoDL: Ubuntu 22.04, Python 3.10.8, and an RTX 4090 D. The [experiment protocol](docs/experiment_protocol.md) defines the task; the [data report](reports/stage2/README.md) contains statistics, checksums, and recovery plots.
 
-- **Code:** data processing, fixed splits, causal windows, shared evaluation, MLP/GRU and graph baselines, canonical-frame equivariant models, and JEPA/direct-state pretraining. The resumable formal pipeline includes checkpoint sealing, test evaluation, diagnostics, and automatic tables/plots. The Linux suite has 60 passing tests.
+- **Code:** data processing, fixed splits, causal windows, shared evaluation, MLP/GRU and graph baselines, canonical-frame equivariant models, and JEPA/direct-state pretraining. The resumable formal pipeline includes checkpoint sealing, test evaluation, diagnostics, and automatic tables/plots. The Linux suite has 62 passing tests.
 - **Data (Square):** 1,000 D0 and 1,000 D1 episodes scanned, with 153,477 and 152,400 recorded states respectively. No nonfinite values or inconsistent field layouts were found. Six complete trajectories (905 frames) passed state recovery checks.
 - **Square experiments:** all 60 formal configurations and 124 evaluation sets are complete, covering three seeds and 80/200/800 training episodes, with the state-pretraining control limited to 80 episodes. Held-out D0 and D1 were evaluated only after all checkpoints were selected and sealed. All diagnostics passed; the [formal report](reports/stage8/README.md) retains every seed and comparison.
-- **Stack replication:** 12 trained configurations and 28 evaluation sets are complete, covering four models and three seeds. Both releases contain 1,000 episodes; the Stack audit and six complete restorations passed. The [Stack report](reports/stage9/README.md) contains the full comparison and ablation. The separate [GRAIL demonstration](reports/stage9/grail/README.md) has a frozen 12-run history-only forecasting protocol. Its detached queue is training on the new 48 GB AutoDL server; CUDA checks pass and held-out results are pending.
+- **Stack replication:** 12 trained configurations and 28 evaluation sets are complete, covering four models and three seeds. Both releases contain 1,000 episodes; the Stack audit and six complete restorations passed. The [Stack report](reports/stage9/README.md) contains the full comparison and ablation. The separate [GRAIL demonstration](reports/stage9/grail/README.md) is also complete: 12 training runs, 14 held-out evaluation sets, and four predetermined trajectory examples. GNN beats GRU but does not beat MLP or its message-ablation control.
 - **Environment:** the Linux snapshot now includes PyG 2.6.1. Windows supports the base checks and plotting only.
 
 GRAIL uses a separate history-only task on G1 robot-root and object anchors: 240 motions split by asset, with horizons of 0.04/0.24/0.48 s at 25 Hz. Models are trained from scratch; this is an abstraction demonstration, not zero-shot or pretrained weight transfer. See the [GRAIL protocol](docs/grail_protocol.md) for its inputs and limitations.
@@ -53,6 +53,21 @@ The second task uses 800 training episodes, three seeds, and the same 40-epoch b
 | Temporal GNN, messages closed | 0.1362 ± 0.0034 | 0.2254 ± 0.0084 |
 
 GNN reduces error relative to GRU by 17.2%/32.9% and relative to the message-ablation control by 13.7%/14.4% on D0/D1. Every seed favors GNN in these aggregate comparisons. The message variants have equal nominal parameter counts and nearly equal update time; GNN and GRU have almost equal parameters but GNN takes about twice as long to train. Position hold still beats learned models on cube B at every horizon. The [complete report](reports/stage9/README.md) retains all seeds, paired intervals, subgroup exceptions, and reproducible episode errors. This supports supervised graph prediction in two tasks, not universal superiority, extra JEPA benefit, or closed-loop control performance.
+
+## GRAIL demonstration results
+
+The history-only GRAIL task uses 168 training motions and 36 held-out test motions from 18 unseen assets. Its six-cell mean errors are in cm; lower is better.
+
+| Model | Test mean ± seed SD, cm |
+| --- | ---: |
+| History MLP | 1.0001 ± 0.0209 |
+| GRU | 1.0825 ± 0.0242 |
+| Temporal GNN | 1.0109 ± 0.0189 |
+| Temporal GNN, messages disabled | 0.9823 ± 0.0269 |
+| Position hold | 1.7052 |
+| Constant velocity | 1.2488 |
+
+GNN improves over GRU by 6.6%, but its mean is 1.1% worse than MLP and 2.9% worse than messages disabled. The joint seed/asset intervals for those last two differences include zero. This does not reproduce Stack's message-passing benefit. All six graph runs selected the earliest allowed checkpoint (epoch 11), after an earlier validation minimum; the conclusion applies to this fixed recipe, not optimally tuned architectures. The [GRAIL report](reports/stage9/grail/README.md) retains all seeds, subgroups, costs, learning curves and trajectory examples. No checkpoints were reselected after seeing test results.
 
 ## Development results before formal testing
 
@@ -127,7 +142,7 @@ For Windows base-only checks, use Python 3.10 with `requirements/windows-base.lo
 
 ## Next steps
 
-The Square formal study and Stack replication are complete. Stack training took 3 h 50 min; its 28 test evaluation sets and independent checks are archived in the [stage 9 report](reports/stage9/README.md). Both tasks' test sets have now been evaluated, so new test-inspired experiments must be marked exploratory. GRAIL preparation and a 12-run training queue are documented in the [launch record](reports/stage9/grail/README.md); Stage 9 remains open until training and held-out evaluation finish. Stage 10 reproduction/Colab work has not started.
+Square, Stack and the GRAIL demonstration are complete. Stage 9 is in final review (`CHECKING`); no experiment remains running. All three tasks' test sets have now been evaluated, so new test-inspired experiments must be marked exploratory. Stage 10 will cover the reproduction package, Colab example and final course materials after the stage review. That work has not started.
 
 ## Data and references
 

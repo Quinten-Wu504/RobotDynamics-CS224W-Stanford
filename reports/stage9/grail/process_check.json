@@ -1,0 +1,7 @@
+{
+  "checked_at_utc": "2026-11-13T06:16:32.939858+00:00",
+  "grail_process_ids": [],
+  "gpu_compute_processes": "pid, process_name, used_gpu_memory [MiB]",
+  "server_shutdown": false,
+  "source_commit": "6641f80292275402e639fcdb66f0f0e919d93d70"
+}

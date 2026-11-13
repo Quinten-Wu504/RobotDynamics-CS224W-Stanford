@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "source": {
+    "source_commit": "b9ff03cbc85c5ebba2b3688d7864a259fc48221b",
+    "working_tree_dirty": false
+  },
+  "sealed_before_test_access": true,
+  "training_seconds": 3406.7772844545543,
+  "training_events": {
+    "start": 12,
+    "reload": 12,
+    "resume": 0
+  },
+  "training_exit": "0",
+  "evaluation_sets": 14,
+  "validation_reloads": 12,
+  "independent_test_rechecks": 2,
+  "selection_seal_sha256": "22ca3cd9a6df8604faa71b8c435957100639bdb77d465091ad6fd381d755d973",
+  "cache_sha256": "96164e2d94a3442fc925a9a3e2a7b84d250576acc5787bfeb714eaa22e59292a",
+  "normalizers": [
+    0.02605212306262534
+  ]
+}

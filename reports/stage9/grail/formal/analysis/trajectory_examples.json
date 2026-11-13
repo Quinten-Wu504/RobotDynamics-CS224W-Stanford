@@ -1,0 +1,11 @@
+{
+  "episodes": [
+    "pickup_table__apple_11__001",
+    "pickup_table__apple_11__006",
+    "pickup_table__beer_19__000",
+    "pickup_table__beer_19__001"
+  ],
+  "selection": "All two motions from each of the first two sorted test assets",
+  "horizon_steps": 12,
+  "plotted_seed": 0
+}

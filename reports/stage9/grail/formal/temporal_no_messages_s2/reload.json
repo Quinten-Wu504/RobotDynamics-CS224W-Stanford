@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "prediction_sha256": "2258067caba6fa4eb50879b6fd98c2abbf00e0052c1008c87abb52fc1af3e09d",
+  "best_checkpoint_sha256": "2cd4f7ff12705d1de8dc3dfac95469558d7c292f56e4337bb919da790e713253",
+  "source_commit": "7e1cb02433c971f13a1c07d20042e8430b09734d",
+  "working_tree_dirty": false
+}

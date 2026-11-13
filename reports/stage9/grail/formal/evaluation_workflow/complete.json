@@ -1,0 +1,27 @@
+{
+  "results": [
+    "history_mlp_s0.json",
+    "gru_s0.json",
+    "temporal_gnn_s0.json",
+    "temporal_no_messages_s0.json",
+    "hold.json",
+    "constant_velocity.json"
+  ],
+  "identity": {
+    "selection_seal_sha256": "22ca3cd9a6df8604faa71b8c435957100639bdb77d465091ad6fd381d755d973",
+    "evaluator_sha256": "9161ee01b21b753b5807f5b0ff540272c1952a4ac0e73bb5f978c341ad524630",
+    "results_code_sha256": "680fcad4a3431629d5f82f78400f149c94e48ccea004c21027630c2b32f46dab",
+    "role": "validation_workflow",
+    "episode_ids": [
+      "pickup_table__apple_10__002",
+      "pickup_table__apple_10__005",
+      "pickup_table__apple_22__003",
+      "pickup_table__apple_22__004"
+    ]
+  },
+  "source": {
+    "source_commit": "b9ff03cbc85c5ebba2b3688d7864a259fc48221b",
+    "working_tree_dirty": false
+  },
+  "finished_unix_time": 1794549740.96892
+}

@@ -1,0 +1,13 @@
+Completed history_mlp_s0: 1/12
+Completed gru_s0: 2/12
+Completed temporal_gnn_s0: 3/12
+Completed temporal_no_messages_s0: 4/12
+Completed history_mlp_s1: 5/12
+Completed gru_s1: 6/12
+Completed temporal_gnn_s1: 7/12
+Completed temporal_no_messages_s1: 8/12
+Completed history_mlp_s2: 9/12
+Completed gru_s2: 10/12
+Completed temporal_gnn_s2: 11/12
+Completed temporal_no_messages_s2: 12/12
+All training and validation reloads complete. Test evaluation has not started.

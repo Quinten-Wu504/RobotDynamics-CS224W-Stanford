@@ -1,0 +1,16 @@
+test: history_mlp_s0 complete
+test: gru_s0 complete
+test: temporal_gnn_s0 complete
+test: temporal_no_messages_s0 complete
+test: history_mlp_s1 complete
+test: gru_s1 complete
+test: temporal_gnn_s1 complete
+test: temporal_no_messages_s1 complete
+test: history_mlp_s2 complete
+test: gru_s2 complete
+test: temporal_gnn_s2 complete
+test: temporal_no_messages_s2 complete
+test: hold complete
+test: constant_velocity complete
+test: temporal_gnn_s0 complete
+test: temporal_no_messages_s2 complete

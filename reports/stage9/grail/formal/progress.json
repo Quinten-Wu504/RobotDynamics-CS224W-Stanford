@@ -1,0 +1,145 @@
+{
+  "completed": [
+    "history_mlp_s0",
+    "gru_s0",
+    "temporal_gnn_s0",
+    "temporal_no_messages_s0",
+    "history_mlp_s1",
+    "gru_s1",
+    "temporal_gnn_s1",
+    "temporal_no_messages_s1",
+    "history_mlp_s2",
+    "gru_s2",
+    "temporal_gnn_s2",
+    "temporal_no_messages_s2"
+  ],
+  "events": [
+    {
+      "run": "history_mlp_s0",
+      "event": "start",
+      "unix_time": 1794543396.773355
+    },
+    {
+      "run": "history_mlp_s0",
+      "event": "reload",
+      "unix_time": 1794543464.2333717
+    },
+    {
+      "run": "gru_s0",
+      "event": "start",
+      "unix_time": 1794543467.435023
+    },
+    {
+      "run": "gru_s0",
+      "event": "reload",
+      "unix_time": 1794543713.9958313
+    },
+    {
+      "run": "temporal_gnn_s0",
+      "event": "start",
+      "unix_time": 1794543717.3604417
+    },
+    {
+      "run": "temporal_gnn_s0",
+      "event": "reload",
+      "unix_time": 1794544124.1618032
+    },
+    {
+      "run": "temporal_no_messages_s0",
+      "event": "start",
+      "unix_time": 1794544127.3304303
+    },
+    {
+      "run": "temporal_no_messages_s0",
+      "event": "reload",
+      "unix_time": 1794544533.408045
+    },
+    {
+      "run": "history_mlp_s1",
+      "event": "start",
+      "unix_time": 1794544536.6962924
+    },
+    {
+      "run": "history_mlp_s1",
+      "event": "reload",
+      "unix_time": 1794544604.4219165
+    },
+    {
+      "run": "gru_s1",
+      "event": "start",
+      "unix_time": 1794544607.5048761
+    },
+    {
+      "run": "gru_s1",
+      "event": "reload",
+      "unix_time": 1794544848.3505523
+    },
+    {
+      "run": "temporal_gnn_s1",
+      "event": "start",
+      "unix_time": 1794544851.5973926
+    },
+    {
+      "run": "temporal_gnn_s1",
+      "event": "reload",
+      "unix_time": 1794545262.4199216
+    },
+    {
+      "run": "temporal_no_messages_s1",
+      "event": "start",
+      "unix_time": 1794545265.692349
+    },
+    {
+      "run": "temporal_no_messages_s1",
+      "event": "reload",
+      "unix_time": 1794545670.285281
+    },
+    {
+      "run": "history_mlp_s2",
+      "event": "start",
+      "unix_time": 1794545673.6258788
+    },
+    {
+      "run": "history_mlp_s2",
+      "event": "reload",
+      "unix_time": 1794545740.8774536
+    },
+    {
+      "run": "gru_s2",
+      "event": "start",
+      "unix_time": 1794545743.9148471
+    },
+    {
+      "run": "gru_s2",
+      "event": "reload",
+      "unix_time": 1794545986.1239223
+    },
+    {
+      "run": "temporal_gnn_s2",
+      "event": "start",
+      "unix_time": 1794545989.3131497
+    },
+    {
+      "run": "temporal_gnn_s2",
+      "event": "reload",
+      "unix_time": 1794546397.8016245
+    },
+    {
+      "run": "temporal_no_messages_s2",
+      "event": "start",
+      "unix_time": 1794546400.9665468
+    },
+    {
+      "run": "temporal_no_messages_s2",
+      "event": "reload",
+      "unix_time": 1794546802.4827857
+    }
+  ],
+  "used_seconds": 3406.7772844545543,
+  "source": {
+    "source_commit": "ef13ad69315c9b3adf67153ab431a0e7eb84b6f4",
+    "working_tree_dirty": false
+  },
+  "test_evaluation_started": false,
+  "status": "training_complete"
+}

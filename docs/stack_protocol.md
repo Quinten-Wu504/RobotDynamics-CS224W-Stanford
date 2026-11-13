@@ -47,7 +47,7 @@ Square full-data mean update times were 8.36 min for MLP, 17.81 min for GRU, and
 
 The user authorized the finite second-task matrix without a time limit and requested a detached training queue followed by a handoff. Measure costs before launch and retain all seeds. Use session detachment, queue locks, atomic epoch checkpoints, and resume validation; test the job across an SSH disconnect. Platform shutdown or storage failure can still interrupt it. Do not buy or resize an instance. No Stage 10 work starts during this stage.
 
-GRAIL remains in the project scope. Its later [history-only pickup protocol](grail_protocol.md) is separate from this Stack comparison; training and held-out evaluation are tracked in the GRAIL launch record. The Stack closeout does not complete or waive GRAIL; no demonstration or transfer result is claimed. Stage 10 remains unstarted.
+The separate [history-only GRAIL protocol](grail_protocol.md) has now been executed; its [results and trajectory demonstration](../reports/stage9/grail/README.md) are complete. It uses newly trained models rather than transferred Stack weights. Stage 10 remains unstarted.
 
 ## References checked during planning
 
@@ -60,4 +60,4 @@ The upstream links above identify the planning sources. Record the installed imp
 
 The Stack two-epoch resource probe measured 10.13/19.84/42.60/42.00 seconds per epoch for MLP/GRU/GNN/message-ablation, respectively, on 238,144 training windows. This projects 3.82 hours of updates; the training-only queue is expected to take roughly 4–5 hours including validation/reloads, subject to load. See the [launch and audit record](../reports/stage9/README.md) for checks and actual commands.
 
-The completed training/validation queue took 3 h 50 min 15 s. The four-model comparison and message ablation are complete. GRAIL remains a separate item with its own protocol and pending results; Stage 10 has not started.
+The completed training/validation queue took 3 h 50 min 15 s. The four-model comparison and message ablation are complete. The separately scoped GRAIL demonstration is also complete; Stage 10 has not started.

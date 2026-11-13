@@ -1,0 +1,232 @@
+{
+  "protocol_sha256": "d7232f1259b97305a90134f77256d78e212b602ee0926eed12c55a5657b78aea",
+  "manifest_sha256": "481ea91edc94e2a1ff00fe072aec6eb002cfc6ec9b305117d5f9270ca8803338",
+  "cache_sha256": "96164e2d94a3442fc925a9a3e2a7b84d250576acc5787bfeb714eaa22e59292a",
+  "training_code": {
+    "grail_data.py": "98b0b7d34b59f409211f2dc176cbd3d8578dcb28ef79f446373ca6724929f668",
+    "grail_models.py": "eb2461516f089e727f44aa91fb1833ec4dc8b377d90725ca51fea6a1d2ce0158",
+    "train_grail.py": "eaaf9ad82442be4d7aff23ed94be96973f8b1e5590b41f437c6f4879844f559a",
+    "grail_checkpoint.py": "968b92f6a01a5db1e24187aac5582f357f82366c275f663156d0ee98ac34143b",
+    "train_learning.py": "ff3e955edc2c72abbd731d8a0e7806a936b8c4a24fc6f5009c484bd6dcf1a471",
+    "formal.py": "549403720ab95dd9a579528b99f6064380191afef345af0963a7564fbcd0cc56"
+  },
+  "runner_sha256": "3fa6d1bbc31054ad9846db287fd35e5dbf85d2d7c9cf5ecba53c071a5e7c3258",
+  "runs": [
+    {
+      "run_id": "history_mlp_s0",
+      "model": "history_mlp",
+      "config": {
+        "purpose": "formal",
+        "device": "cuda",
+        "threads": 4,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 512,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "train_episodes": 168,
+        "validation_episodes": 36,
+        "seed": 0
+      }
+    },
+    {
+      "run_id": "gru_s0",
+      "model": "gru",
+      "config": {
+        "purpose": "formal",
+        "device": "cuda",
+        "threads": 4,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 512,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "train_episodes": 168,
+        "validation_episodes": 36,
+        "seed": 0
+      }
+    },
+    {
+      "run_id": "temporal_gnn_s0",
+      "model": "temporal_gnn",
+      "config": {
+        "purpose": "formal",
+        "device": "cuda",
+        "threads": 4,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 512,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "train_episodes": 168,
+        "validation_episodes": 36,
+        "seed": 0
+      }
+    },
+    {
+      "run_id": "temporal_no_messages_s0",
+      "model": "temporal_no_messages",
+      "config": {
+        "purpose": "formal",
+        "device": "cuda",
+        "threads": 4,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 512,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "train_episodes": 168,
+        "validation_episodes": 36,
+        "seed": 0
+      }
+    },
+    {
+      "run_id": "history_mlp_s1",
+      "model": "history_mlp",
+      "config": {
+        "purpose": "formal",
+        "device": "cuda",
+        "threads": 4,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 512,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "train_episodes": 168,
+        "validation_episodes": 36,
+        "seed": 1
+      }
+    },
+    {
+      "run_id": "gru_s1",
+      "model": "gru",
+      "config": {
+        "purpose": "formal",
+        "device": "cuda",
+        "threads": 4,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 512,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "train_episodes": 168,
+        "validation_episodes": 36,
+        "seed": 1
+      }
+    },
+    {
+      "run_id": "temporal_gnn_s1",
+      "model": "temporal_gnn",
+      "config": {
+        "purpose": "formal",
+        "device": "cuda",
+        "threads": 4,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 512,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "train_episodes": 168,
+        "validation_episodes": 36,
+        "seed": 1
+      }
+    },
+    {
+      "run_id": "temporal_no_messages_s1",
+      "model": "temporal_no_messages",
+      "config": {
+        "purpose": "formal",
+        "device": "cuda",
+        "threads": 4,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 512,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "train_episodes": 168,
+        "validation_episodes": 36,
+        "seed": 1
+      }
+    },
+    {
+      "run_id": "history_mlp_s2",
+      "model": "history_mlp",
+      "config": {
+        "purpose": "formal",
+        "device": "cuda",
+        "threads": 4,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 512,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "train_episodes": 168,
+        "validation_episodes": 36,
+        "seed": 2
+      }
+    },
+    {
+      "run_id": "gru_s2",
+      "model": "gru",
+      "config": {
+        "purpose": "formal",
+        "device": "cuda",
+        "threads": 4,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 512,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "train_episodes": 168,
+        "validation_episodes": 36,
+        "seed": 2
+      }
+    },
+    {
+      "run_id": "temporal_gnn_s2",
+      "model": "temporal_gnn",
+      "config": {
+        "purpose": "formal",
+        "device": "cuda",
+        "threads": 4,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 512,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "train_episodes": 168,
+        "validation_episodes": 36,
+        "seed": 2
+      }
+    },
+    {
+      "run_id": "temporal_no_messages_s2",
+      "model": "temporal_no_messages",
+      "config": {
+        "purpose": "formal",
+        "device": "cuda",
+        "threads": 4,
+        "epochs": 40,
+        "selection_start": 11,
+        "batch_size": 512,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "train_episodes": 168,
+        "validation_episodes": 36,
+        "seed": 2
+      }
+    }
+  ]
+}

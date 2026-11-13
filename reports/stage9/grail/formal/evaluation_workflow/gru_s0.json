@@ -1,0 +1,203 @@
+{
+  "episode_ids": [
+    "pickup_table__apple_10__002",
+    "pickup_table__apple_10__005",
+    "pickup_table__apple_22__003",
+    "pickup_table__apple_22__004"
+  ],
+  "asset_ids": [
+    "apple_10",
+    "apple_22"
+  ],
+  "asset_means_cm": [
+    0.8503104846202452,
+    1.1826299933320683
+  ],
+  "mean_cm": 1.0164702389761566,
+  "error_sha256": "eebe19f9844a9296e573cb9113d300bc260e6c90a211b9c99d36ac14a34ff062",
+  "summary": [
+    {
+      "entity": "object",
+      "horizon_steps": 1,
+      "segment": "all",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 964,
+      "mean_cm": 0.15855818228863247
+    },
+    {
+      "entity": "object",
+      "horizon_steps": 1,
+      "segment": "low_motion",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 289,
+      "mean_cm": 0.06941746050925317
+    },
+    {
+      "entity": "object",
+      "horizon_steps": 1,
+      "segment": "moving",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 675,
+      "mean_cm": 0.19422515200507515
+    },
+    {
+      "entity": "object",
+      "horizon_steps": 6,
+      "segment": "all",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 944,
+      "mean_cm": 0.8850746447437046
+    },
+    {
+      "entity": "object",
+      "horizon_steps": 6,
+      "segment": "low_motion",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 289,
+      "mean_cm": 0.2146623085520396
+    },
+    {
+      "entity": "object",
+      "horizon_steps": 6,
+      "segment": "moving",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 655,
+      "mean_cm": 1.151789610432707
+    },
+    {
+      "entity": "object",
+      "horizon_steps": 12,
+      "segment": "all",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 920,
+      "mean_cm": 1.7232836954082482
+    },
+    {
+      "entity": "object",
+      "horizon_steps": 12,
+      "segment": "low_motion",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 289,
+      "mean_cm": 0.46203748626067037
+    },
+    {
+      "entity": "object",
+      "horizon_steps": 12,
+      "segment": "moving",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 631,
+      "mean_cm": 2.194590386938125
+    },
+    {
+      "entity": "robot_root",
+      "horizon_steps": 1,
+      "segment": "all",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 964,
+      "mean_cm": 0.16749013387349643
+    },
+    {
+      "entity": "robot_root",
+      "horizon_steps": 1,
+      "segment": "low_motion",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 250,
+      "mean_cm": 0.14121219066757956
+    },
+    {
+      "entity": "robot_root",
+      "horizon_steps": 1,
+      "segment": "moving",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 714,
+      "mean_cm": 0.17282891120867805
+    },
+    {
+      "entity": "robot_root",
+      "horizon_steps": 6,
+      "segment": "all",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 944,
+      "mean_cm": 1.0440551919902779
+    },
+    {
+      "entity": "robot_root",
+      "horizon_steps": 6,
+      "segment": "low_motion",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 236,
+      "mean_cm": 0.6569943518641979
+    },
+    {
+      "entity": "robot_root",
+      "horizon_steps": 6,
+      "segment": "moving",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 708,
+      "mean_cm": 1.1550657469080996
+    },
+    {
+      "entity": "robot_root",
+      "horizon_steps": 12,
+      "segment": "all",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 920,
+      "mean_cm": 2.1203595855525803
+    },
+    {
+      "entity": "robot_root",
+      "horizon_steps": 12,
+      "segment": "low_motion",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 222,
+      "mean_cm": 1.4570176281017329
+    },
+    {
+      "entity": "robot_root",
+      "horizon_steps": 12,
+      "segment": "moving",
+      "episodes": 4,
+      "assets": 2,
+      "windows": 698,
+      "mean_cm": 2.358069872712192
+    }
+  ],
+  "trajectory_rows_sha256": "970200eda4a6df4c6ea75bff27fa7a099843ff63c4b18abd4dd23f308db00569",
+  "model": "gru",
+  "seed": 0,
+  "role": "validation_workflow",
+  "identity": {
+    "selection_seal_sha256": "22ca3cd9a6df8604faa71b8c435957100639bdb77d465091ad6fd381d755d973",
+    "evaluator_sha256": "9161ee01b21b753b5807f5b0ff540272c1952a4ac0e73bb5f978c341ad524630",
+    "results_code_sha256": "680fcad4a3431629d5f82f78400f149c94e48ccea004c21027630c2b32f46dab",
+    "role": "validation_workflow",
+    "episode_ids": [
+      "pickup_table__apple_10__002",
+      "pickup_table__apple_10__005",
+      "pickup_table__apple_22__003",
+      "pickup_table__apple_22__004"
+    ]
+  },
+  "source": {
+    "source_commit": "b9ff03cbc85c5ebba2b3688d7864a259fc48221b",
+    "working_tree_dirty": false
+  },
+  "episode_rows_sha256": "1555d6985866b2b2037daaf8d77676144b117f4fa72968045aa3aedafb10c1af"
+}

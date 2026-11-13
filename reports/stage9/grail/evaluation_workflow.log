@@ -1,0 +1,9 @@
+validation_workflow: history_mlp_s0 complete
+validation_workflow: gru_s0 complete
+validation_workflow: temporal_gnn_s0 complete
+validation_workflow: temporal_no_messages_s0 complete
+validation_workflow: hold complete
+validation_workflow: constant_velocity complete
+validation_workflow: temporal_gnn_s0 complete
+validation_workflow: hold complete
+validation_workflow: constant_velocity complete

@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "analysis_source": {
+    "source_commit": "6641f80292275402e639fcdb66f0f0e919d93d70",
+    "working_tree_dirty": false
+  },
+  "evaluation_sets": 14,
+  "episode_csv_hashes_checked": 14,
+  "independently_recomputed_group_summaries": 252,
+  "summary_tolerance_cm": 1e-12,
+  "exact_local_remote_analysis_fields": [
+    "summary",
+    "groups",
+    "paired_contrasts",
+    "costs",
+    "training_curves"
+  ],
+  "trajectory_csv_hashes_checked_by_analyzer": 6,
+  "plots_visually_inspected": [
+    "comparison",
+    "horizons",
+    "learning_curves",
+    "trajectory_1",
+    "trajectory_2",
+    "trajectory_3",
+    "trajectory_4"
+  ],
+  "raw_cache_and_checkpoints_required_for_prediction_replay": true
+}
