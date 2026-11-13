@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "source": {
+    "source_commit": "51a9a78021c56df202add86b19a745496bed4917",
+    "working_tree_dirty": false
+  },
+  "code": {
+    "grail_data.py": "98b0b7d34b59f409211f2dc176cbd3d8578dcb28ef79f446373ca6724929f668",
+    "grail_models.py": "eb2461516f089e727f44aa91fb1833ec4dc8b377d90725ca51fea6a1d2ce0158",
+    "train_grail.py": "eaaf9ad82442be4d7aff23ed94be96973f8b1e5590b41f437c6f4879844f559a",
+    "grail_checkpoint.py": "968b92f6a01a5db1e24187aac5582f357f82366c275f663156d0ee98ac34143b",
+    "train_learning.py": "ff3e955edc2c72abbd731d8a0e7806a936b8c4a24fc6f5009c484bd6dcf1a471",
+    "formal.py": "549403720ab95dd9a579528b99f6064380191afef345af0963a7564fbcd0cc56"
+  },
+  "precommit_line_endings": {
+    "train_grail.py": {
+      "before_sha256": "fb752a8c340659552d460d4b42aa39816f8e03c916dc42061ccaf8015bbb7581",
+      "after_sha256": "eaaf9ad82442be4d7aff23ed94be96973f8b1e5590b41f437c6f4879844f559a",
+      "difference": "CRLF to LF only"
+    }
+  },
+  "cache_and_published_manifest_match": true,
+  "cpu_queue_check_runs": 4,
+  "test_predictions_computed": false
+}

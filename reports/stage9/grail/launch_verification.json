@@ -1,0 +1,26 @@
+{
+  "observed_utc": "2026-11-13T03:44:29.741534+00:00",
+  "passed": true,
+  "verified_from_new_ssh_connection_after_launch_session_exit": true,
+  "driver_pid": 347386,
+  "child_pids": [
+    347391
+  ],
+  "parent_pid": 1,
+  "session_id": 347386,
+  "sighup_ignored": true,
+  "stdin": "/dev/null",
+  "stdout": "/root/autodl-tmp/RobotDynamics-CS224W-Stanford/outputs/grail/formal/driver.log",
+  "duplicate_launch_exit_code": 1,
+  "status": "waiting_for_gpu",
+  "source": {
+    "source_commit": "51a9a78021c56df202add86b19a745496bed4917",
+    "working_tree_dirty": false
+  },
+  "planned_runs": 12,
+  "completed_runs": 0,
+  "other_gpu_pids": [
+    "339111"
+  ],
+  "test_evaluation_started": false
+}

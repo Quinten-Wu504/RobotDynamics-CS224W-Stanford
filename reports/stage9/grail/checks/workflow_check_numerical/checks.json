@@ -1,0 +1,79 @@
+{
+  "passed": true,
+  "models": {
+    "history_mlp": {
+      "exact_resume": true,
+      "resume_max_parameter_drift": 0.0,
+      "resume_tolerance": {
+        "rtol": 1e-05,
+        "atol": 1e-06
+      },
+      "selected_prediction_hash_equal": true,
+      "independent_reload": true,
+      "parameter_count": 119206,
+      "prediction_sha256": "3f952eab81cab0d73e69a917191dc58e0e812604e8be97e8843f5af6de22d310",
+      "resources": {
+        "loading_seconds": 0.14840160682797432,
+        "run_seconds_this_invocation": 0.24556419998407364,
+        "max_observed_rss_bytes": 585097216,
+        "peak_cuda_allocated_bytes": 0
+      }
+    },
+    "gru": {
+      "exact_resume": true,
+      "resume_max_parameter_drift": 0.0,
+      "resume_tolerance": {
+        "rtol": 1e-05,
+        "atol": 1e-06
+      },
+      "selected_prediction_hash_equal": true,
+      "independent_reload": true,
+      "parameter_count": 129606,
+      "prediction_sha256": "d6df7b25b7164b753664240265d2057052c9653e3dac1e5c3ceef577c8a4e924",
+      "resources": {
+        "loading_seconds": 0.13972611352801323,
+        "run_seconds_this_invocation": 0.5437751337885857,
+        "max_observed_rss_bytes": 642342912,
+        "peak_cuda_allocated_bytes": 0
+      }
+    },
+    "temporal_gnn": {
+      "exact_resume": true,
+      "resume_max_parameter_drift": 0.0,
+      "resume_tolerance": {
+        "rtol": 1e-05,
+        "atol": 1e-06
+      },
+      "selected_prediction_hash_equal": true,
+      "independent_reload": true,
+      "parameter_count": 119427,
+      "prediction_sha256": "fee4e7dfe6e0b6e72af477e31d9e080869a7de21ce39111c834f47ef68199f43",
+      "resources": {
+        "loading_seconds": 0.1518484242260456,
+        "run_seconds_this_invocation": 4.767840601503849,
+        "max_observed_rss_bytes": 1054191616,
+        "peak_cuda_allocated_bytes": 0
+      }
+    },
+    "temporal_no_messages": {
+      "exact_resume": true,
+      "resume_max_parameter_drift": 0.0,
+      "resume_tolerance": {
+        "rtol": 1e-05,
+        "atol": 1e-06
+      },
+      "selected_prediction_hash_equal": true,
+      "independent_reload": true,
+      "parameter_count": 119427,
+      "prediction_sha256": "51932b55213319d1c8cd029a1509bc184efeb8f5fdf1e76c0bd6a996c87c4dbd",
+      "resources": {
+        "loading_seconds": 0.16079073399305344,
+        "run_seconds_this_invocation": 5.267486356198788,
+        "max_observed_rss_bytes": 1074233344,
+        "peak_cuda_allocated_bytes": 0
+      }
+    }
+  },
+  "fit_final_initial_mse_ratio": 0.15896629790606293,
+  "test_predictions_computed": false
+}

@@ -1,0 +1,13 @@
+episode,entity,horizon_steps,windows,mean_error_cm
+pickup_table__alcohol_1__000,robot_root,1,241,0.6318061418008375
+pickup_table__alcohol_1__000,object,1,241,0.3884782975007551
+pickup_table__alcohol_1__000,robot_root,6,236,0.7696915254852389
+pickup_table__alcohol_1__000,object,6,236,0.6275605860063214
+pickup_table__alcohol_1__000,robot_root,12,230,1.0481488817554088
+pickup_table__alcohol_1__000,object,12,230,0.7926432266606498
+pickup_table__alcohol_1__002,robot_root,1,241,1.0109956667967592
+pickup_table__alcohol_1__002,object,1,241,0.39828464800994384
+pickup_table__alcohol_1__002,robot_root,6,236,0.8844782864942371
+pickup_table__alcohol_1__002,object,6,236,0.4678968444414857
+pickup_table__alcohol_1__002,robot_root,12,230,1.358142563643209
+pickup_table__alcohol_1__002,object,12,230,0.7878378018941572

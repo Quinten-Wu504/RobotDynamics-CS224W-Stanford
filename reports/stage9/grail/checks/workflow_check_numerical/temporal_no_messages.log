@@ -1,0 +1,2 @@
+{"epoch": 1, "train_mse": 1.0397031739712437, "validation_cm": 1.8983581660271147, "update_seconds": 1.1168652400374413, "validation_seconds": 0.7219453677535057}
+{"epoch": 2, "train_mse": 0.9301404560978038, "validation_cm": 1.9697743736842837, "update_seconds": 1.1231469176709652, "validation_seconds": 0.7554446533322334}

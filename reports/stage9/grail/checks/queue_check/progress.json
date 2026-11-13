@@ -1,0 +1,57 @@
+{
+  "completed": [
+    "history_mlp_s0",
+    "gru_s0",
+    "temporal_gnn_s0",
+    "temporal_no_messages_s0"
+  ],
+  "events": [
+    {
+      "run": "history_mlp_s0",
+      "event": "start",
+      "unix_time": 1794541337.4982467
+    },
+    {
+      "run": "history_mlp_s0",
+      "event": "reload",
+      "unix_time": 1794541342.3059566
+    },
+    {
+      "run": "gru_s0",
+      "event": "start",
+      "unix_time": 1794541345.3712375
+    },
+    {
+      "run": "gru_s0",
+      "event": "reload",
+      "unix_time": 1794541351.148239
+    },
+    {
+      "run": "temporal_gnn_s0",
+      "event": "start",
+      "unix_time": 1794541354.1984794
+    },
+    {
+      "run": "temporal_gnn_s0",
+      "event": "reload",
+      "unix_time": 1794541360.2538645
+    },
+    {
+      "run": "temporal_no_messages_s0",
+      "event": "start",
+      "unix_time": 1794541363.305283
+    },
+    {
+      "run": "temporal_no_messages_s0",
+      "event": "reload",
+      "unix_time": 1794541369.4147582
+    }
+  ],
+  "used_seconds": 34.72995373234153,
+  "source": {
+    "source_commit": "51a9a78021c56df202add86b19a745496bed4917",
+    "working_tree_dirty": false
+  },
+  "test_evaluation_started": false,
+  "status": "training_complete"
+}

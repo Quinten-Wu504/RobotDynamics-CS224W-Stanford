@@ -1,0 +1,87 @@
+{
+  "model": "temporal_gnn",
+  "config": {
+    "batch_size": 512,
+    "device": "cpu",
+    "epochs": 1,
+    "gradient_clip": 1.0,
+    "learning_rate": 0.001,
+    "purpose": "check",
+    "seed": 0,
+    "selection_start": 1,
+    "threads": 2,
+    "train_episodes": 2,
+    "validation_episodes": 2,
+    "weight_decay": 0.0001
+  },
+  "identity": {
+    "model": "temporal_gnn",
+    "config": {
+      "batch_size": 512,
+      "device": "cpu",
+      "epochs": 1,
+      "gradient_clip": 1.0,
+      "learning_rate": 0.001,
+      "purpose": "check",
+      "seed": 0,
+      "selection_start": 1,
+      "threads": 2,
+      "train_episodes": 2,
+      "validation_episodes": 2,
+      "weight_decay": 0.0001
+    },
+    "manifest_sha256": "481ea91edc94e2a1ff00fe072aec6eb002cfc6ec9b305117d5f9270ca8803338",
+    "cache_sha256": "96164e2d94a3442fc925a9a3e2a7b84d250576acc5787bfeb714eaa22e59292a",
+    "normalization_sha256": "40b2e5bac21cfd449b878514c6c3715bf2404783ef46070a03238a6fd408da98",
+    "code": {
+      "grail_data.py": "98b0b7d34b59f409211f2dc176cbd3d8578dcb28ef79f446373ca6724929f668",
+      "grail_models.py": "eb2461516f089e727f44aa91fb1833ec4dc8b377d90725ca51fea6a1d2ce0158",
+      "train_grail.py": "eaaf9ad82442be4d7aff23ed94be96973f8b1e5590b41f437c6f4879844f559a",
+      "grail_checkpoint.py": "968b92f6a01a5db1e24187aac5582f357f82366c275f663156d0ee98ac34143b",
+      "train_learning.py": "ff3e955edc2c72abbd731d8a0e7806a936b8c4a24fc6f5009c484bd6dcf1a471",
+      "formal.py": "549403720ab95dd9a579528b99f6064380191afef345af0963a7564fbcd0cc56"
+    }
+  },
+  "train_ids": [
+    "pickup_table__alcohol_1__000",
+    "pickup_table__alcohol_1__002"
+  ],
+  "evaluation_ids": [
+    "pickup_table__apple_10__002",
+    "pickup_table__apple_10__005"
+  ],
+  "evaluation_role": "asset_disjoint_validation",
+  "train_windows": 1414,
+  "validation_windows": 1414,
+  "parameter_count": 119427,
+  "best_epoch": 1,
+  "best_score_cm": 1.8141998449781556,
+  "initial_train_mse_this_invocation": 1.1179651021957397,
+  "best_train_mse": 1.0515152215957642,
+  "prediction_sha256": "15ba5106b04f36ed4465551f1539223c1ea4d84bba365432978a9fb288cc4369",
+  "best_checkpoint_sha256": "6f61c2ca0c718a823324acb775bb9f896fa4dc9a1e08f4b88f1f016fd68d4403",
+  "logs": [
+    {
+      "epoch": 1,
+      "train_mse": 1.0978384056725292,
+      "validation_cm": 1.8141998449781556,
+      "update_seconds": 0.6090277247130871,
+      "validation_seconds": 0.2715015262365341
+    }
+  ],
+  "optimizer_steps_total": 3,
+  "resources": {
+    "loading_seconds": 0.11191879212856293,
+    "run_seconds_this_invocation": 1.5233927257359028,
+    "max_observed_rss_bytes": 966406144,
+    "peak_cuda_allocated_bytes": 0
+  },
+  "environment": {
+    "torch": "2.5.1+cu121",
+    "device": "cpu",
+    "deterministic": true,
+    "dtype": "float32"
+  },
+  "source_commit": "51a9a78021c56df202add86b19a745496bed4917",
+  "working_tree_dirty": false
+}

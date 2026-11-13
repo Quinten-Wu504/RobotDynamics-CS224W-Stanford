@@ -1,0 +1,13 @@
+episode,entity,horizon_steps,windows,mean_error_cm
+pickup_table__apple_10__002,robot_root,1,241,0.3537031423366757
+pickup_table__apple_10__002,object,1,241,0.37765217313494387
+pickup_table__apple_10__002,robot_root,6,236,1.539715207350223
+pickup_table__apple_10__002,object,6,236,2.030135471476963
+pickup_table__apple_10__002,robot_root,12,230,2.9264159433818473
+pickup_table__apple_10__002,object,12,230,4.067542615363277
+pickup_table__apple_10__005,robot_root,1,241,0.3757529743405666
+pickup_table__apple_10__005,object,1,241,0.3357421457781027
+pickup_table__apple_10__005,robot_root,6,236,1.8302548488401005
+pickup_table__apple_10__005,object,6,236,1.5051131119399588
+pickup_table__apple_10__005,robot_root,12,230,3.4062846504357887
+pickup_table__apple_10__005,object,12,230,3.0220858553594216

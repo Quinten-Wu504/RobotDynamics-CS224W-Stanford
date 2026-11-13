@@ -1,0 +1,98 @@
+{
+  "model": "temporal_gnn",
+  "config": {
+    "batch_size": 512,
+    "device": "cpu",
+    "epochs": 2,
+    "gradient_clip": 1.0,
+    "learning_rate": 0.001,
+    "purpose": "check",
+    "seed": 0,
+    "selection_start": 1,
+    "threads": 2,
+    "train_episodes": 4,
+    "validation_episodes": 4,
+    "weight_decay": 0.0001
+  },
+  "identity": {
+    "model": "temporal_gnn",
+    "config": {
+      "batch_size": 512,
+      "device": "cpu",
+      "epochs": 2,
+      "gradient_clip": 1.0,
+      "learning_rate": 0.001,
+      "purpose": "check",
+      "seed": 0,
+      "selection_start": 1,
+      "threads": 2,
+      "train_episodes": 4,
+      "validation_episodes": 4,
+      "weight_decay": 0.0001
+    },
+    "manifest_sha256": "481ea91edc94e2a1ff00fe072aec6eb002cfc6ec9b305117d5f9270ca8803338",
+    "cache_sha256": "96164e2d94a3442fc925a9a3e2a7b84d250576acc5787bfeb714eaa22e59292a",
+    "normalization_sha256": "d1d16daac6c30e599afe406d36a27a87cf35f70a685746890824697f49a63dd9",
+    "code": {
+      "grail_data.py": "98b0b7d34b59f409211f2dc176cbd3d8578dcb28ef79f446373ca6724929f668",
+      "grail_models.py": "eb2461516f089e727f44aa91fb1833ec4dc8b377d90725ca51fea6a1d2ce0158",
+      "train_grail.py": "fb752a8c340659552d460d4b42aa39816f8e03c916dc42061ccaf8015bbb7581",
+      "grail_checkpoint.py": "968b92f6a01a5db1e24187aac5582f357f82366c275f663156d0ee98ac34143b",
+      "train_learning.py": "ff3e955edc2c72abbd731d8a0e7806a936b8c4a24fc6f5009c484bd6dcf1a471",
+      "formal.py": "549403720ab95dd9a579528b99f6064380191afef345af0963a7564fbcd0cc56"
+    }
+  },
+  "train_ids": [
+    "pickup_table__alcohol_1__000",
+    "pickup_table__alcohol_1__002",
+    "pickup_table__apple_21__000",
+    "pickup_table__apple_21__001"
+  ],
+  "evaluation_ids": [
+    "pickup_table__apple_10__002",
+    "pickup_table__apple_10__005",
+    "pickup_table__apple_22__003",
+    "pickup_table__apple_22__004"
+  ],
+  "evaluation_role": "asset_disjoint_validation",
+  "train_windows": 2828,
+  "validation_windows": 2828,
+  "parameter_count": 119427,
+  "best_epoch": 2,
+  "best_score_cm": 1.932014175613297,
+  "initial_train_mse_this_invocation": 1.0824947357177734,
+  "best_train_mse": 0.8547274470329285,
+  "prediction_sha256": "fee4e7dfe6e0b6e72af477e31d9e080869a7de21ce39111c834f47ef68199f43",
+  "best_checkpoint_sha256": "7507eabf65d5e26d93583e3ff03aace04941f251a0c30ada4f91b11f53a3327a",
+  "logs": [
+    {
+      "epoch": 1,
+      "train_mse": 1.0380282477071294,
+      "validation_cm": 1.9345436107338572,
+      "update_seconds": 1.0863414369523525,
+      "validation_seconds": 0.6861545257270336
+    },
+    {
+      "epoch": 2,
+      "train_mse": 0.9261123054941439,
+      "validation_cm": 1.932014175613297,
+      "update_seconds": 0.9850834235548973,
+      "validation_seconds": 0.6286000609397888
+    }
+  ],
+  "optimizer_steps_total": 12,
+  "resources": {
+    "loading_seconds": 0.1518484242260456,
+    "run_seconds_this_invocation": 4.767840601503849,
+    "max_observed_rss_bytes": 1054191616,
+    "peak_cuda_allocated_bytes": 0
+  },
+  "environment": {
+    "torch": "2.5.1+cu121",
+    "device": "cpu",
+    "deterministic": true,
+    "dtype": "float32"
+  },
+  "source_commit": "f33064f5674a37369a36fb43c2de9ec291f62f97",
+  "working_tree_dirty": true
+}
