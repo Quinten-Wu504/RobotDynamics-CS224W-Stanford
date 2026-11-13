@@ -1,0 +1,12 @@
+batch_size: 512
+device: cuda
+epochs: 2
+gradient_clip: 1.0
+learning_rate: 0.001
+purpose: check
+seed: 0
+selection_start: 1
+threads: 2
+train_episodes: 4
+validation_episodes: 4
+weight_decay: 0.0001

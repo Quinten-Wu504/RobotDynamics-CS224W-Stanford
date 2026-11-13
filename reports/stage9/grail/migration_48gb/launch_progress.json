@@ -1,0 +1,31 @@
+{
+  "completed": [
+    "history_mlp_s0"
+  ],
+  "events": [
+    {
+      "run": "history_mlp_s0",
+      "event": "start",
+      "unix_time": 1794543396.773355
+    },
+    {
+      "run": "history_mlp_s0",
+      "event": "reload",
+      "unix_time": 1794543464.2333717
+    },
+    {
+      "run": "gru_s0",
+      "event": "start",
+      "unix_time": 1794543467.435023
+    }
+  ],
+  "used_seconds": 70.46789454296231,
+  "source": {
+    "source_commit": "ef13ad69315c9b3adf67153ab431a0e7eb84b6f4",
+    "working_tree_dirty": false
+  },
+  "test_evaluation_started": false,
+  "active_run": "gru_s0",
+  "status": "training",
+  "active_pid": 8288
+}

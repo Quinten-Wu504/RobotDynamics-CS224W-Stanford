@@ -1,0 +1,6 @@
+{
+  "sample_interval_seconds": 1,
+  "samples": 138,
+  "sampled_peak_device_memory_mib": 2121.0,
+  "note": "Device sampling includes allocator reserve and CUDA context; it can miss subsecond peaks."
+}

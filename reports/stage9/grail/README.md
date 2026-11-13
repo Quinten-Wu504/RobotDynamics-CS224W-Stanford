@@ -1,6 +1,6 @@
 # GRAIL launch record
 
-The pickup demonstration is a separate part of Stage 9. Its scope is now fixed: history-only forecasting from scratch on 240 tabletop pickup motions, with four models and three seeds. The 12-run driver has been launched on AutoDL and survives SSH disconnection. At the recorded check it was waiting for an existing GPU task, with 0/12 formal runs completed. No held-out GRAIL result is available yet. The completed [Stack report](../README.md) remains unchanged as evidence about that task.
+The pickup demonstration is a separate part of Stage 9. Its scope is now fixed: history-only forecasting from scratch on 240 tabletop pickup motions, with four models and three seeds. The 12-run driver is now training on the new 48 GB AutoDL server and survives SSH disconnection. The [migration record](migration_48gb/README.md) contains CUDA checks, resource measurements and the active queue details. The original server's waiting queue has been stopped. No held-out GRAIL result is available yet. The completed [Stack report](../README.md) remains unchanged as evidence about that task.
 
 See the [protocol](../../../docs/grail_protocol.md), [configuration](../../../configs/grail_protocol.yaml), [asset-disjoint manifest](manifest.json), and [data audit](data_audit.json). All 720 downloaded files passed their pinned upstream hashes. The 240 trajectories contain 60,000 frames; 218 source keys stay within their asset split. No exact numerical duplicates or invalid fields were found. The audit is a release-format and numerical check, not a physics replay or confirmation that every pickup succeeds.
 
@@ -43,7 +43,7 @@ cat outputs/grail/formal/training.exit
 
 After training, verify all 12 configurations, logs, checkpoints and seals, then evaluate the reserved test assets, both non-learning baselines, grouped errors and trajectory displays. No test score or transfer claim should be inferred from the launch checks.
 
-## Launch checks
+## Original server launch checks (archived)
 
 Source commit: `51a9a78021c56df202add86b19a745496bed4917`. The [post-disconnection check](launch_verification.json) confirms driver PID 347386, parent PID 1, an independent session, ignored SIGHUP and `/dev/null` input. Its runner child is PID 347391. A duplicate launch exited with code 1 before touching the active job. The recorded status is `waiting_for_gpu`, because pre-existing PID 339111 occupies about 20.7 GB of the GPU. The queue checks every 30 seconds and starts automatically when the GPU is free; that process was not interrupted. There is no runtime cap or automatic instance shutdown.
 
@@ -51,7 +51,7 @@ The Linux [test log](checks/tests.txt) records 60 passing tests; [Ruff](checks/r
 
 The two-motion GNN fitting check reduced training MSE to 0.158966 of its initial value. These are implementation checks, not test results. The [check summary](checks/workflow_check_numerical/checks.json) and its logs retain the actual numbers. A separate [complete queue check](checks/queue_check/progress.json) trained and reloaded all four models at a one-epoch CPU smoke budget, sealed four checkpoints and exited zero. It used the committed source. The [source verification](checks/source_verification.json) confirms the precommit training check differs from that source only in `train_grail.py` line endings; data and the published manifest match exactly.
 
-The new GRAIL CUDA training path has not yet been measured because the GPU is occupied. CPU tests, complete queue execution, data integrity and detached waiting are verified. Once the GPU is released, any CUDA or training error stops the queue visibly with logs and a nonzero exit code; no model or seed is silently dropped. SSH logout is covered by the survival check, but server shutdown, storage failure and externally sent kill signals cannot be prevented by `nohup`. Every completed epoch is recoverable with the same launch command.
+At this original launch, the GRAIL CUDA training path had not yet been measured because the GPU was occupied. The later [48 GB migration](migration_48gb/README.md) completes those checks and starts formal training. CPU tests, complete queue execution, data integrity and detached waiting are verified. Once the GPU is released, any CUDA or training error stops the queue visibly with logs and a nonzero exit code; no model or seed is silently dropped. SSH logout is covered by the survival check, but server shutdown, storage failure and externally sent kill signals cannot be prevented by `nohup`. Every completed epoch is recoverable with the same launch command.
 
 To rerun the real-data CPU checks in a new output directory:
 

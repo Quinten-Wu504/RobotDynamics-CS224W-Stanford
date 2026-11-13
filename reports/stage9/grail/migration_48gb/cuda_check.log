@@ -1,0 +1,5 @@
+history_mlp: continuation and independent reload passed; maximum parameter drift 0
+gru: continuation and independent reload passed; maximum parameter drift 0
+temporal_gnn: continuation and independent reload passed; maximum parameter drift 0
+temporal_no_messages: continuation and independent reload passed; maximum parameter drift 0
+All checks passed; two-motion fitting MSE ratio 0.158907

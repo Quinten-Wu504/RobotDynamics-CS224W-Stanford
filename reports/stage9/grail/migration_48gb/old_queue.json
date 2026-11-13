@@ -1,0 +1,17 @@
+{
+  "completed": [],
+  "events": [],
+  "used_seconds": 0.0,
+  "source": {
+    "source_commit": "51a9a78021c56df202add86b19a745496bed4917",
+    "working_tree_dirty": false
+  },
+  "test_evaluation_started": false,
+  "active_run": "history_mlp_s0",
+  "status": "migrated_to_new_server",
+  "other_gpu_pids": [
+    "339111"
+  ],
+  "migration_reason": "Move the untouched queue to the newly authorized 48 GB server",
+  "new_server_port": 10793
+}
