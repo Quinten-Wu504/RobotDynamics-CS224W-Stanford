@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "motions": 240,
+  "assets": 120,
+  "split_counts": {
+    "train": 168,
+    "validation": 36,
+    "test": 36
+  },
+  "source": {
+    "source_commit": "f33064f5674a37369a36fb43c2de9ec291f62f97",
+    "working_tree_dirty": true
+  },
+  "extraction_sha256": "fb2fafc90c990535e358b5ff96b39b5d11018ef521c4a9bab5eabaa04a6eaca2",
+  "test_predictions_computed": false
+}

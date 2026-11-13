@@ -2,7 +2,7 @@
 
 The Stack comparison is complete: four models across three seeds (12 trained configurations) and 28 evaluation sets. Supervised Temporal GNN improves the primary metric over MLP, GRU, and its message-ablation control on both test distributions, with the same direction in every seed. This replicates the supervised graph result on a second task; it does not test JEPA, equivariance, or transfer from Square.
 
-GRAIL remains in scope, with its demonstration details to be decided later. It has not been assessed or run. The Stack work is complete, but this report does not close that remaining Stage 9 item or start Stage 10.
+GRAIL remains in scope; its separately frozen history-only forecasting experiment is described in the [launch record](grail/README.md). Results are pending. The Stack work is complete, but this report does not close that remaining Stage 9 item or start Stage 10.
 
 ## Main comparison
 
@@ -132,4 +132,4 @@ On AutoDL, from `/root/autodl-tmp/RobotDynamics-CS224W-Stanford`, the evaluated 
 .venv/bin/python -m robot_dynamics.evaluate_stack outputs/stage9/cache/stack_d0.hdf5 --d1-cache outputs/stage9/cache/stack_d1.hdf5 --manifest outputs/stage9/cache/manifest.json --runs outputs/stage9/formal --verify-run temporal_gnn_s0
 ```
 
-The [Stack protocol](../../docs/stack_protocol.md) records the experiment scope; the [archived launch record](launch.md) retains data-preparation and recovery commands. Both Stack test distributions are now used tests; any new test-inspired work is exploratory. GRAIL is retained for a later scope decision, and Stage 10 has not started.
+The [Stack protocol](../../docs/stack_protocol.md) records the experiment scope; the [archived launch record](launch.md) retains data-preparation and recovery commands. Both Stack test distributions are now used tests; any new test-inspired work is exploratory. The separate GRAIL experiment remains open, and Stage 10 has not started.
