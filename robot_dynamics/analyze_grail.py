@@ -158,9 +158,20 @@ def analyze(runs, manifest):
                 **paired_interval(differences),
             }
         )
-    costs = []
+    costs, curves = [], []
     for run in plan["runs"]:
         metrics = json.loads((runs / run["run_id"] / "metrics.json").read_text())
+        curves.extend(
+            {
+                "model": run["model"],
+                "seed": run["config"]["seed"],
+                "epoch": row["epoch"],
+                "train_mse": row["train_mse"],
+                "validation_cm": row["validation_cm"],
+                "selected": row["epoch"] == metrics["best_epoch"],
+            }
+            for row in metrics["logs"]
+        )
         costs.append(
             {
                 "run_id": run["run_id"],
@@ -185,6 +196,7 @@ def analyze(runs, manifest):
         "groups": groups,
         "paired_contrasts": contrasts,
         "costs": costs,
+        "training_curves": curves,
         "bootstrap_unit": "asset (both motions together), jointly with training seed",
     }, trajectories
 
@@ -256,6 +268,34 @@ def plots(output, result, trajectories):
     for suffix in ("png", "pdf"):
         fig.savefig(output / f"horizons.{suffix}", dpi=160)
     plt.close(fig)
+    fig, axes = plt.subplots(2, 2, figsize=(10, 7))
+    for ax, model, label in zip(axes.flat, MODELS[:4], LABELS[:4]):
+        for seed in (0, 1, 2):
+            selected = [
+                r
+                for r in result["training_curves"]
+                if r["model"] == model and r["seed"] == seed
+            ]
+            (line,) = ax.plot(
+                [r["epoch"] for r in selected],
+                [r["validation_cm"] for r in selected],
+                label=f"Seed {seed}",
+            )
+            best = next(r for r in selected if r["selected"])
+            ax.scatter(
+                best["epoch"], best["validation_cm"], color=line.get_color(), zorder=3
+            )
+        ax.axvline(11, linestyle="--", color="grey", linewidth=1)
+        ax.set(title=label, xlabel="Epoch", ylabel="Validation error (cm)")
+        ax.grid(alpha=0.2)
+    axes[0, 0].legend(fontsize=8)
+    fig.suptitle(
+        "Validation curves: dots mark selected checkpoints; selection starts at epoch 11"
+    )
+    fig.tight_layout()
+    for suffix in ("png", "pdf"):
+        fig.savefig(output / f"learning_curves.{suffix}", dpi=160)
+    plt.close(fig)
     names = sorted({r["episode"] for r in trajectories["temporal_gnn"]})
     for number, name in enumerate(names, 1):
         fig, axes = plt.subplots(2, 3, figsize=(12, 6))
@@ -278,6 +318,8 @@ def plots(output, result, trajectories):
                 for model, label, color in (
                     ("temporal_gnn", "GNN seed 0", "#287f73"),
                     ("gru", "GRU seed 0", "#527ca6"),
+                    ("history_mlp", "MLP seed 0", "#b65275"),
+                    ("temporal_no_messages", "Messages disabled seed 0", "#8d67a6"),
                     ("constant_velocity", "Constant velocity", "#bf8b47"),
                 ):
                     values = [
@@ -302,12 +344,13 @@ def plots(output, result, trajectories):
                     title=entity.replace("_", " "),
                 )
                 ax.grid(alpha=0.2)
-        axes[0, 0].legend(fontsize=8)
+        handles, labels = axes[0, 0].get_legend_handles_labels()
+        fig.legend(handles, labels, loc="lower center", ncol=6, fontsize=8)
         fig.suptitle(
             f"{name}\nDirect 0.48 s forecasts from observed histories; not a free rollout",
             fontsize=11,
         )
-        fig.tight_layout()
+        fig.tight_layout(rect=(0, 0.045, 1, 1))
         for suffix in ("png", "pdf"):
             fig.savefig(output / f"trajectory_{number}.{suffix}", dpi=150)
         plt.close(fig)
@@ -331,7 +374,7 @@ def main():
     result, trajectories = analyze(args.runs, json.loads(args.manifest.read_text()))
     args.output.mkdir(parents=True, exist_ok=True)
     write_json(args.output / "analysis.json", {**result, "source": source_version()})
-    for name in ("summary", "groups", "paired_contrasts", "costs"):
+    for name in ("summary", "groups", "paired_contrasts", "costs", "training_curves"):
         write_csv(args.output / f"{name}.csv", result[name])
     plots(args.output, result, trajectories)
     print(json.dumps(result["summary"], indent=2))
