@@ -1,0 +1,33 @@
+{
+  "purpose": "small pipeline demonstration, not a formal accuracy comparison",
+  "standalone_reload_exact": true,
+  "prediction_sha256": "ed7f0556fd0b846848eb64fa9aac9f9bcbe28f28b3351e5e2db085cde12c2428",
+  "checkpoint_sha256": "4db1b045c09589a3e50a9d6180bec434a15d5c7fce5e740bd7e1f3ad042ab177",
+  "train_ids": [
+    "demo_528",
+    "demo_852",
+    "demo_273",
+    "demo_365",
+    "demo_232",
+    "demo_992",
+    "demo_932",
+    "demo_663"
+  ],
+  "validation_ids": [
+    "demo_785",
+    "demo_226"
+  ],
+  "test_evaluated": false,
+  "nodes": 4,
+  "directed_edges": 10,
+  "resources": {
+    "loading_seconds": 0.922111599938944,
+    "run_seconds_this_invocation": 7.989337099948898,
+    "optimizer_steps_this_invocation": 140,
+    "optimizer_steps_total": 140,
+    "max_observed_rss_bytes": 595451904,
+    "peak_cuda_allocated_bytes": 0
+  },
+  "source_commit": "a7767538deb0549b8043a7427a7792617e8bb3ce",
+  "working_tree_dirty": false
+}

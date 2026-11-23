@@ -2,7 +2,7 @@
 
 The 12-run experiment is complete. Temporal GNN improves over GRU by **6.6%**, but does not improve over the history MLP or the messages-disabled control. This task therefore does not reproduce the message-passing benefit found on Stack. All runs and seeds are retained, including the negative comparisons.
 
-This is a history-only numeric and trajectory demonstration on G1 pickup motions, trained from scratch. It does not transfer Square/Stack weights, simulate the robot, measure pickup success, or evaluate closed-loop control. Stage 9 is ready for review; Stage 10 has not started.
+This is a history-only numeric and trajectory demonstration on G1 pickup motions, trained from scratch. It does not transfer Square/Stack weights, simulate the robot, measure pickup success, or evaluate closed-loop control. Stage 9 is complete; final reproduction materials are now available in the project README.
 
 ## Data and comparison
 

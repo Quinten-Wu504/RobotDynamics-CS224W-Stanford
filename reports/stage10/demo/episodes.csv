@@ -1,0 +1,13 @@
+episode,entity,horizon_steps,model,windows,mean_error_cm
+demo_785,end_effector,1,temporal_gnn,168,0.3343604505062103
+demo_785,square_nut,1,temporal_gnn,168,0.33451658487319946
+demo_785,end_effector,5,temporal_gnn,164,0.8684176802635193
+demo_785,square_nut,5,temporal_gnn,164,0.9218368530273438
+demo_785,end_effector,10,temporal_gnn,159,1.3345179557800293
+demo_785,square_nut,10,temporal_gnn,159,1.353641152381897
+demo_226,end_effector,1,temporal_gnn,162,0.44230636954307556
+demo_226,square_nut,1,temporal_gnn,162,0.35544514656066895
+demo_226,end_effector,5,temporal_gnn,158,1.2444617748260498
+demo_226,square_nut,5,temporal_gnn,158,1.054219365119934
+demo_226,end_effector,10,temporal_gnn,153,2.1614480018615723
+demo_226,square_nut,10,temporal_gnn,153,1.7809081077575684

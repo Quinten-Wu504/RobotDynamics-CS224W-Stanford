@@ -1,5 +1,7 @@
 # Development summary before formal results
 
+For the completed study, use the [final report](reports/stage10/README.md) and [reproduction guide](docs/reproduction.md). The development narrative below is preserved as an archive.
+
 This document preserves the development-stage summary written while Stage 8 was running. Its statements about the current job and pending conclusions are historical. Stage 8 has since completed: supervised Temporal GNN outperformed the tested MLP/GRU controls across all fractions on both test splits, while JEPA and canonicalization did not show consistent additional benefits. See the [formal report](reports/stage8/README.md) for the complete three-seed evidence, costs, and limitations, the [Stack replication report](reports/stage9/README.md) for the completed second-task comparison, the [GRAIL report](reports/stage9/grail/README.md) for its completed history-only demonstration and mixed results, and the [progress record](docs/progress.md) for stage status. The pilot values below have not been replaced with test results.
 
 Stages 0–7 are complete. Stage 8 is still running. This document summarizes the completed experiments and their limits. All accuracy figures below come from the archived D0 **validation pilots**, not the ongoing formal test matrix.

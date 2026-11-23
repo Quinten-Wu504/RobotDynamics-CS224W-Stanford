@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "notebook_sha256": "94a16342c966660b01131d2e4ebe3d98e3570d7bcd568fd220f1710d952fe078",
+  "execution_seconds": 68.57915010000579,
+  "code_cells": 8,
+  "executed_code_cells": 8,
+  "environment": "isolated Windows Python 3.10 CPU virtualenv; separate clean git clone",
+  "installation": "requirements/demo.txt and torch==2.5.1+cpu installed separately in fresh environment; notebook installation cell skipped via documented flag",
+  "data": "Pinned full Square D0 download verified; numeric cache prepared separately with cache_square; notebook reverified download and prepared its subset",
+  "hosted_colab_ui_executed": false,
+  "source_commit": "a7767538deb0549b8043a7427a7792617e8bb3ce"
+}

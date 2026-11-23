@@ -1,0 +1,58 @@
+{
+  "inputs": {
+    "square": {
+      "path": "reports/stage8/formal/analysis/analysis.json",
+      "sha256": "cb83f35adf37020aecf1f9ff4fc7611cb88cca10189320c8ac461e118acc27ed"
+    },
+    "stack": {
+      "path": "reports/stage9/formal/analysis/analysis.json",
+      "sha256": "ca4f34ab0353db15bd37e0cfdcf2fd756a8308549c3427d2fd394e9c9b4b1de0"
+    },
+    "grail": {
+      "path": "reports/stage9/grail/formal/analysis/analysis.json",
+      "sha256": "1418d444f95df0ecd49db01ea87c77f38a43c1e840bd6f18faf638ae1354c2f1"
+    }
+  },
+  "summary_rows": 62,
+  "grail_reanalysis_exact": true,
+  "new_training": false,
+  "files": {
+    "all_costs.csv": "8d7f04c5e4005a62b7e0f8ba44d1794c71af8efb3876770488c6f8bca9206a1e",
+    "all_results.csv": "f54324e0fd383213786bde78986e46bdcc6031b7c6098aff18be00d7ee2445a3",
+    "all_results.json": "1e3b13ca15bada921bc6fe540e1ec2bca4ce60c681fb15a5593e8af3e548aab6",
+    "cost_comparison.pdf": "9d386a6c4450940e18b215fd96e6be93b6c3128e06ae256a5358e4909a4e2647",
+    "cost_comparison.png": "b3247c54caded58d525591be215f8f2f53702753ef5e3b46829673435d7e3f5d",
+    "overview.pdf": "bb86fc3cb3cf9b95552b87d9697f689480e208d6caaa58d516ce2e5215783d7a",
+    "overview.png": "2d466348e11c8104ce5811c2d89c758a65c934427a4ce95e639ab0498be40c73",
+    "proximity.pdf": "43c0a34a0868f569a6a3f7a1bd26be0cf05ccc55c6aa75ada9525fbcc86b41bd",
+    "proximity.png": "c142b74c0bc3966fe6503de40bf38e969cbac44292c34a975bb464aabe649d1b",
+    "tables.md": "ba941b965fa9c46c2584c631fb22f6f26d4372f5480a3527a63db06543ba0f0f",
+    "grail/comparison.pdf": "b012048e6066b035176e018a12aef53de99908703bde141a079ca2085143c973",
+    "grail/comparison.png": "3d4b46483b2d29736f3e0986ee22ba593fdf8f06db3a0b014f91b20fd0a284da",
+    "grail/horizons.pdf": "05136647293aa08fb8553e738b6ac1b9ce2aefefd65d89c0ae65a410239dfd7c",
+    "grail/horizons.png": "38f7cf906aca046f378f0b94707e5ff1f38bda583102e9280e2d6a25cceee224",
+    "grail/learning_curves.pdf": "27ce874ee57a8564986b230b4e0a278a60b93e97d344434eee7c473702f5911d",
+    "grail/learning_curves.png": "67dac14c0b2c3d43ca877cddc62aa38aae3a638c7fd2262bd93825d7882672d6",
+    "grail/trajectory_1.pdf": "535d4300e99a03140beefc553bb10e40007c95a7d21f9aaa7de6b1de4f1c176a",
+    "grail/trajectory_1.png": "5e5cc61e75657d918078e798ad8d756aeb832cd0849aabf6c9cad1637e022ff6",
+    "grail/trajectory_2.pdf": "cb6fc5b1eb2cc6e1f9fdea73f353c19a6635c6b536e86666bae0a77909b55c09",
+    "grail/trajectory_2.png": "918c2d6227128de57acfaa512b873c4d8e56ad1ca9ebdf98d71c8833f8322eb9",
+    "grail/trajectory_3.pdf": "debd4fe89e0fb178ce893f2215811c27f5174642a6d7758239d25a8b4d8f445b",
+    "grail/trajectory_3.png": "4d18317823ced4f05e0d5931448203d2512ddad9e665c24208c771d093514cf5",
+    "grail/trajectory_4.pdf": "6ace414205495699800628e708d4f8099dec7f242459b08c0760fbdfde675773",
+    "grail/trajectory_4.png": "63be43418840e1c8fbbb33657104493cb60bc6c73c108f0259510417f009a135",
+    "grail/trajectory_examples.json": "1f70fbcc556fd016735056a39d491396295b05397be91a396faccf88df2ca1e4",
+    "square/data_efficiency.pdf": "a01afd4f7abb6d6e90c7704882ef7dd47ed404c6cc6682bf34b751d5eb8b8b1b",
+    "square/data_efficiency.png": "8314ef07d720665ad113bf4407c0dbf0bcb7d081e6e4954b819edeb7a867a80f",
+    "square/horizons.pdf": "a624405561f02b3ae1835a5c5d9c9a1dbbaf8b1f5decfcb2137e1f7e1f07ef4d",
+    "square/horizons.png": "78846c3155347a19b81038008611f634e6b03d6e945cbb81d888f7844ea32eb3",
+    "square/training_cost.pdf": "2b43cc1943dd5b0bd4f69ca95891f126b1b54f01ef38d3b58e847d5097eda7a4",
+    "square/training_cost.png": "ec27f21258bcbb5c1b6f7d742969fac7109057d0687ed43702c03a80d05d4042",
+    "stack/comparison.pdf": "359d2363b63aed2297b9743b4a9205c9673de7afe09717500c1dc3add86c3b52",
+    "stack/comparison.png": "d5e3301a91cc4f3b810b15cc2d1d72f8c9cabfe79d8011521aa55a1aa56da703",
+    "stack/horizons.pdf": "0ea9bd3e067aba3531fc16fb815d997a6e932431c120703aca75183f104971d1",
+    "stack/horizons.png": "a55f89363c04bebc936c10614124086f561ce586de767ddf2db125318eb11b44"
+  },
+  "source_commit": "a7767538deb0549b8043a7427a7792617e8bb3ce",
+  "working_tree_dirty": false
+}

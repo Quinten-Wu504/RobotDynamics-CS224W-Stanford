@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "stopped_after_epoch": 2,
+  "final_epoch": 5,
+  "prediction_sha256": "ed7f0556fd0b846848eb64fa9aac9f9bcbe28f28b3351e5e2db085cde12c2428",
+  "full_and_resumed_predictions_identical": true,
+  "optimizer_steps": 140,
+  "source_commit": "0b1afd6e7ed58857fba70c618acb3cc1e9a3a99c",
+  "working_tree_dirty": false
+}

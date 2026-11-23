@@ -1,0 +1,59 @@
+{
+  "train_episode_ids": [
+    "demo_528",
+    "demo_852",
+    "demo_273",
+    "demo_365",
+    "demo_232",
+    "demo_992",
+    "demo_932",
+    "demo_663"
+  ],
+  "position_center": [
+    0.06763755632448663,
+    0.08755628159015338,
+    0.8725448236159227
+  ],
+  "position_scale": 0.0951921507891222,
+  "position_weighting": "four node positions per recorded training state, shared isotropic scale",
+  "scalar_fields": {
+    "gripper_qpos": {
+      "mean": [
+        0.02622092497399084,
+        -0.0258058366955057
+      ],
+      "scale": [
+        0.01122162186529171,
+        0.011577042369389327
+      ],
+      "constant_dimensions": []
+    },
+    "robot_joint_qpos": {
+      "mean": [
+        0.14549888306847344,
+        0.7931987267590617,
+        0.0602640189004139,
+        -1.8416427155124018,
+        -0.10217859459125973,
+        2.6766426083210133,
+        0.6810492622040399
+      ],
+      "scale": [
+        0.1348433193896714,
+        0.38098888601803726,
+        0.09427852761757856,
+        0.7575111022520252,
+        0.19045070880787784,
+        0.4334025983208142,
+        0.7817634115978466
+      ],
+      "constant_dimensions": []
+    }
+  },
+  "motion_threshold_m_per_s": [
+    0.06629839481253325,
+    1e-06
+  ],
+  "motion_rule": "past one-step speed <= training 25th percentile (floor 1e-6 m/s) is low_motion",
+  "dt_seconds": 0.05
+}

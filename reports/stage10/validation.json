@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "notebook": {
+    "passed": true,
+    "notebook_sha256": "94a16342c966660b01131d2e4ebe3d98e3570d7bcd568fd220f1710d952fe078",
+    "execution_seconds": 68.57915010000579,
+    "code_cells": 8,
+    "executed_code_cells": 8,
+    "environment": "isolated Windows Python 3.10 CPU virtualenv; separate clean git clone",
+    "installation": "requirements/demo.txt and torch==2.5.1+cpu installed separately in fresh environment; notebook installation cell skipped via documented flag",
+    "data": "Pinned full Square D0 download verified; numeric cache prepared separately with cache_square; notebook reverified download and prepared its subset",
+    "hosted_colab_ui_executed": false,
+    "source_commit": "a7767538deb0549b8043a7427a7792617e8bb3ce"
+  },
+  "formal_grail_replay": {
+    "passed": true,
+    "run_id": "temporal_gnn_s0",
+    "error_sha256": "bdb103c63e42ccb4c193f387ba16fbb484c39198b277393ecb3bc3f7d5eb0d63",
+    "source": {
+      "source_commit": "0b1afd6e7ed58857fba70c618acb3cc1e9a3a99c",
+      "working_tree_dirty": false
+    }
+  },
+  "demo_resume": {
+    "passed": true,
+    "stopped_after_epoch": 2,
+    "final_epoch": 5,
+    "prediction_sha256": "ed7f0556fd0b846848eb64fa9aac9f9bcbe28f28b3351e5e2db085cde12c2428",
+    "full_and_resumed_predictions_identical": true,
+    "optimizer_steps": 140,
+    "source_commit": "0b1afd6e7ed58857fba70c618acb3cc1e9a3a99c",
+    "working_tree_dirty": false
+  },
+  "linux_tests": 63,
+  "windows_cpu_tests": 63,
+  "dependency_check": "No broken requirements found.",
+  "lint": "passed",
+  "format": "77 files already formatted",
+  "summary_rows": 62,
+  "learned_cost_rows": 84,
+  "exported_file_hashes_checked": 35,
+  "local_markdown_links": "all resolve",
+  "resolved_validation_issue": "Initial pytest discovery included the nested independent checkout. Added testpaths=tests; final suite passes.",
+  "hosted_colab_ui_executed": false,
+  "original_square_stack_server_replayed_in_stage10": false,
+  "public_formal_checkpoint_download": false,
+  "new_formal_training_runs": 0,
+  "demo_training_runs": "Two complete five-epoch notebook runs plus a two-epoch/three-epoch continuation check",
+  "source_code_revision": "a7767538deb0549b8043a7427a7792617e8bb3ce"
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "run_id": "temporal_gnn_s0",
+  "error_sha256": "bdb103c63e42ccb4c193f387ba16fbb484c39198b277393ecb3bc3f7d5eb0d63",
+  "source": {
+    "source_commit": "0b1afd6e7ed58857fba70c618acb3cc1e9a3a99c",
+    "working_tree_dirty": false
+  }
+}

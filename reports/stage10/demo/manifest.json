@@ -1,0 +1,47 @@
+{
+  "purpose": "8 training / 2 validation motions; five-epoch pipeline demonstration",
+  "d0": {
+    "train": [
+      "demo_528",
+      "demo_852",
+      "demo_273",
+      "demo_365",
+      "demo_232",
+      "demo_992",
+      "demo_932",
+      "demo_663"
+    ],
+    "validation": [
+      "demo_785",
+      "demo_226"
+    ],
+    "test": [],
+    "train_subsets": {
+      "0.1": [],
+      "0.25": [
+        "demo_528",
+        "demo_852"
+      ],
+      "1.0": [
+        "demo_528",
+        "demo_852",
+        "demo_273",
+        "demo_365",
+        "demo_232",
+        "demo_992",
+        "demo_932",
+        "demo_663"
+      ]
+    }
+  },
+  "datasets": {
+    "square_d0": {
+      "cache_sha256": "4a1e1080e819dacd97153b3774d6dbe5c24c12845d8d9e316fc0f1ba439d7c18",
+      "source_sha256": "41fc24bce0f88343099c0b1b5bf6eee08cbc35851e71276d4509a01c9b75481c"
+    }
+  },
+  "parent_manifest_sha256": "cb95e5c8ae0068bcb1e2629eb73a7bb90cc7e5c73618897a1ee1173c15a65643",
+  "parent_cache_sha256": "4966d1841a0b12fb954f01cf6862775443ad3761f69401fead86ba870c970de4",
+  "source_commit": "a7767538deb0549b8043a7427a7792617e8bb3ce",
+  "working_tree_dirty": false
+}

@@ -8,17 +8,28 @@ The main question is whether graph structure helps predict manipulation dynamics
 
 Models take state histories and planned actions as input and predict position changes for the end effector and manipulated objects. The verified control frequency is 20 Hz: horizons are 1, 5, and 10 steps (0.05, 0.25, and 0.5 s). D0 supplies training and development data; held-out D0 and D1 trajectories test generalization.
 
+## Reproduce and read the results
+
+- [Final report](reports/stage10/README.md): conclusions, negative results, costs and limitations across Square, Stack and GRAIL.
+- [Colab notebook](https://colab.research.google.com/github/Quinten-Wu504/RobotDynamics-CS224W-Stanford/blob/main/notebooks/robot_dynamics_demo.ipynb): a real eight-training/two-validation Square example with graph construction, training, checkpoint reload and prediction plots.
+- [Reproduction guide](docs/reproduction.md): pinned data, environment, command-line example, checkpoint locations and full-matrix requirements.
+
+For figures and tables only, no GPU, model weights or raw data are needed:
+
+```bash
+python -m pip install -r requirements/base.txt
+python -m robot_dynamics.final_results --output outputs/final_results
+```
+
+The exporter includes all 62 aggregate results and 84 learned-run costs. It preserves each task's metric rather than pooling scores. The notebook is a short pipeline demonstration, separate from the formal evidence below.
+
 ## Current status
 
-The environment and Square data audit are complete on AutoDL: Ubuntu 22.04, Python 3.10.8, and an RTX 4090 D. The [experiment protocol](docs/experiment_protocol.md) defines the task; the [data report](reports/stage2/README.md) contains statistics, checksums, and recovery plots.
+The formal experiments are complete: 60 Square configurations, 12 Stack configurations and 12 GRAIL configurations, with all three seeds retained. The code covers audited data processing, causal windows, MLP/GRU and graph models, canonical coordinates, JEPA/state-pretraining controls, checkpoint sealing, evaluation and plotting.
 
-- **Code:** data processing, fixed splits, causal windows, shared evaluation, MLP/GRU and graph baselines, canonical-frame equivariant models, and JEPA/direct-state pretraining. The resumable formal pipeline includes checkpoint sealing, test evaluation, diagnostics, and automatic tables/plots. The Linux suite has 62 passing tests.
-- **Data (Square):** 1,000 D0 and 1,000 D1 episodes scanned, with 153,477 and 152,400 recorded states respectively. No nonfinite values or inconsistent field layouts were found. Six complete trajectories (905 frames) passed state recovery checks.
-- **Square experiments:** all 60 formal configurations and 124 evaluation sets are complete, covering three seeds and 80/200/800 training episodes, with the state-pretraining control limited to 80 episodes. Held-out D0 and D1 were evaluated only after all checkpoints were selected and sealed. All diagnostics passed; the [formal report](reports/stage8/README.md) retains every seed and comparison.
-- **Stack replication:** 12 trained configurations and 28 evaluation sets are complete, covering four models and three seeds. Both releases contain 1,000 episodes; the Stack audit and six complete restorations passed. The [Stack report](reports/stage9/README.md) contains the full comparison and ablation. The separate [GRAIL demonstration](reports/stage9/grail/README.md) is also complete: 12 training runs, 14 held-out evaluation sets, and four predetermined trajectory examples. GNN beats GRU but does not beat MLP or its message-ablation control.
-- **Environment:** the Linux snapshot now includes PyG 2.6.1. Windows supports the base checks and plotting only.
+The final reproduction notebook has been executed in a fresh Windows CPU environment and a separate clean clone. It reproduces its checkpoint predictions exactly; a two-epoch interruption/resume check also matches uninterrupted training. Both Windows CPU and Linux pass 63 tests. A formal GRAIL checkpoint was independently replayed during final verification. The hosted Colab interface itself was not run; [validation records](reports/stage10/README.md#reproduction-and-delivery-checks) distinguish these checks. Formal weights remain in AutoDL storage, while the notebook trains and exports its own small checkpoint.
 
-GRAIL uses a separate history-only task on G1 robot-root and object anchors: 240 motions split by asset, with horizons of 0.04/0.24/0.48 s at 25 Hz. Models are trained from scratch; this is an abstraction demonstration, not zero-shot or pretrained weight transfer. See the [GRAIL protocol](docs/grail_protocol.md) for its inputs and limitations.
+GRAIL uses a separate history-only task on G1 robot-root and object anchors: 240 motions split by asset, with horizons of 0.04/0.24/0.48 s at 25 Hz. Models are trained from scratch; see the [GRAIL protocol](docs/grail_protocol.md) for inputs and limitations.
 
 ## Evaluation protocol
 
@@ -69,80 +80,15 @@ The history-only GRAIL task uses 168 training motions and 36 held-out test motio
 
 GNN improves over GRU by 6.6%, but its mean is 1.1% worse than MLP and 2.9% worse than messages disabled. The joint seed/asset intervals for those last two differences include zero. This does not reproduce Stack's message-passing benefit. All six graph runs selected the earliest allowed checkpoint (epoch 11), after an earlier validation minimum; the conclusion applies to this fixed recipe, not optimally tuned architectures. The [GRAIL report](reports/stage9/grail/README.md) retains all seeds, subgroups, costs, learning curves and trajectory examples. No checkpoints were reselected after seeing test results.
 
-## Development results before formal testing
+## Implementation and earlier experiments
 
-The following stages used D0 validation only. Their pilot observations motivated the frozen formal comparison above.
+The [data audit](reports/stage2/README.md), [baseline study](reports/stage3/README.md), [learning pilots](reports/stage4/README.md), [graph pilots](reports/stage5/README.md), [equivariance checks](reports/stage6/README.md), and [pretraining pilots](reports/stage7/README.md) preserve the development history. Their validation scores are separate from the held-out results above. [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md) is an archived pilot summary, not the current result report.
 
-On D0 validation, mean end-effector errors at 0.05 / 0.25 / 0.5 s are **0.715 / 3.344 / 6.242 cm** for position hold and **0.247 / 1.973 / 5.138 cm** for constant velocity. Nut errors are **0.490 / 2.313 / 4.309 cm** and **0.207 / 1.449 / 3.494 cm**, respectively. Both methods use the same four-frame-history windows and ignore planned actions.
+The [reproduction guide](docs/reproduction.md) is the current starting point for installation, data processing, training, recovery, checkpoint evaluation and plotting. The [Linux environment record](docs/environment.md) covers the original CUDA/simulator setup; the numeric demo needs only the CPU dependencies. Data and checkpoints are excluded from git.
 
-Constant velocity is a strong short-horizon baseline, but its advantage is smaller over 0.5 s and disappears in some low-motion groups. The [baseline report](reports/stage3/README.md) contains episode-bootstrap intervals, motion breakdowns, example predictions, and limitations. These are validation results, not final-test claims.
+## Remaining scope
 
-The seed-0 learning pilots reach 0.5-second end-effector / nut errors of **0.550 / 0.455 cm** (current-state MLP), **0.518 / 0.446 cm** (history MLP), and **0.496 / 0.437 cm** (GRU). Among these three non-graph baselines, GRU has the lowest overall validation error, but the differences are small. They use planned actions, which the non-learning baselines ignore. The [learning report](reports/stage4/README.md) includes all horizons, learning curves, confidence intervals, resource measurements, and reproducibility checks. These single-seed pilots do not establish graph or temporal-model superiority.
-
-The [graph pilots](reports/stage5/README.md) give a mixed result. Temporal GNN reaches **0.537 / 0.439 cm** at 0.5 seconds and a six-error mean of **0.329 cm**, close to GRU's **0.333 cm**. Closing messages raises that mean to 0.346 cm; adding the static fixture edges gives 0.331 cm. Temporal GNN improves low-motion nut prediction but trails GRU on moving windows, and much of the low-motion gain remains without messages. The predefined 5 cm proximity group has only four episodes, so it does not support a contact-stage claim. No model is a clear overall winner across accuracy and cost.
-
-The [equivariance pilots](reports/stage6/README.md) use the known peg frame, without adding parameters. Canonical Temporal GNN reaches a six-error mean of **0.325 cm**, a small improvement over ordinary Temporal GNN; canonical GRU worsens to **0.347 cm**. Both pass full-chain yaw/translation consistency checks below 3.5e-8 m maximum discrepancy. This verifies a coordinate property, not physical OOD performance. The real D0 placement-coverage diagnostic has only five outside-hull episodes and shows no consistent benefit; D1 had not yet been evaluated at that stage. The construction uses canonicalization, not an EGNN message layer.
-
-The [pretraining pilots](reports/stage7/README.md) do not show an extra JEPA benefit at this budget. With 10 pretraining plus 30 fine-tuning epochs, ordinary/canonical JEPA reaches **0.325 / 0.320 cm**. Direct-state pretraining gives **0.333 / 0.340 cm**, while 40 epochs of direct supervision gives **0.305 / 0.310 cm**. JEPA beats the state-pretraining control but trails longer supervision in both architectures, despite using slightly more update time. Both JEPA variants pass the declared collapse screen. These are fixed-budget, seed-0 validation results; the earlier GRU used only 30 epochs, so this comparison does not establish graph superiority.
-
-## Setup
-
-Clone the repository and follow the [environment setup](docs/stage_1_handoff.md) for installation, the project-local EGL library, and mirror options:
-
-```sh
-git clone https://github.com/Quinten-Wu504/RobotDynamics-CS224W-Stanford.git
-cd RobotDynamics-CS224W-Stanford
-```
-
-The existing AutoDL installation is at `/root/autodl-tmp/RobotDynamics-CS224W-Stanford`. From that directory:
-
-```bash
-export LD_LIBRARY_PATH="$PWD/.venv/native/usr/lib/x86_64-linux-gnu${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
-.venv/bin/python -m pytest -q
-.venv/bin/python -m robot_dynamics.config
-.venv/bin/python scripts/smoke_environment.py --device cpu --output outputs/cpu_check.json
-MUJOCO_GL=egl .venv/bin/python scripts/smoke_environment.py --device cuda --simulation --output outputs/cuda_check.json
-```
-
-Use a new output filename for repeat checks; existing results are protected against overwrite. The configuration now passes `--require-audited` for the pinned Square release.
-
-For data acquisition and processing, follow the [tested commands](docs/data_processing.md). The two raw HDF5 files and numeric caches are stored under `/root/autodl-fs/RobotDynamics-CS224W-Stanford-data`, outside Git. The [field table](docs/state_fields.md) explains the different D0/D1 observation layouts, world-coordinate fixtures, and end-effector orientation convention.
-
-The [baseline commands](docs/baseline_protocol.md) reproduce splitting, normalization, evaluation, and plots. Use the committed [manifest](reports/stage3/manifest.json) for comparisons. On AutoDL CPU with a local cache copy, fitting all three normalizers took 1.8 s and evaluation took 1.3 s, with peak RSS below 145 MiB; these timings exclude cache copying, tests, and plotting. No GPU computation is needed for these baselines.
-
-The [learning commands](docs/learning_baselines.md) cover fitting, pilot training, checkpoint evaluation, recovery, and report generation. The three 30-epoch pilots took about 159 seconds of measured run time in total, plus 26 seconds of input preparation. Checkpoints remain in AutoDL `outputs/stage4`; metrics and plots are committed under `reports/stage4`.
-
-For graph models, follow the [graph protocol and commands](docs/graph_baselines.md), including installation of `torch-geometric==2.6.1`. The full environment is recorded in [linux-stage5.lock.txt](requirements/linux-stage5.lock.txt). Four graph pilots took about 12.6 minutes of measured run time plus 34 seconds of input preparation. Graph checkpoints remain in AutoDL `outputs/stage5`, and small results are in `reports/stage5`. Figures can be regenerated on CPU without data or checkpoints:
-
-```bash
-python -m robot_dynamics.plot_graphs reports/stage5/analysis/analysis.json --output outputs/stage5_figures
-```
-
-The [equivariance protocol](docs/equivariance_protocol.md) provides stage 6 training and validation commands using the same environment. Its two pilots took about six minutes of measured run time plus 18 seconds of input preparation; concurrent GPU work prevents a controlled speed comparison with earlier runs. Checkpoints remain in AutoDL `outputs/stage6`. To redraw its figures without data or checkpoints:
-
-```bash
-python -m robot_dynamics.plot_equivariance reports/stage6/analysis/analysis.json --output outputs/stage6_figures
-```
-
-The [pretraining protocol](docs/pretraining_protocol.md) provides the six stage 7 training commands, exact-resume checks, independent evaluation, and paired analysis. It uses the same Linux environment, with no new dependencies. Checkpoints remain in AutoDL `outputs/stage7`; small results are in `reports/stage7`. Figures can be redrawn on CPU:
-
-```bash
-python -m robot_dynamics.plot_pretraining reports/stage7/analysis/analysis.json --output outputs/stage7_figures
-```
-
-The [formal protocol](docs/formal_protocol.md) gives the end-to-end stage 8 command. The complete pipeline took 14 h 53 min on the existing RTX 4090 D; peak recorded CUDA allocation was 1.15 GiB and sampled RSS 2.59 GiB. Its checkpoint and raw-data files stay on AutoDL; all selected configurations, metrics, logs, and compressed episode errors are committed under `reports/stage8/formal`. To redraw the formal figures on CPU:
-
-```bash
-python -m robot_dynamics.plot_formal reports/stage8/formal/analysis/analysis.json --output outputs/stage8_figures
-```
-
-The container has a 16-core CPU quota, 80 GiB RAM, and 24 GiB VRAM. Its host-visible CPU and memory totals are larger than these limits.
-
-For Windows base-only checks, use Python 3.10 with `requirements/windows-base.lock.txt` and `--device numpy`. Full simulator support was verified on Linux. [Environment notes](docs/environment.md) describe both machines and the resolved setup issues.
-
-## Next steps
-
-Square, Stack and the GRAIL demonstration are complete. Stage 9 is in final review (`CHECKING`); no experiment remains running. All three tasks' test sets have now been evaluated, so new test-inspired experiments must be marked exploratory. Stage 10 will cover the reproduction package, Colab example and final course materials after the stage review. That work has not started.
+The planned experiments and reproduction materials are delivered; Stage 10 is in final review (`CHECKING`). No training or evaluation job remains running. Hosted Colab execution, public distribution of the formal checkpoints, and closed-loop control have not been demonstrated. All formal test sets have been used, so any new test-inspired experiment is exploratory. No blog has been published.
 
 ## Data and references
 

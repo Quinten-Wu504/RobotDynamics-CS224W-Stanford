@@ -149,4 +149,4 @@ for path in target.rglob("*.csv.gz"):
 python -m robot_dynamics.analyze_formal --runs outputs/stage8_reanalysis
 ```
 
-Stage 8 is complete. Stage 9 has not started; it will choose at most one evidence-driven extension or record why no extension is warranted.
+Stage 8 is complete. The subsequent [Stack replication](../stage9/README.md), [GRAIL demonstration](../stage9/grail/README.md), and [final reproduction materials](../stage10/README.md) are also available.
