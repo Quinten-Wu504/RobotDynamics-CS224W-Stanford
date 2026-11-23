@@ -39,7 +39,9 @@ def export(output):
                     "split": row.get("split", "asset_test"),
                     "train_episodes": row.get(
                         "train_episodes", 800 if task == "stack" else 168
-                    ),
+                    )
+                    if row["seed_sd_cm"] is not None
+                    else 0,
                     "model": row["model"],
                     "method": row.get(
                         "method",
@@ -50,6 +52,19 @@ def export(output):
                     "seed_values_cm": json.dumps(row["seed_means_cm"]),
                 }
             )
+    for baseline in data["square"]["baselines"]:
+        rows.append(
+            {
+                "task": "square",
+                "split": baseline["split"],
+                "train_episodes": 0,
+                "model": baseline["run_id"],
+                "method": "baseline",
+                "mean_cm": baseline["macro"]["mean_cm"],
+                "seed_sd_cm": None,
+                "seed_values_cm": json.dumps([baseline["macro"]["mean_cm"]]),
+            }
+        )
     with (output / "all_results.csv").open("w", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
         writer.writeheader()
@@ -114,6 +129,69 @@ def export(output):
     fig.suptitle("Supervised comparisons · separate task scales · error bars: seed SD")
     for suffix in ("png", "pdf"):
         fig.savefig(output / f"overview.{suffix}", dpi=160)
+    plt.close(fig)
+
+    costs = []
+    for task, result in data.items():
+        for record in result["costs"]:
+            if task == "square":
+                seconds = (
+                    record["resources"]["initial_phase_update_seconds"]
+                    + record["resources"]["finetune_phase_update_seconds"]
+                )
+                count = record["parameter_count"]
+            elif task == "stack":
+                seconds, count = record["update_seconds"], record["parameters"]
+            else:
+                seconds, count = (
+                    60 * record["update_minutes"],
+                    record["parameter_count"],
+                )
+            costs.append(
+                {
+                    "task": task,
+                    "run_id": record["run_id"],
+                    "model": record["model"],
+                    "method": record.get("method", "supervised"),
+                    "seed": record["seed"],
+                    "train_episodes": record.get(
+                        "train_episodes", 800 if task == "stack" else 168
+                    ),
+                    "parameters": count,
+                    "update_minutes": seconds / 60,
+                }
+            )
+    with (output / "all_costs.csv").open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(costs[0]))
+        writer.writeheader()
+        writer.writerows(costs)
+    fig, axes = plt.subplots(1, 3, figsize=(13, 4.5), layout="constrained")
+    for ax, task in zip(axes, data):
+        model_names = MODELS[:3] if task == "square" else MODELS
+        values = [
+            np.mean(
+                [
+                    r["update_minutes"]
+                    for r in costs
+                    if r["task"] == task
+                    and r["model"] == model
+                    and r["method"] == "supervised"
+                    and r["train_episodes"] == (168 if task == "grail" else 800)
+                ]
+            )
+            for model in model_names
+        ]
+        ax.bar(range(len(values)), values, color=[f"C{i}" for i in range(len(values))])
+        ax.set(
+            xticks=range(len(values)),
+            xticklabels=["MLP", "GRU", "GNN", "No msg"][: len(values)],
+            ylabel="Mean update minutes/run",
+            title=task.upper() if task == "grail" else task.title(),
+        )
+        ax.grid(axis="y", alpha=0.2)
+    fig.suptitle("Measured training cost · excludes loading, validation and reload")
+    for suffix in ("png", "pdf"):
+        fig.savefig(output / f"cost_comparison.{suffix}", dpi=160)
     plt.close(fig)
 
     square_output = output / "square"
